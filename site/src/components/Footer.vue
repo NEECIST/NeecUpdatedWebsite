@@ -16,7 +16,14 @@
                     <div class="contact-email">
                     <i class="ion-ios-email-outline"></i>
                     <h3>Email</h3>
-                    <p><a href="mailto:coordination@jeec.ist">coordination@jeec.ist</a></p>
+                    <p><a href="mailto:contacto@neecist.org">contacto@neecist.org</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-phone">
+                    <h3>Phone</h3>
+                    <p><a href="tel:(+351) 218 419 056">(+351) 218 419 056</a></p>
                     </div>
                 </div>
 

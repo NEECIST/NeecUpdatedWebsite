@@ -10,7 +10,9 @@
                 <div class="description-text">Connecting the best students and engineers for over 20 years!
                 </div>
             </div>
-            <img src="https://us.123rf.com/450wm/tupungato/tupungato1611/tupungato161100074/66488989-science-doodle-background-seamless-vector-texture-with-physics-concepts-.jpg?ver=6">
+            <!--<img src="https://us.123rf.com/450wm/tupungato/tupungato1611/tupungato161100074/66488989-science-doodle-background-seamless-vector-texture-with-physics-concepts-.jpg?ver=6">
+            -->
+            <img src="../assets/Quidgest.jpg"/>
         </div>
 
         <div class="team">
@@ -55,7 +57,7 @@ export default {
                 {name: "Vasco Rodrigues",image: 'https://avatars.githubusercontent.com/u/34923176?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
                 {name: "António Coimbra",image: 'https://avatars.githubusercontent.com/u/65049521?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
                 {name: "Gonçalo Midões",image: 'https://avatars.githubusercontent.com/u/69457730?v=4', linkedin_url: 'https://www.linkedin.com/in/goncalo-midoes/'},
-                ]
+            ]
         },
         linkedin_icon_link: linkedin_logo,
       }

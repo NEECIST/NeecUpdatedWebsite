@@ -6,6 +6,9 @@
       <img class="navbar-left-logo-mobile" :src="navbar_mobile_logo_link" />
     </router-link>
 
+    <router-link router-link :to="{ name: 'Home' }">
+      <div class="navbar-title">Home</div>
+    </router-link>
     <router-link router-link :to="{ name: 'Team' }">
       <div class="navbar-title">Team</div>
     </router-link>
