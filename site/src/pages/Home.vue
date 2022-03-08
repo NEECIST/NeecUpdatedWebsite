@@ -4,6 +4,16 @@
       <Carousel :settings="settings" :breakpoints="breakpoints"/>
     </div>
   </div>
+  <div class="NEEC-talks">
+    <ul>
+      <li>
+        <img id="NEECtalksLOGO" src="https://us.123rf.com/450wm/tupungato/tupungato1611/tupungato161100074/66488989-science-doodle-background-seamless-vector-texture-with-physics-concepts-.jpg?ver=6">
+      </li>
+      <li>
+        <iframe src="https://open.spotify.com/embed/show/1cIa5h27pb8ghnfDB7N8Mu?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" frameBorder="0"></iframe>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -52,6 +62,24 @@ export default {
     height: 300px;
     background-color:white;
     position: relative;
+}
+.NEEC-talks li{
+  display: inline;
+  white-space: nowrap
+}
+.NEEC-talks iframe{
+  border-radius:12px;
+  width:75%;
+  height:232px;
+}
+#NEECtalksLOGO{
+  width:10px;
+  height:200px;
+  text-align:center;
+  align-items:center;
+  flex-direction:row;
+  display:flex;
+  justify-content:left;
 }
 .carousel{
     background-color:white;

@@ -27,22 +27,49 @@
                     </div>
                 </div>
 
+                <div class="col-md-4">
+                  <div class="socials">
+                    <h3>Check our socials</h3>
+                    <a href="https://www.facebook.com/NEECIST/" target="_blank">
+                      <img  align="center" alt="facebook" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/facebook/facebook-plain.svg">
+                    </a>
+                    <a href="https://twitter.com/NEECIST" target="_blank">
+                      <img  align="center" alt="twitter" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/twitter/twitter-original.svg">
+                    </a>
+                    <a href="https://www.linkedin.com/company/neecist/mycompany/" target="_blank">
+                      <img  align="center" alt="linkedin" src="../../static/linkedin.svg">
+                    </a>
+                    <a href="https://www.instagram.com/neecist/" target="_blank">
+                      <img  align="center" alt="instagram" src="../../static/instagram.svg">
+                    </a>
+                    <a href="https://www.youtube.com/user/NEECIST" target="_blank">
+                      <img  align="center" alt="youtube" src="../../static/youtube2.svg">
+                    </a>
+                  </div>
+                </div>
+
                 </div>
             </div>
         </section>
 
-        <div class="flexbox-imgs">
+        <div class="container">
+          <div class="flexbox-imgs">
             <a href="https://tecnico.ulisboa.pt/pt/" target="_blank"><img src="../../static/partner-logos/ist_logo.png"></a>
 
             <a href="https://fenix.tecnico.ulisboa.pt/departamentos/deec" target="_blank"><img src="../../static/partner-logos/deec_logo.png"></a>
+          </div>
         </div>
+
 
         <div class="bottom-bar">
             <div id="copyright">
                 Copyright © 2022 - Núcleo de Estudantes de Eletrotécnica e de Computadores do Instituto Superior Técnico
             </div>
             <div id="source-code">
-                Code hosted on <a href="https://github.com/NEECIST/NeecUpdatedWebsite" target="_blank">Github</a>
+                Code hosted on 
+                <a href="https://github.com/NEECIST/NeecUpdatedWebsite" target="_blank">
+                  <img  align="center" alt="github" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg">
+                </a>
             </div>
         </div>
 
@@ -61,6 +88,40 @@ export default {
 </script>
 
 <style>
+.socials{
+    text-align: center;
+}
+.socials h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #112363;
+}
+.socials img {
+    height: 30px;
+    width: 40px;
+    opacity: .85;
+    transition: all .3s;
+ 
+}
+.socials img:hover {
+	opacity: 1;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+#source-code img {
+    height: 20px;
+    width: 30px;
+    opacity: .85;
+    transition: all .3s;
+ 
+}
+#source-code img:hover {
+	opacity: 1;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
 .contacts-comp {
     position: relative;
     padding-top: 10px;
@@ -167,7 +228,7 @@ address {
   color: #f82249;
 }
 .col-md-4 {
-    width: 30%;
+    width: 25%;
     display: inline-block;
 }
 #contact .contact-info address,

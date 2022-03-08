@@ -4,7 +4,7 @@
        <div class="description-team">
            <div class="team-text">
                 <div class="description-title">
-                    Our Team
+                    <abbr title="Núcleo de Estudantes de Eletrotécnia e Computadores">NEEC</abbr> Team
                 </div>
 
                 <div class="description-text">Connecting the best students and engineers for over 20 years!
@@ -12,7 +12,7 @@
             </div>
             <!--<img src="https://us.123rf.com/450wm/tupungato/tupungato1611/tupungato161100074/66488989-science-doodle-background-seamless-vector-texture-with-physics-concepts-.jpg?ver=6">
             -->
-            <img src="../assets/Quidgest.jpg"/>
+            <img src="../assets/NEECteam.png"/>
         </div>
 
         <div class="team">
@@ -31,7 +31,22 @@
                             <a :href="member.linkedin_url" target="_blank">
                                 <img class="icon-team-member" :src="linkedin_icon_link"/>
                             </a>
-                        </div>                              
+                        </div>
+                        <div class="insta-icons">
+                            <a :href="member.insta_url" target="_blank">
+                                <img class="icon-team-member" :src="insta_icon_link"/>
+                            </a>
+                        </div>
+                        <div class="git-icons">
+                            <a :href="member.git_url" target="_blank">
+                                <img class="icon-team-member" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"/>
+                            </a>
+                        </div>
+                        <div class="mail-icons">
+                            <a :href="member.mail" target="_blank">
+                                <img class="icon-team-member" :src="mail_icon_link"/>
+                            </a>
+                        </div>                                   
                     </div>
                     <div class="team-member-name">
                         <p class="member-name">{{ member.name }}</p>
@@ -44,6 +59,11 @@
 
 <script>
 import linkedin_logo from "../../static/linkedin.svg"
+import insta_logo from "../../static/instagram.svg"
+import gmail_logo from "../../static/gmail.svg"
+import tiago from "../assets/NEEC/Tiago.jpg"
+import alexandra from "../assets/NEEC/Alex.jpg"
+import midoes from "../assets/NEEC/Midoes.jpg"
 
 export default {
   name: "team-page",
@@ -53,13 +73,18 @@ export default {
             name: "NEEC",
             description: "We are NEEC!",
             members:[
-                {name: "André Pereira",image: 'https://avatars.githubusercontent.com/u/54562621?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-                {name: "Vasco Rodrigues",image: 'https://avatars.githubusercontent.com/u/34923176?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-                {name: "António Coimbra",image: 'https://avatars.githubusercontent.com/u/65049521?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-                {name: "Gonçalo Midões",image: 'https://avatars.githubusercontent.com/u/69457730?v=4', linkedin_url: 'https://www.linkedin.com/in/goncalo-midoes/'},
+                {name: "André Pereira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Andre-MR-Pereira',insta_url: 'https://www.instagram.com/andre_periphery/',image: 'https://avatars.githubusercontent.com/u/54562621?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
+                {name: "Vasco Rodrigues",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/VascoDVRodrigues',insta_url: 'https://www.instagram.com/vascovrodrigues/',image: 'https://avatars.githubusercontent.com/u/34923176?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
+                {name: "António Coimbra",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/antoniocoimbraa',insta_url: 'https://www.instagram.com/antoniocoimbraa/',image: 'https://avatars.githubusercontent.com/u/65049521?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
+                //{name: "Gonçalo Midões",image: 'https://avatars.githubusercontent.com/u/69457730?v=4', linkedin_url: 'https://www.linkedin.com/in/goncalo-midoes/'},
+                {name: "Gonçalo Midões",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Midas-sudo',insta_url: 'https://www.instagram.com/goncalopm01/',image: midoes, linkedin_url: 'https://www.linkedin.com/in/goncalo-midoes/'},
+                {name: "Tiago Gonçalves",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Varsenaiga',insta_url: 'https://www.instagram.com/tiago.angelico.goncalves/',image: tiago, linkedin_url: 'https://www.linkedin.com/in/tiago-gon%C3%A7alves-b5a87b183/'},
+                {name: "Alexandra Fernandes",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
             ]
         },
         linkedin_icon_link: linkedin_logo,
+        insta_icon_link: insta_logo,
+        mail_icon_link: gmail_logo,
       }
   }
 };
@@ -76,11 +101,11 @@ export default {
 }
 .description-team img{
     width: 700px;
-    transform: rotate(30deg);
-    clip-path: polygon(0 0, 0 57.7%, 100% 0);
+    /*transform: rotate(30deg);*/
+    clip-path: inset(0 5.5em 11em 3em);
     position: absolute;
-    top:179px;
-    left: -200px;
+    top:100px;
+    left: -60px;
     z-index: 0;
 }
 .team-text{
@@ -99,7 +124,7 @@ export default {
 }
 .description-text{
     margin-top: 10px;
-    background-color: rgb(95, 140, 179);
+    background-color: #009DE0;
     border-radius: 5px;
     font-size: 30px;
     font-family: 'Karla';
@@ -134,8 +159,21 @@ export default {
 .linkedin-icons {
     opacity: 0;
     position:absolute;
-    top:0;
-    left:0;
+    top:-75px;
+    left:0px;
+    right:85px;
+    bottom:0;
+    margin: auto;
+    border-radius: 0px;
+    width:60px;
+    height:60px;
+    transition: .5s ease;
+}
+.insta-icons {
+    opacity: 0;
+    position:absolute;
+    top:-75px;
+    left:85px;
     right:0;
     bottom:0;
     margin: auto;
@@ -144,6 +182,35 @@ export default {
     height:60px;
     transition: .5s ease;
 }
+.git-icons {
+    opacity: 0;
+    position:absolute;
+    top:75px;
+    left:85px;
+    right:0;
+    bottom:0;
+    margin: auto;
+    border-radius: 0px;
+    width:60px;
+    height:60px;
+    transition: .5s ease;
+}
+.mail-icons {
+    opacity: 0;
+    position:absolute;
+    top:75px;
+    left:-85px;
+    right:0;
+    bottom:0;
+    margin: auto;
+    border-radius: 0px;
+    width:60px;
+    height:60px;
+    transition: .5s ease;
+}
+.teams_container:hover .git-icons,
+.teams_container:hover .mail-icons,
+.teams_container:hover .insta-icons,
 .teams_container:hover .linkedin-icons {
   opacity: 1;
 }
