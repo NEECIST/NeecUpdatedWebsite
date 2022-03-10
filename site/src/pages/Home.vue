@@ -5,14 +5,14 @@
     </div>
   </div>
   <div class="NEEC-talks">
-    <ul>
-      <li>
-        <img id="NEECtalksLOGO" src="https://us.123rf.com/450wm/tupungato/tupungato1611/tupungato161100074/66488989-science-doodle-background-seamless-vector-texture-with-physics-concepts-.jpg?ver=6">
-      </li>
-      <li>
-        <iframe src="https://open.spotify.com/embed/show/1cIa5h27pb8ghnfDB7N8Mu?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" frameBorder="0"></iframe>
-      </li>
-    </ul>
+    <div class="row">
+      <div class="col-50">
+        <img id="NEECtalksLOGO" src="../assets/Logos/NEECtalks.png">
+      </div>
+      <div class="col-50">
+        <iframe id="NEECtalksPlayer" :src="episode" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" frameBorder="0"></iframe>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,8 +50,23 @@ export default {
                 itemsToShow: 5,
                 snapAlign: 'start',
             },
-        }
+        },
+        episode2:"https://open.spotify.com/embed/episode/6m0bfUJ8qC5qE968BzC8G7?utm_source=generator",
+        episode1:"https://open.spotify.com/embed/episode/4521myIGDo3tCxexZgt74r?utm_source=generator",
+        episode:null
     };
+  },
+  methods: {
+    randomizeEpisode: function () {
+      var random=Math.ceil(Math.random()*2)
+      if (random===1)
+        this.episode=this.episode1;
+      else
+        this.episode=this.episode2
+    }
+  },
+  mounted: function(){
+    this.randomizeEpisode() 
   }
 };
 </script>
@@ -59,9 +74,17 @@ export default {
 <style>
 .home-app{
     padding-top: 100px;
-    height: 300px;
     background-color:white;
     position: relative;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.NEEC-talks {
+  background-image: url(../assets/brickWall.png);
+  background-size: cover;
 }
 .NEEC-talks li{
   display: inline;
@@ -72,9 +95,13 @@ export default {
   width:75%;
   height:232px;
 }
+#NEECtalksPlayer{
+  border-radius:12px;
+  width:75%;
+  height:232px;
+}
 #NEECtalksLOGO{
-  width:10px;
-  height:200px;
+  width:70%;
   text-align:center;
   align-items:center;
   flex-direction:row;
