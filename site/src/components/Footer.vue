@@ -79,17 +79,17 @@
 
 <script>
 export default {
-    name: 'footer-component',
-    data() {
-        return {
-        }
-    }
+  name: 'footer-component',
+  data() {
+      return {
+      }
+  }
 }   
 </script>
 
 <style>
 .socials{
-    text-align: center;
+  text-align: center;
 }
 .socials h3 {
   font-size: 18px;
@@ -99,34 +99,32 @@ export default {
   color: #112363;
 }
 .socials img {
-    height: 30px;
-    width: 40px;
-    opacity: .85;
-    transition: all .3s;
- 
+  height: 30px;
+  width: 40px;
+  opacity: .85;
+  transition: all .3s;
 }
 .socials img:hover {
 	opacity: 1;
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 #source-code img {
-    height: 20px;
-    width: 30px;
-    opacity: .85;
-    transition: all .3s;
- 
+  height: 20px;
+  width: 30px;
+  opacity: .85;
+  transition: all .3s;
 }
 #source-code img:hover {
 	opacity: 1;
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 .contacts-comp {
-    position: relative;
-    padding-top: 10px;
-    background-color: #ffffff;
-    text-align: left;
+  position: relative;
+  padding-top: 10px;
+  background-color: #ffffff;
+  text-align: left;
 }
 .bottom-bar {
   margin-top: 10px;
@@ -164,54 +162,54 @@ address {
   display: -webkit-flex; /* Safari 6.1+. iOS 7.1+, BB10 */
   display: flex;         /*Firefox, Chrome, Opera */
   
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
 }
 .flexbox-imgs img {
-      justify-content: center;
-    max-height: 100px;
-    max-width: 150px;
-    margin: 5px 12px;
-    padding-left: 30px;
-    opacity: .85;
-    transition: all .3s;
+  justify-content: center;
+  max-height: 100px;
+  max-width: 150px;
+  margin: 5px 12px;
+  padding-left: 30px;
+  opacity: .85;
+  transition: all .3s;
  
 }
 .flexbox-imgs img:hover {
 	opacity: 1;
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 @media screen and (max-width: 800px) {
     .flexbox-imgs img {
-      max-width: 125px;
-      max-height: 88px;
-      margin: 5px 8px;
-      padding-left: 10px;
+    max-width: 125px;
+    max-height: 88px;
+    margin: 5px 8px;
+    padding-left: 10px;
   }
 }
 @media screen and (max-width: 560px) {
   .flexbox-imgs img {
-      max-width: 85px;
-      max-height: 60px;
-      margin: 3px 5px;
+    max-width: 85px;
+    max-height: 60px;
+    margin: 3px 5px;
   }
   .copyright {
-      text-align: center;
-      font-size: 8px;
-      width: 80%;
-      padding-left: 0px;
-      padding-bottom: 0px;
+    text-align: center;
+    font-size: 8px;
+    width: 80%;
+    padding-left: 0px;
+    padding-bottom: 0px;
   }
   .source-code {
-      text-align: center;
+    text-align: center;
   }
   .bottom-bar {
-      text-align: center;
-      height: 50px;
+    text-align: center;
+    height: 50px;
   }
 }
 .section-with-bg {
@@ -228,8 +226,8 @@ address {
   color: #f82249;
 }
 .col-md-4 {
-    width: 25%;
-    display: inline-block;
+  width: 25%;
+  display: inline-block;
 }
 #contact .contact-info address,
 #contact .contact-info p {
@@ -257,7 +255,7 @@ address {
 }
 @media screen and (max-width: 560px) {
   .col-md-4 {
-      width: 80%;
+    width: 80%;
   }
 }
 </style>

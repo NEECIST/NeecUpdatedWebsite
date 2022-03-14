@@ -1,10 +1,42 @@
 <template>
     <carousel :settings="settings" :breakpoints="breakpoints">
-        <slide v-for="slide in 5" :key="slide">
-            <div class="carousel__item">
-                <!--<img class="carousel_photo" src="https://us.123rf.com/450wm/tupungato/tupungato1611/tupungato161100074/66488989-science-doodle-background-seamless-vector-texture-with-physics-concepts-.jpg?ver=6">
-                -->{{slide}}
+        <slide v-for="slide in payload" :key="slide">
+          <a v-if="slide.page_url" class="carousel__item" :href="slide.page_url" target="_blank">
+            <div v-if="slide.local" class="carousel__item" :style="{ backgroundImage: `url(${require('../assets/' + slide.image)})`,backgroundColor: slide.backcolor, backgroundSize: slide.backsize,backgroundPosition:slide.backposition,backgroundRepeat:slide.backrepeat }">
+                <div v-if="slide.main_text" class="carousel__main__text" :style="{color: slide.maincolor ,fontFamily: slide.mainfont, fontSize: slide.mainfontSize + 'px', marginLeft: slide.mainleftmargin + 'px', marginBottom: slide.mainbottommargin + 'px', textShadow: slide.mainshadow}">
+                  {{slide.main_text}}
+                  <div v-if="slide.secondary_text" class="carousel__secondary__text" :style="{color: slide.secondarycolor ,fontFamily: slide.secondaryfont, fontSize: slide.secondaryfontSize + 'px', marginLeft: slide.secondaryleftmargin + 'px', marginBottom: slide.secondarybottommargin + 'px', textShadow: slide.secondaryshadow}">
+                    {{slide.secondary_text}}
+                  </div>
+                </div>
             </div>
+            <div v-else class="carousel__item" :style="{'background-image': 'url('+slide.image+')',backgroundColor: slide.backcolor, backgroundSize: slide.backsize,backgroundPosition:slide.backposition,backgroundRepeat:slide.backrepeat }">
+                <div v-if="slide.main_text" class="carousel__main__text" :style="{color: slide.maincolor ,fontFamily: slide.mainfont, fontSize: slide.mainfontSize + 'px', marginLeft: slide.mainleftmargin + 'px', marginBottom: slide.mainbottommargin + 'px', textShadow: slide.mainshadow}">
+                  {{slide.main_text}}
+                  <div v-if="slide.secondary_text" class="carousel__secondary__text" :style="{color: slide.secondarycolor ,fontFamily: slide.secondaryfont, fontSize: slide.secondaryfontSize + 'px', marginLeft: slide.secondaryleftmargin + 'px', marginBottom: slide.secondarybottommargin + 'px', textShadow: slide.secondaryshadow}">
+                    {{slide.secondary_text}}
+                  </div>
+                </div>
+            </div>
+          </a>
+          <div class="carousel__item" v-else>
+            <div v-if="slide.local" class="carousel__item" :style="{ backgroundImage: `url(${require('../assets/' + slide.image)})`,backgroundColor: slide.backcolor, backgroundSize: slide.backsize,backgroundPosition:slide.backposition,backgroundRepeat:slide.backrepeat  }">
+                <div v-if="slide.main_text" class="carousel__main__text" :style="{color: slide.maincolor ,fontFamily: slide.mainfont, fontSize: slide.mainfontSize + 'px', marginLeft: slide.mainleftmargin + 'px', marginBottom: slide.mainbottommargin + 'px', textShadow: slide.mainshadow}">
+                  {{slide.main_text}}
+                  <div v-if="slide.secondary_text" class="carousel__secondary__text" :style="{color: slide.secondarycolor ,fontFamily: slide.secondaryfont, fontSize: slide.secondaryfontSize + 'px', marginLeft: slide.secondaryleftmargin + 'px', marginBottom: slide.secondarybottommargin + 'px', textShadow: slide.secondaryshadow}">
+                    {{slide.secondary_text}}
+                  </div>
+                </div>
+            </div>
+            <div v-else class="carousel__item" :style="{'background-image': 'url('+slide.image+')',backgroundColor: slide.backcolor, backgroundSize: slide.backsize,backgroundPosition:slide.backposition,backgroundRepeat:slide.backrepeat }">
+                <div v-if="slide.main_text" class="carousel__main__text" :style="{color: slide.maincolor ,fontFamily: slide.mainfont, fontSize: slide.mainfontSize + 'px', marginLeft: slide.mainleftmargin + 'px', marginBottom: slide.mainbottommargin + 'px', textShadow: slide.mainshadow}">
+                  {{slide.main_text}}
+                  <div v-if="slide.secondary_text" class="carousel__secondary__text" :style="{color: slide.secondarycolor ,fontFamily: slide.secondaryfont, fontSize: slide.secondaryfontSize + 'px', marginLeft: slide.secondaryleftmargin + 'px', marginBottom: slide.secondarybottommargin + 'px', textShadow: slide.secondaryshadow}">
+                    {{slide.secondary_text}}
+                  </div>
+                </div>
+            </div>
+          </div>
         </slide>
 
         <template #addons>
@@ -21,8 +53,41 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 export default {
   name: "carousel-component",
   props:{
-      settings:Object,
-      breakpoints:Object
+      settings:{
+        type: Object,
+        default: () => ({
+            itemsToShow:1,
+            itemsToScroll:1,
+            wrapAround:true,
+            snapAlign:'center',
+            transition:300,
+            autoplay:5000,
+            breakpoints:null,
+            modelValue:0,
+            mouseDrag:true,
+            touchDrag:true,
+            pauseAutoplayOnHover:true,
+        })
+      },
+      breakpoints:{
+        type:Object,
+        default: () => ({
+            // 700px and up
+            700: {
+                itemsToShow: 3.5,
+                snapAlign: 'center',
+            },
+            // 1024 and up
+            1024: {
+                itemsToShow: 5,
+                snapAlign: 'start',
+            },
+        })
+      },
+      payload:{
+        type:Array,
+        default: null
+      }
   },
   components: {
     Carousel,
@@ -32,21 +97,31 @@ export default {
   },
   data() {
     return {
-        payload:[
-            {name: "André Pereira",image: 'https://avatars.githubusercontent.com/u/54562621?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-            {name: "Vasco Rodrigues",image: 'https://avatars.githubusercontent.com/u/34923176?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-            {name: "António Coimbra",image: 'https://avatars.githubusercontent.com/u/65049521?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-            {name: "Gonçalo Midões",image: 'https://avatars.githubusercontent.com/u/69457730?v=4', linkedin_url: 'https://www.linkedin.com/in/goncalo-midoes/'},
-        ]
+      /*txtColor:"#0099CC",
+      height: -200,
+      font: "Times New Roman"*/
     }
+  },
+  mounted: function(){
+    //console.log(this.payload)
+  },
+  computed: {
+    /*cssTextVars() {
+      return {
+        '--text-color': this.txtColor,
+        '--height': this.height + 'px',
+        '--font':this.font
+      }
+    }*/
   }
 };
 </script>
 
 <style>
+
 .carousel__item {
-  min-height: 200px;
-  width: 100%;
+  min-height: 300px;
+  min-width: 100%;
   background-color: #009DE0;
   color:  var(--vc-clr-white);
   font-size: 20px;
@@ -54,10 +129,32 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center;
+}
+
+.carousel__main__text {
+  font-size: 18px;
+  margin-bottom: -180px;
+  margin-left: 0px;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  text-shadow: none;
+}
+
+.carousel__secondary__text {
+  font-size: 13px;
+  margin-bottom: -240px;
+  margin-left: 0px;
+  color: black;
+  text-align: center;
+  position:relative;
 }
 
 .carousel__pagination-button--active {
-    background-color: #009DE0;
+  background-color: #009DE0;
 }
 
 .carousel_photo {

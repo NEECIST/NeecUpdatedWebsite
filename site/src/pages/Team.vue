@@ -10,17 +10,10 @@
                 <div class="description-text">Connecting the best students and engineers for over 20 years!
                 </div>
             </div>
-            <!--<img src="https://us.123rf.com/450wm/tupungato/tupungato1611/tupungato161100074/66488989-science-doodle-background-seamless-vector-texture-with-physics-concepts-.jpg?ver=6">
-            -->
             <img src="../assets/NEECteam.png"/>
         </div>
 
         <div class="team">
-            <!--<component-title 
-                :title="team.name"
-                :subtitle="team.description"
-            />-->
-
             <div class="team-flex">
                 <div v-for="member in team.members" :key="member.name">
                     <div class="teams_container">
