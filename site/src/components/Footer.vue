@@ -45,6 +45,9 @@
                     <a href="https://www.youtube.com/user/NEECIST" target="_blank">
                       <img  align="center" alt="youtube" src="../../static/youtube2.svg">
                     </a>
+                    <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
+                      <img  align="center" alt="spotify" src="../../static/spotify.svg">
+                    </a>
                   </div>
                 </div>
 
@@ -252,6 +255,7 @@ address {
 #contact .contact-email {
   font-size: 18px;
   margin-bottom: 10px;
+  margin-left: 30px;
 }
 @media screen and (max-width: 560px) {
   .col-md-4 {
