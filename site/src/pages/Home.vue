@@ -49,7 +49,8 @@
           <div class="box">
             <h2>ISTSI</h2>
             <p>Queres experienciar o mundo de trabalho? Entra em contacto e candidata-te
-              para estagiar em empresas ligadas a todos os ramos de engenharia. 
+              para estagiar no verão em empresas ligadas a todos os ramos de engenharia, para poderes enriquecer
+              a tua experiência profissional. 
             </p>
           </div>
         </a>
