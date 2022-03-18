@@ -7,7 +7,7 @@
                     <abbr title="Núcleo de Estudantes de Eletrotécnia e Computadores">NEEC</abbr> Team
                 </div>
 
-                <div class="description-text">Connecting the best students and engineers for over 20 years!
+                <div class="description-text">Conhece a equipa por trás do projeto que não para de crescer!
                 </div>
             </div>
             <img src="../assets/NEECteam.png"/>

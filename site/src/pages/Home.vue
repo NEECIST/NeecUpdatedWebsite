@@ -31,7 +31,7 @@
     <div class="activities-column" @mouseover="updateActivities(0)" :class="{'activities-column active': hovering===0}">
       <div class="activities-content">
         <a href="https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz" target="_blank">
-          <h1>Drive</h1><!---->
+          <h1>Drive</h1>
           <div class="box">
             <h2>NEEC Drive</h2>
             <p>Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras!
@@ -45,7 +45,7 @@
     <div class="activities-column" @mouseover="updateActivities(1)" :class="{'activities-column active': hovering===1}">
       <div class="activities-content">
         <a href="https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz" target="_blank">
-          <h1>ISTSI</h1><!---->
+          <h1>ISTSI</h1>
           <div class="box">
             <h2>ISTSI</h2>
             <p>Queres experienciar o mundo de trabalho? Entra em contacto e candidata-te
@@ -58,12 +58,11 @@
     <div class="activities-column" @mouseover="updateActivities(2)" :class="{'activities-column active': hovering===2}">
       <div class="activities-content">
         <a href="https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz" target="_blank">
-          <h1>Projetos</h1><!---->
+          <h1>Projetos</h1>
           <div class="box">
             <h2>Workshops</h2>
-            <p> Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras!
-              Aulas, problemas, testes e exames, tanto de licenciatura como de mestrado. 
-              Também podes contribuir com material teu!
+            <p> Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda. Inspira-te em alguns dos nossos
+              projetos internos ou inscreve-te nos nossos workshops!
             </p>
           </div>
         </a>
@@ -72,12 +71,10 @@
     <div class="activities-column" @mouseover="updateActivities(3)" :class="{'activities-column active': hovering===3}">
       <div class="activities-content">
         <a href="https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz" target="_blank">
-          <h1>Join Us!</h1><!---->
+          <h1>Join Us!</h1>
           <div class="box">
             <h2>Torna-te um NEECo!</h2>
-            <p> Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras!
-              Aulas, problemas, testes e exames, tanto de licenciatura como de mestrado. 
-              Também podes contribuir com material teu!
+            <p> As inscrições abrem brevemente. Não percas esta oportunidade!
             </p>
           </div>
       </a>
@@ -125,10 +122,11 @@ export default {
         },
         episode2:"https://open.spotify.com/embed/episode/6m0bfUJ8qC5qE968BzC8G7?utm_source=generator",
         episode1:"https://open.spotify.com/embed/episode/4521myIGDo3tCxexZgt74r?utm_source=generator",
-        episode:"https://open.spotify.com/embed/episode/4521myIGDo3tCxexZgt74r?utm_source=generator",
+        episode:"https://open.spotify.com/embed/episode/0jmTSMg4x1USWTEZ70xSXD?utm_source=generator",
         payload:[
             {main_text: "StartUp the engine!",mainfont:"System-ui", maincolor: 'Snow', mainfontSize: 35, mainleftmargin: 75,mainbottommargin: -170,local:true,image: 'Events/NEECathon.png', page_url: null},
             {local:true,image: 'Events/discord_invite.png', page_url: 'https://discord.gg/kBMRWgZn'},
+            //{local:true,image: 'Events/newsletter.png'},
         ]
     };
   },
@@ -147,7 +145,7 @@ export default {
       }else if(entry===1){
         this.activities_image='Activities/ISTSI.jpg';
       }else if(entry===2){
-        this.activities_image='brickWall.png';
+        this.activities_image='Activities/projects.jpg';
       }else if(entry===3){
         this.activities_image='NEECteam.png';
       }

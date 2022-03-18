@@ -5,6 +5,15 @@
 
       <img class="navbar-left-logo-mobile" :src="navbar_mobile_logo_link" />
     </router-link>
+    
+    <div class="sedeStatus">
+      <small> Sede is
+        <div class="sedeBtn">
+          <span v-if="sede_state.status===true" class="blink_green"/>
+          <span v-else class="blink_red"/>
+        </div>
+      </small>
+    </div>
 
     <router-link router-link :to="{ name: 'Home' }">
       <div class="navbar-title">Home</div>
@@ -31,6 +40,7 @@
 <script>
 import neec_logo from "../../static/partner-logos/neec_logo.png"
 import neec_logo_mobile from "../../static/neec.svg"
+import DataService from "../services/DataService";
 
 export default {
   name: "navbar-component",
@@ -40,14 +50,33 @@ export default {
       show_registrations: false,
       show_schedule: false,
       navbar_logo_link: neec_logo,
+      sede_state: [],
       navbar_mobile_logo_link: neec_logo_mobile
     };
   },
   methods: {
+    onDataChange(items) {
+      let payload = [];
+      items.forEach((item) => {
+        let key = item.key;
+        let data = item.val();
+        payload.push({
+          key: key,
+          status: data,
+        });
+      });
+      this.sede_state = payload;
+    },
     redirect(page) {
       this.show_menu = false;
       this.$router.push({ name: page });
     }
+  },
+  mounted(){
+    DataService.getAll().on("value", this.onDataChange);
+  },
+  beforeUnmount() {
+    DataService.getAll().off("value", this.onDataChange);
   }
 };
 </script>
@@ -71,6 +100,20 @@ export default {
 }
 .navbar-left-logo-mobile {
   display: none;
+}
+.sedeStatus{
+  float: left;
+  margin-top: 25px;
+  margin-left: 30px;
+}
+.sedeStatus small{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sedeBtn{
+  padding-left: 5px;
+  padding-top: 5px;
 }
 .platform-button {
   margin-top: 15px;
@@ -300,6 +343,29 @@ a:hover {
 @media only screen and (max-width: 350px) {
   .register-button {
     margin-top: 30px;
+  }
+}
+.blink_green {
+  animation: blinker 2s linear infinite;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border: 1px solid green;
+  background-color: green;
+  border-radius: 100%;
+}
+.blink_red {
+  animation: blinker 2s linear infinite;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border: 1px solid red;
+  background-color: red;
+  border-radius: 100%;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0.6;
   }
 }
 </style>
