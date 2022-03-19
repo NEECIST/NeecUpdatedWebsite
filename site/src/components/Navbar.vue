@@ -9,7 +9,7 @@
     <div class="sedeStatus">
       <small> Sede is
         <div class="sedeBtn">
-          <span v-if="sede_state.status===true" class="blink_green"/>
+          <span v-if="boolean_sede_state===true" class="blink_green"/>
           <span v-else class="blink_red"/>
         </div>
       </small>
@@ -35,7 +35,7 @@
       <ul id="menu">
         <li v-on:click="redirect('Home')">Home</li>
         <li v-on:click="redirect('Team')">Team</li>
-        
+        <li v-on:click="redirect('Oportunities')">Oportunities</li>
       </ul>
     </div>
   </div>
@@ -55,6 +55,7 @@ export default {
       show_schedule: false,
       navbar_logo_link: neec_logo,
       sede_state: [],
+      boolean_sede_state: false,
       navbar_mobile_logo_link: neec_logo_mobile
     };
   },
@@ -70,6 +71,7 @@ export default {
         });
       });
       this.sede_state = payload;
+      this.boolean_sede_state = this.sede_state[0].status==='True'
     },
     redirect(page) {
       this.show_menu = false;

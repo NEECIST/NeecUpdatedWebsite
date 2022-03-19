@@ -1,24 +1,23 @@
 <template>
     <div class="oportunities-app">
 
-       <div class="description-team">
-           <div class="team-text">
+       <div class="description-opportunities">
+           <div class="opportunities-text">
                 <div class="description-title">
                     Oportunidades
                 </div>
                 <div class="description-text">Desde estágios até vagas de emprego, conhece aqui as melhores oportunidades!
                 </div>
-                
             </div>
             <img src="../assets/oportunities.jpg"/>
         </div>
 
-        <div class="team" >
+        <div class="team">
              <ul v-if="cardList && cardList.length" style="list-style: none;display: flex; flex-direction: row; flex-wrap: wrap;">
                 <li v-for="card of cardList" :key="card.name" style=" flex: 0 1 50%;padding-bottom: 10px;">
                     <div class="card" >
                         <h2>{{card.name}}</h2>
-                        <p>{{card.desc}}</p>
+                        <p><span v-html="card.desc"/></p>
                     </div>
                    
                 </li>
@@ -34,20 +33,39 @@ export default {
   name: "oportunities-page",
   data() {
       return {
-        cardList: [],
+        cardList: []
       }
-  },created(){
-      axios.get('https://api.trello.com/1/lists/620256ba93c9f35b1c4c54ac/cards')
-      .then(response => {
-      // JSON responses are automatically parsed.
-      this.cardList = response.data
-        }).then(()=>console.log(this.cardList)) 
+  },
+  created(){
+    axios.get("https://api.trello.com/1/lists/620256ba93c9f35b1c4c54ac/cards")
+    .then(response => {
+    // JSON responses are automatically parsed.
+    this.cardList = response.data
+    }).then(()=>
+    this.curateCardText(this.cardList)) 
+  },
+  methods:{
+    curateCardText(List) {
+        List.forEach(element => {
+            element.desc=this.linkify(element.desc)
+        });
+    },
+    linkify(inputText) {
+        //eslint-disable-next-line
+        const pattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+        let text = inputText.replace(pattern1, '<a href="$1" target="_blank">$1</a>');
+        //eslint-disable-next-line
+        const pattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
+        text = text.replace(pattern2, '$1<a href="http://$2" target="_blank">$2</a>');
+        
+        return text;
+    }
   }
 };
 </script>
 
 <style>
-.description-team{
+.description-opportunities{
     padding-top: 100px;
     height: 300px;
     background-color:white;
@@ -67,16 +85,16 @@ export default {
     height: 100%;
     box-sizing: border-box;
 }
-.description-team img{
+.description-opportunities img{
     width: 700px;
     /*transform: rotate(30deg);*/
-    clip-path: inset(0 5.5em 11em 3em);
+    clip-path: inset(0 5.5em 4.5em 3em);
     position: absolute;
     top:100px;
     left: -60px;
     z-index: 0;
 }
-.team-text{
+.opportunities-text{
     float: right;
     padding-right: 40px;
     position: relative;
@@ -226,7 +244,7 @@ export default {
         padding-right: 40px;
         line-height: 28px;
     }
-    .description-team img{
+    .description-opportunities img{
         width: 475px;
         top: 200px;
     }
@@ -255,7 +273,7 @@ export default {
     }
 }
 @media screen and (max-width: 400px) {
-    .description-team{
+    .description-opportunities{
         height: 200px;
         background-color:white;
         position: relative;
@@ -271,7 +289,7 @@ export default {
         padding-left: 20px;
         line-height: 24px;
     }
-    .description-team img{
+    .description-opportunities img{
         width: 475px;
         top: 150px;
     }

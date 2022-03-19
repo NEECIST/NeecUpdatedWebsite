@@ -44,7 +44,6 @@
     </div>
     <div class="activities-column" @mouseover="updateActivities(1)" :class="{'activities-column active': hovering===1}">
       <div class="activities-content">
-        <a href="https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz" target="_blank">
           <h1>ISTSI</h1>
           <div class="box">
             <h2>ISTSI</h2>
@@ -53,12 +52,10 @@
               a tua experiência profissional. 
             </p>
           </div>
-        </a>
       </div>
     </div>
     <div class="activities-column" @mouseover="updateActivities(2)" :class="{'activities-column active': hovering===2}">
       <div class="activities-content">
-        <a href="https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz" target="_blank">
           <h1>Projetos</h1>
           <div class="box">
             <h2>Workshops</h2>
@@ -66,19 +63,16 @@
               projetos internos ou inscreve-te nos nossos workshops!
             </p>
           </div>
-        </a>
       </div>
     </div>
     <div class="activities-column" @mouseover="updateActivities(3)" :class="{'activities-column active': hovering===3}">
       <div class="activities-content">
-        <a href="https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz" target="_blank">
           <h1>Join Us!</h1>
           <div class="box">
             <h2>Torna-te um NEECo!</h2>
             <p> As inscrições abrem brevemente. Não percas esta oportunidade!
             </p>
           </div>
-      </a>
       </div>
     </div>
   </div>
