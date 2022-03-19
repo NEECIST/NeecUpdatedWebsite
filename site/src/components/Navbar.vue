@@ -21,6 +21,9 @@
     <router-link router-link :to="{ name: 'Team' }">
       <div class="navbar-title">Team</div>
     </router-link>
+       <router-link router-link :to="{ name: 'Oportunities' }">
+      <div class="navbar-title">Oportunidades</div>
+    </router-link>
 
     <div id="menuToggle">
       <input type="checkbox" :checked="show_menu" v-on:click="show_menu = !show_menu" />
@@ -32,6 +35,7 @@
       <ul id="menu">
         <li v-on:click="redirect('Home')">Home</li>
         <li v-on:click="redirect('Team')">Team</li>
+        
       </ul>
     </div>
   </div>
