@@ -21,8 +21,11 @@
     <router-link router-link :to="{ name: 'Team' }">
       <div class="navbar-title">Team</div>
     </router-link>
-       <router-link router-link :to="{ name: 'Oportunities' }">
+    <router-link router-link :to="{ name: 'Oportunities' }">
       <div class="navbar-title">Oportunidades</div>
+    </router-link>
+    <router-link router-link :to="{ name: 'About' }">
+      <div class="navbar-title">Sobre</div>
     </router-link>
 
     <div id="menuToggle">
