@@ -121,7 +121,6 @@ export default {
         payload:[
             {main_text: "StartUp the engine!",mainfont:"System-ui", maincolor: 'Snow', mainfontSize: 35, mainleftmargin: 75,mainbottommargin: -170,local:true,image: 'Events/NEECathon.png', page_url: null},
             {local:true,image: 'Events/discord_invite.png', page_url: 'https://discord.gg/kBMRWgZn'},
-            //{local:true,image: 'Events/newsletter.png'},
         ]
     };
   },

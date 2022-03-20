@@ -18,9 +18,10 @@
                 <div v-for="member in team.members" :key="member.name">
                     <div class="teams_container">
                         <div class="team-member">
-                            <img :src="member.image">
+                            <!--<img :src="member.image">-->
+                            <img :src="default_avatar">
                         </div> 
-                        <div class="linkedin-icons">
+                        <!--<div class="linkedin-icons">
                             <a :href="member.linkedin_url" target="_blank">
                                 <img class="icon-team-member" :src="linkedin_icon_link"/>
                             </a>
@@ -39,7 +40,7 @@
                             <a :href="member.mail" target="_blank">
                                 <img class="icon-team-member" :src="mail_icon_link"/>
                             </a>
-                        </div>                                   
+                        </div>-->                                   
                     </div>
                     <div class="team-member-name">
                         <p class="member-name">{{ member.name }}</p>
@@ -62,17 +63,29 @@ export default {
   name: "team-page",
   data() {
       return {
+        default_avatar: 'https://avatars.githubusercontent.com/u/51272291?v=4',
         team: {
             name: "NEEC",
             description: "We are NEEC!",
             members:[
-                {name: "André Pereira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Andre-MR-Pereira',insta_url: 'https://www.instagram.com/andre_periphery/',image: 'https://avatars.githubusercontent.com/u/54562621?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-                {name: "Vasco Rodrigues",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/VascoDVRodrigues',insta_url: 'https://www.instagram.com/vascovrodrigues/',image: 'https://avatars.githubusercontent.com/u/34923176?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-                {name: "António Coimbra",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/antoniocoimbraa',insta_url: 'https://www.instagram.com/antoniocoimbraa/',image: 'https://avatars.githubusercontent.com/u/65049521?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-                //{name: "Gonçalo Midões",image: 'https://avatars.githubusercontent.com/u/69457730?v=4', linkedin_url: 'https://www.linkedin.com/in/goncalo-midoes/'},
-                {name: "Gonçalo Midões",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Midas-sudo',insta_url: 'https://www.instagram.com/goncalopm01/',image: midoes, linkedin_url: 'https://www.linkedin.com/in/goncalo-midoes/'},
-                {name: "Tiago Gonçalves",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Varsenaiga',insta_url: 'https://www.instagram.com/tiago.angelico.goncalves/',image: tiago, linkedin_url: 'https://www.linkedin.com/in/tiago-gon%C3%A7alves-b5a87b183/'},
                 {name: "Alexandra Fernandes",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Alice Rosa",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "André Pereira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Andre-MR-Pereira',insta_url: 'https://www.instagram.com/andre_periphery/',image: 'https://avatars.githubusercontent.com/u/54562621?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
+                {name: "André Silva",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "António Coimbra",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/antoniocoimbraa',insta_url: 'https://www.instagram.com/antoniocoimbraa/',image: 'https://avatars.githubusercontent.com/u/65049521?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
+                {name: "Diogo Ferreira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Duarte Cerdeira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Gabriel Marques",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Gonçalo Coelho",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Gonçalo Midões",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Midas-sudo',insta_url: 'https://www.instagram.com/goncalopm01/',image: midoes, linkedin_url: 'https://www.linkedin.com/in/goncalo-midoes/'},
+                {name: "Madalena Barros",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Margarida Pereira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Maria Ines",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Miguel Guerreiro",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Mónica Gomes",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
+                {name: "Tiago Felizardo",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Varsenaiga',insta_url: 'https://www.instagram.com/tiago.angelico.goncalves/',image: tiago, linkedin_url: 'https://www.linkedin.com/in/tiago-gon%C3%A7alves-b5a87b183/'},
+                {name: "Tiago Gonçalves",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Varsenaiga',insta_url: 'https://www.instagram.com/tiago.angelico.goncalves/',image: tiago, linkedin_url: 'https://www.linkedin.com/in/tiago-gon%C3%A7alves-b5a87b183/'},
+                {name: "Vasco Rodrigues",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/VascoDVRodrigues',insta_url: 'https://www.instagram.com/vascovrodrigues/',image: 'https://avatars.githubusercontent.com/u/34923176?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
             ]
         },
         linkedin_icon_link: linkedin_logo,

@@ -36,7 +36,7 @@
                     <a href="https://twitter.com/NEECIST" target="_blank">
                       <img  align="center" alt="twitter" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/twitter/twitter-original.svg">
                     </a>
-                    <a href="https://www.linkedin.com/company/neecist/mycompany/" target="_blank">
+                    <a href="https://www.linkedin.com/company/2977028/" target="_blank">
                       <img  align="center" alt="linkedin" src="../../static/linkedin.svg">
                     </a>
                     <a href="https://www.instagram.com/neecist/" target="_blank">
