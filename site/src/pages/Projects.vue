@@ -60,7 +60,6 @@ export default {
             {name:'NEECduino',subtitle:'Um arduino que podes construir com o apoio do NEEC',desc:'Um dispositivo barato, funcional e fácil de programar, acessível a estudantes e projetistas amadores. Aprende a soldar e a programar um arduino desde raiz, com um apoio pessoal e personalizado atravês dos workshops do NEEC.\n\nA placa é composta por um microcontrolador, circuitos de entrada/saída, podendo ser facilmente conectada a um computador e programada via IDE utilizando uma linguagem baseada em C/C++.', image:NEECduino},
             {name:'Blinker',subtitle:'O teu primeiro contacto com o NEEC',desc:'Um simples circuito eletrónico que pode ser montado em minutos, que podes levar na roupa para representar MEEC!', image:blinker},
             {name:'NEECSimon',subtitle:'Jogo do Simon Says (Em desenvolvimento)',desc:'O famoso jogo agora numa consola portátil!', image:NEECSimon},
-            //{name:'NEECArcade',subtitle:null,desc:'KEKW\n\nOKAYYYYY', image:null},
             {name:'TVBGone',subtitle:null,desc:'O TV-Bgone é um controlo remoto universal para ligar ou desligar qualquer televisão!\nQuando ligado,começa a percorrer uma sequencia de códigos que controlam a função POWER de vários modelos de televisões. Estes códigos são enviados para os LEDs de Infra-Vermelho ligados à placa.', image:NEECTVBGone},
             {name:'POV',subtitle:null,desc:'Display de LEDs que, piscando a uma frequência elevada, consegue escrever mensagens de luz no ar.', image:NEECPov},
         ]
