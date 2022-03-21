@@ -55,15 +55,17 @@
       </div>
     </div>
     <div class="activities-column" @mouseover="updateActivities(2)" :class="{'activities-column active': hovering===2}">
-      <div class="activities-content">
-          <h1>Projetos</h1>
-          <div class="box">
-            <h2>Workshops</h2>
-            <p> Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda. Inspira-te em alguns dos nossos
-              projetos internos ou inscreve-te nos nossos workshops!
-            </p>
-          </div>
-      </div>
+      <a v-on:click="redirect('Projects')">
+        <div class="activities-content">
+            <h1>Projetos</h1>
+            <div class="box">
+              <h2>Projetos</h2>
+              <p>Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda. Inspira-te em alguns dos nossos
+                projetos internos ou inscreve-te nos nossos workshops!
+              </p>
+            </div>
+        </div>
+      </a>
     </div>
     <div class="activities-column" @mouseover="updateActivities(3)" :class="{'activities-column active': hovering===3}">
       <div class="activities-content">
@@ -119,8 +121,9 @@ export default {
         episode1:"https://open.spotify.com/embed/episode/4521myIGDo3tCxexZgt74r?utm_source=generator",
         episode:"https://open.spotify.com/embed/episode/0jmTSMg4x1USWTEZ70xSXD?utm_source=generator",
         payload:[
-            {main_text: "StartUp the engine!",mainfont:"System-ui", maincolor: 'Snow', mainfontSize: 35, mainleftmargin: 75,mainbottommargin: -170,local:true,image: 'Events/NEECathon.png', page_url: null},
-            {local:true,image: 'Events/discord_invite.png', page_url: 'https://discord.gg/kBMRWgZn'},
+          {local:true,image: 'Events/python.jpg', page_url: 'https://linktr.ee/neecist',backsize:'contain',backcolor:'white',main_text:'Inscreve-te já!',mainfontSize:40,mainleftmargin:900,mainbottommargin:200,mainfont:'fantasy',secondary_text:'Clica Aqui',secondaryfontSize:20,secondaryfont:'Monaco'},
+          {local:true,image: 'Events/discord_invite.png', page_url: 'https://discord.gg/kBMRWgZn'},
+          {main_text: "StartUp the engine!",mainfont:"System-ui", maincolor: 'Snow', mainfontSize: 35, mainleftmargin: 75,mainbottommargin: -170,local:true,image: 'Events/NEECathon.png', page_url: null},
         ]
     };
   },
@@ -143,6 +146,10 @@ export default {
       }else if(entry===3){
         this.activities_image='NEECteam.png';
       }
+    },
+    redirect(page) {
+      this.show_menu = false;
+      this.$router.push({ name: page });
     }
   },
   mounted: function(){
