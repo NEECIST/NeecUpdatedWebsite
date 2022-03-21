@@ -4,6 +4,7 @@ import Home from '@/pages/Home'
 import Error_Handling from '@/pages/Error_Handling'
 import Team from '@/pages/Team'
 import Oportunities from '@/pages/Oportunities'
+import Projects from '@/pages/Projects'
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         path: '/oportunities',
         name: 'Oportunities',
         component: Oportunities
+    },
+    {
+        path: '/projects',
+        name: 'Projects',
+        component: Projects
     },
 ]
 

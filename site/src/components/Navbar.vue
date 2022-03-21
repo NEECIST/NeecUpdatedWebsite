@@ -36,6 +36,7 @@
         <li v-on:click="redirect('Home')">Home</li>
         <li v-on:click="redirect('Team')">Team</li>
         <li v-on:click="redirect('Oportunities')">Oportunities</li>
+        <li v-on:click="redirect('Projects')">Projects</li>
       </ul>
     </div>
   </div>
