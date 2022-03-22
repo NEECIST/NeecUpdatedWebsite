@@ -122,7 +122,7 @@ export default {
         episode:"https://open.spotify.com/embed/episode/0jmTSMg4x1USWTEZ70xSXD?utm_source=generator",
         payload:[
           {local:true,image: 'Events/python.jpg', page_url: 'https://linktr.ee/neecist',backsize:'contain',backcolor:'white',main_text:'Inscreve-te já!',mainfontSize:40,mainleftmargin:900,mainbottommargin:200,mainfont:'fantasy',secondary_text:'Clica Aqui',secondaryfontSize:20,secondaryfont:'Monaco'},
-          {local:true,image: 'Events/discord_invite.png', page_url: 'https://discord.gg/kBMRWgZn'},
+          {local:true,image: 'Events/discord_invite.png', page_url: 'https://discord.gg/qr7bPe2zJR'},
           {main_text: "StartUp the engine!",mainfont:"System-ui", maincolor: 'Snow', mainfontSize: 35, mainleftmargin: 75,mainbottommargin: -170,local:true,image: 'Events/NEECathon.png', page_url: null},
         ]
     };
