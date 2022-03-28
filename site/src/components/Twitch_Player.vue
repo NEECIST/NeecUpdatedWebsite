@@ -1,6 +1,6 @@
 <template>
   <iframe
-    src="https://player.twitch.tv/?channel=maxvital&parent=neecist.org"
+    src="https://player.twitch.tv/?channel=fruity&parent=neecist.org"
     :style="{height: height+`px`}"
     allowfullscreen>
   </iframe>
