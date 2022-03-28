@@ -6,6 +6,7 @@ import Team from '@/pages/Team'
 import Oportunities from '@/pages/Oportunities'
 import About from '@/pages/About'
 import Projects from '@/pages/Projects'
+import Scores from '@/pages/Scores'
 
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: '/projects',
         name: 'Projects',
         component: Projects
+    },
+    {
+        path: '/scores',
+        name: 'Scores',
+        component: Scores
     },
 ]
 

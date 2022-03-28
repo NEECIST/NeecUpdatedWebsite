@@ -27,6 +27,9 @@
     <router-link router-link :to="{ name: 'About' }">
       <div class="navbar-title">Sobre</div>
     </router-link>
+    <router-link router-link :to="{ name: 'Scores' }">
+      <div class="navbar-title">Scores</div>
+    </router-link>
 
     <div id="menuToggle">
       <input type="checkbox" :checked="show_menu" v-on:click="show_menu = !show_menu" />
