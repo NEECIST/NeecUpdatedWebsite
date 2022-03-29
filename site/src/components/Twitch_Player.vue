@@ -1,6 +1,6 @@
 <template>
   <iframe
-    src="https://player.twitch.tv/?channel=fruity&parent=neecist.org"
+    :src="player"
     :style="{height: height+`px`}"
     allowfullscreen>
   </iframe>
@@ -10,10 +10,19 @@
 export default {
   name: "TwitchComponent",
   props:{
+    streamer:{
+      type:String,
+      default: 'neecist'
+    },
     height:{
       type:Number,
       default: 350
     },
+  },
+  data(){
+    return{
+      player:'https://player.twitch.tv/?channel=' + this.streamer + '&parent=neecist.org'
+    }
   }
 }
 </script>

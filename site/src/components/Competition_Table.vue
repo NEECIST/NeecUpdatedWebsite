@@ -3,6 +3,7 @@
     <div v-else class="results_table">
         <div class="general_table">
             <caption>Geral</caption>
+            <sub v-if="showGeneral"> Top {{showGeneral}} </sub>
             <table :style="{width: tablesWidth + '%'}">
                 <tr class="table_header">
                     <th v-for="h in header" :key="h">{{h}}</th>
@@ -14,6 +15,7 @@
         </div>
         <div class="daily_table">
             <caption>{{dayShow}}</caption>
+            <sub v-if="showDaily"> Top {{showDaily}} </sub>
             <table :style="{width: tablesWidth + '%'}">
                 <tr class="table_header">
                     <th v-for="h in header" :key="h">{{h}}</th>
@@ -67,6 +69,14 @@ export default {
         tablesWidth:{
             type:Number,
             default:45
+        },
+        accumulation:{
+            type:Boolean,
+            default:false
+        },
+        accumulationField:{
+            type:String,
+            default:null
         }
     },
     data(){
@@ -105,24 +115,31 @@ export default {
         },
         getData(apiUrl) {
             axios.get(apiUrl).then((res) => {
-                this.entries = res.data.valueRanges[0].values
+                this.entries = res.data.valueRanges[0].values;
                 this.header = this.entries.shift();
-                this.allDayList = this.sortArray(this.entries,this.allDayList,this.sortDia,this.header);
-                this.dayList = this.sortArray(this.entries,this.dayList,this.sortScore,this.header);
-                this.generalList = this.sortArray(this.entries,this.generalList,this.sortScore,this.header);
+                this.entries = this.objectifier(this.entries,this.header);
+                this.allDayList = this.sortArray(this.entries,this.sortDia);
+                console.log(this.allDayList)
+                this.dayList = this.sortArray(this.entries,this.sortScore);
+                console.log(this.dayList)
+                this.generalList = this.dayList;
+                if(this.accumulation){
+                    this.generalList = this.accumulateResults(this.generalList);
+                    this.generalList = this.sortArray(this.generalList,this.sortScore);
+                }
                 this.beautifyHeader();
                 this.createDate();
                 this.dayList = this.beautifyTables(this.dayList,this.showDaily);
+                console.log('final',this.allDayList)
                 this.generalList = this.beautifyTables(this.generalList,this.showGeneral);
                 this.entries = []
                 this.not_header = []
                 this.loading=false
             });
         },
-        sortArray(init_arr,final_arr,field,sorter){
-            final_arr = this.objectifier(init_arr,sorter)
-            final_arr.sort(function(a, b){return b[field] - a[field]})
-            return final_arr
+        sortArray(init_arr,field){
+            var buffer=[...init_arr].sort(function(a, b){return b[field] - a[field]});
+            return buffer;
         },
         objectifier(array,sorter){
             var arr=[]
@@ -149,6 +166,24 @@ export default {
                 })
             })
             return array;
+        },
+        accumulateResults(array){
+            var final_array = [];
+            var buffer=array;
+            buffer = this.sortArray(buffer,this.accumulationField)
+            var to_accumulate=buffer[0];
+            var accumulated = 0;
+            buffer.forEach(element =>{
+                if(element[this.accumulationField]===to_accumulate[this.accumulationField]){
+                    accumulated = accumulated + parseInt(element[this.sortScore]);
+                }else{
+                    to_accumulate[this.sortScore] = accumulated;
+                    final_array.push(to_accumulate);
+                    to_accumulate = element;
+                    accumulated = parseInt(element[this.sortScore]);
+                }
+            })
+            return final_array;
         }
     }
 }
@@ -184,6 +219,22 @@ caption {
     font-family:consolas;
     font-size: 2rem;
     font-weight:300;
+    letter-spacing:1px;
+    white-space: nowrap;
+    transform: translate(0%, -50%);
+    font-variation-settings: 'wght';
+    margin: 0;
+    animation: rise 2.25s infinite ease-in-out;
+    -webkit-animation: rise 2.25s infinite ease-in-out;
+    -moz-animation: rise 2.25s infinite ease-in-out;
+}
+sub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:consolas;
+    font-size: 1rem;
+    font-weight:150;
     letter-spacing:1px;
     white-space: nowrap;
     transform: translate(0%, -50%);
