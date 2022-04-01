@@ -26,7 +26,7 @@ export default {
         amount_of_general_entries: 10,
         accumulation:true,
         accumulation_field: "IST",
-        streamer: "rocketleague"
+        streamer: "rocketleague",
       }
     },
 }

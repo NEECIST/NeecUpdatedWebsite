@@ -13,7 +13,7 @@
                 </tr>
             </table>
         </div>
-        <div class="daily_table">
+        <div v-if="dayList.length > 0" class="daily_table">
             <caption>{{dayShow}}</caption>
             <sub v-if="showDaily"> Top {{showDaily}} </sub>
             <table :style="{width: tablesWidth + '%'}">
@@ -119,10 +119,8 @@ export default {
                 this.header = this.entries.shift();
                 this.entries = this.objectifier(this.entries,this.header);
                 this.allDayList = this.sortArray(this.entries,this.sortDia);
-                console.log(this.allDayList)
                 this.dayList = this.sortArray(this.entries,this.sortScore);
-                console.log(this.dayList)
-                this.generalList = this.dayList;
+                this.generalList = JSON.parse(JSON.stringify(this.dayList));
                 if(this.accumulation){
                     this.generalList = this.accumulateResults(this.generalList);
                     this.generalList = this.sortArray(this.generalList,this.sortScore);
@@ -130,7 +128,6 @@ export default {
                 this.beautifyHeader();
                 this.createDate();
                 this.dayList = this.beautifyTables(this.dayList,this.showDaily);
-                console.log('final',this.allDayList)
                 this.generalList = this.beautifyTables(this.generalList,this.showGeneral);
                 this.entries = []
                 this.not_header = []

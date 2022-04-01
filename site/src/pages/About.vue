@@ -80,7 +80,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .about-app{
         margin-bottom: 20px;
     }

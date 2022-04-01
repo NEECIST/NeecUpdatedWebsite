@@ -63,7 +63,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .description-opportunities{
     padding-top: 100px;
     height: 300px;

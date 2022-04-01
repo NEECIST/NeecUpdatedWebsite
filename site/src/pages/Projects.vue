@@ -88,7 +88,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .description-projects{
     padding-top: 100px;
     height: 300px;

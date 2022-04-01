@@ -11,14 +11,6 @@
           <img id="NEECtalksLOGO" src="../assets/Logos/NEECtalks.png">
         </a>
       </div>
-      <!--<div class="col-33" id="NEECtalksLinks">
-        <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
-          <div id="NEECtalksSpotify">Spotify</div>
-        </a>
-        <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
-          <div id="NEECtalksYoutube">Youtube</div>
-        </a>
-      </div>-->
       <div class="col-50">
         <div id="NEECtalksLatest">latest episode</div>
       </div>
@@ -27,7 +19,7 @@
       </div>
     </div>
   </div>
-  <div class="activities-container" :style="{'background-image': `url(${require('../assets/' + activities_image)})`}">
+  <!--<div class="activities-container" :style="{'background-image': `url(${require('../assets/' + activities_image)})`}">
     <div class="activities-column" @mouseover="updateActivities(0)" :class="{'activities-column active': hovering===0}">
       <div class="activities-content">
         <a href="https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz" target="_blank">
@@ -77,21 +69,83 @@
           </div>
       </div>
     </div>
+  </div>-->
+  <div class="activities-board">
+    <div class="card-row">
+      <div class="card">
+        <Responsive_Card :image="drive_image" :title="drive_title" :description="drive_description" :link="drive_link" :link_message="drive_link_message" :main_color="drive_main_color" :secondary_color="drive_secondary_color" :top="drive_top" :left="drive_left" :zoom_height="drive_zoom_height" :zoom_position="drive_zoom_position" :left_padding="drive_left_padding" :right_padding="drive_right_padding" :top_flatted_screen="drive_top_flatted_screen"/>
+      </div>
+      <div class="card">
+        <Responsive_Card :image="arduino_image" :title="arduino_title" :description="arduino_description" :redirect_function="arduino_redirect_function" :link_message="arduino_link_message" :main_color="arduino_main_color" :secondary_color="arduino_secondary_color" :top="arduino_top" :left="arduino_left" :zoom_height="arduino_zoom_height" :zoom_position="arduino_zoom_position" :left_padding="arduino_left_padding" :right_padding="arduino_right_padding" :image_height="arduino_image_height" :top_flatted_screen="arduino_top_flatted_screen"/>
+      </div> 
+    </div>
+    <div class="card-row">
+      <div class="single-card">
+        <Responsive_Card :image="ISTSI_image" :title="ISTSI_title" :description="ISTSI_description" :main_color="ISTSI_main_color" :secondary_color="ISTSI_secondary_color" :left_padding="ISTSI_left_padding" :right_padding="ISTSI_right_padding" :zoom_height="ISTSI_zoom_height" :zoom_position="ISTSI_zoom_position" :top_flatted_screen="ISTSI_top_flatted_screen"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Carousel from '../components/Carousel'
+import Responsive_Card from '../components/Responsive_Card'
+import arduino from "../assets/Activities/Arduino.png"
+import GoogleDrive from "../assets/Activities/GoogleDrive.png"
+import ISTSI from "../assets/Activities/ISTSI.png"
 
 export default {
   name: "home-page",
   components: {
     Carousel,
+    Responsive_Card
   },
   data() {
     return {
       hovering:-1,
       activities_image:'Activities/WhitePane.jpg',
+      //NOTE Google Drive
+      drive_image: GoogleDrive,
+      drive_link: "https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz",
+      drive_link_message: "Aceder",
+      drive_main_color: "#1FA463",
+      drive_secondary_color: "#FFD04B",
+      drive_top: 55,
+      drive_left: 50,
+      drive_zoom_height: 350,
+      drive_zoom_position: 85,
+      drive_title: "NEEC Drive",
+      drive_description: "Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras! Aulas, problemas, testes e exames, tanto de licenciatura como de mestrado. Também podes contribuir com material teu!",
+      drive_left_padding: 0,
+      drive_right_padding: 240,
+      drive_top_flatted_screen: 114,
+      //NOTE Arduino
+      arduino_image: arduino,
+      arduino_redirect_function: 'Projects',
+      arduino_link_message: "Visitar",
+      arduino_main_color: "#D0F2F2",
+      arduino_secondary_color: "#00979C",
+      arduino_top: 50,
+      arduino_left: 50,
+      arduino_image_height: 250,
+      arduino_zoom_height: 250,
+      arduino_zoom_position: 86,
+      arduino_title: "Projetos",
+      arduino_description: "Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda. Inspira-te em alguns dos nossos projetos internos ou inscreve-te nos nossos workshops!",
+      arduino_left_padding: 0,
+      arduino_right_padding: 250,
+      arduino_top_flatted_screen: 116,
+      //NOTE ISTSI
+      ISTSI_image: ISTSI,
+      ISTSI_main_color: "#7c587f",
+      ISTSI_secondary_color: "#a4bcbc",
+      ISTSI_title: "ISTSI",
+      ISTSI_description: "Queres experienciar o mundo de trabalho? Entra em contacto e candidata-te para estagiar no verão em empresas ligadas a todos os ramos de engenharia, para poderes enriquecer a tua experiência profissional.",
+      ISTSI_left_padding: 0,
+      ISTSI_right_padding: 225,
+      ISTSI_zoom_height: 400,
+      ISTSI_zoom_position: 85,
+      ISTSI_top_flatted_screen: 120,
       settings:{
             itemsToShow:1,
             itemsToScroll:1,
@@ -169,6 +223,30 @@ export default {
   src: local("Vibur"),
    url(../assets/fonts/Vibur/Vibur-Regular.ttf) format("truetype");
 }
+
+.activities-board{
+  padding-top: 5px;
+  padding-bottom: 25px;
+}
+
+.activities-board .card-row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin:auto;
+}
+
+.activities-board .card-row .card{
+  flex: 1;
+}
+
+.activities-board .card-row .single-card{
+  flex: 0;
+}
+
+.activities-board .card-row .card:first-child {
+  margin-right: 0px;
+} 
 .activities-container{
   width:100%;
   height: 75vh;
@@ -379,5 +457,18 @@ export default {
     align-items: center;
     margin-left: 10px;
     margin-right: 10px;
+}
+@media(max-width: 1200px)
+{
+  .activities-board .card-row .card{
+    flex: 0;
+  }
+}
+@media(max-width: 990px)
+{
+  .activities-board{
+    padding-top: 5px;
+    padding-bottom: 210px;
+  }
 }
 </style>

@@ -63,7 +63,9 @@
           </div>
         </div>
 
-
+        <div class="credits">
+          <a href="https://www.flaticon.com/free-icons/internship" title="internship icons">Internship icons created by rukanicon - Flaticon</a>
+        </div>
         <div class="bottom-bar">
             <div id="copyright">
                 Copyright © 2022 - Núcleo de Estudantes de Eletrotécnica e de Computadores do Instituto Superior Técnico
@@ -185,6 +187,10 @@ address {
 	opacity: 1;
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
+}
+.credits a{
+  display:block;
+  text-align:center;
 }
 @media screen and (max-width: 800px) {
     .flexbox-imgs img {
