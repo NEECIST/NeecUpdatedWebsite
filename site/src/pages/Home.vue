@@ -102,7 +102,6 @@ export default {
         zoom_position: 85,
         top_flatted_screen: 120,
       },
-      //NOTE Recrutamento
       recrutamento:{
         image: NEEC_Logo,
         link: "mailto:contemcomigo@neecist.org",
@@ -112,7 +111,7 @@ export default {
         zoom_height: 325,
         zoom_position: 85,
         title: "Recrutamento",
-        description: "O NEEC está a recrutar! Gostavas de te juntar a nós? Envia-nos a tua carta de motivação!",
+        description: "O NEEC está a recrutar! Se queres pertencer ao nosso núcleo, envia a tua carta de motivação! As inscrições fecham à meia noite de domingo, 10/04.",
         left_padding: 0,
         right_padding: 250,
         top_flatted_screen: 115
