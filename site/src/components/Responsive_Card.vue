@@ -8,8 +8,6 @@
             <a v-if="redirect_function" v-on:click="redirect(redirect_function)">{{link_message}}</a>
         </div>
         <img :src="image" :style="cssImage"/>
-        <!--<img src="https://www.pngkey.com/png/full/7-76531_pepsi-can-png-transparent-image-pepsi-can-png.png"/>-->
-        <!--<img src="https://cdn-icons.flaticon.com/png/512/4275/premium/4275603.png?token=exp=1648639272~hmac=cdd654c1ba4cf989054f888dad0a3d56"/>-->
     </div>
 </template>
 

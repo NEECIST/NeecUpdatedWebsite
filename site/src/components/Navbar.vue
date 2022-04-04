@@ -44,6 +44,7 @@
         <li v-on:click="redirect('Oportunities')">Oportunities</li>
         <li v-on:click="redirect('Projects')">Projects</li>
         <li v-on:click="redirect('About')">Sobre</li>
+        <li v-on:click="redirect('Scores')">JEEC22</li>
       </ul>
     </div>
   </div>

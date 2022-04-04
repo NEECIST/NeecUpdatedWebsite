@@ -19,70 +19,22 @@
       </div>
     </div>
   </div>
-  <!--<div class="activities-container" :style="{'background-image': `url(${require('../assets/' + activities_image)})`}">
-    <div class="activities-column" @mouseover="updateActivities(0)" :class="{'activities-column active': hovering===0}">
-      <div class="activities-content">
-        <a href="https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz" target="_blank">
-          <h1>Drive</h1>
-          <div class="box">
-            <h2>NEEC Drive</h2>
-            <p>Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras!
-              Aulas, problemas, testes e exames, tanto de licenciatura como de mestrado. 
-              Também podes contribuir com material teu!
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="activities-column" @mouseover="updateActivities(1)" :class="{'activities-column active': hovering===1}">
-      <div class="activities-content">
-          <h1>ISTSI</h1>
-          <div class="box">
-            <h2>ISTSI</h2>
-            <p>Queres experienciar o mundo de trabalho? Entra em contacto e candidata-te
-              para estagiar no verão em empresas ligadas a todos os ramos de engenharia, para poderes enriquecer
-              a tua experiência profissional. 
-            </p>
-          </div>
-      </div>
-    </div>
-    <div class="activities-column" @mouseover="updateActivities(2)" :class="{'activities-column active': hovering===2}">
-      <a v-on:click="redirect('Projects')">
-        <div class="activities-content">
-            <h1>Projetos</h1>
-            <div class="box">
-              <h2>Projetos</h2>
-              <p>Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda. Inspira-te em alguns dos nossos
-                projetos internos ou inscreve-te nos nossos workshops!
-              </p>
-            </div>
-        </div>
-      </a>
-    </div>
-    <div class="activities-column" @mouseover="updateActivities(3)" :class="{'activities-column active': hovering===3}">
-      <div class="activities-content">
-          <h1>Join Us!</h1>
-          <div class="box">
-            <h2>Torna-te um NEECo!</h2>
-            <p> As inscrições abrem brevemente. Não percas esta oportunidade!
-            </p>
-          </div>
-      </div>
-    </div>
-  </div>-->
   <div class="activities-board">
     <div class="card-row">
       <div class="card">
-        <Responsive_Card :image="drive_image" :title="drive_title" :description="drive_description" :link="drive_link" :link_message="drive_link_message" :main_color="drive_main_color" :secondary_color="drive_secondary_color" :top="drive_top" :left="drive_left" :zoom_height="drive_zoom_height" :zoom_position="drive_zoom_position" :left_padding="drive_left_padding" :right_padding="drive_right_padding" :top_flatted_screen="drive_top_flatted_screen"/>
+        <Responsive_Card :image="drive.image" :title="drive.title" :description="drive.description" :link="drive.link" :link_message="drive.link_message" :main_color="drive.main_color" :secondary_color="drive.secondary_color" :top="drive.top" :left="drive.left" :zoom_height="drive.zoom_height" :zoom_position="drive.zoom_position" :left_padding="drive.left_padding" :right_padding="drive.right_padding" :top_flatted_screen="drive.top_flatted_screen"/>
       </div>
       <div class="card">
-        <Responsive_Card :image="arduino_image" :title="arduino_title" :description="arduino_description" :redirect_function="arduino_redirect_function" :link_message="arduino_link_message" :main_color="arduino_main_color" :secondary_color="arduino_secondary_color" :top="arduino_top" :left="arduino_left" :zoom_height="arduino_zoom_height" :zoom_position="arduino_zoom_position" :left_padding="arduino_left_padding" :right_padding="arduino_right_padding" :image_height="arduino_image_height" :top_flatted_screen="arduino_top_flatted_screen"/>
+        <Responsive_Card :image="arduino.image" :title="arduino.title" :description="arduino.description" :redirect_function="arduino.redirect_function" :link_message="arduino.link_message" :main_color="arduino.main_color" :secondary_color="arduino.secondary_color" :top="arduino.top" :left="arduino.left" :zoom_height="arduino.zoom_height" :zoom_position="arduino.zoom_position" :left_padding="arduino.left_padding" :right_padding="arduino.right_padding" :image_height="arduino.image_height" :top_flatted_screen="arduino.top_flatted_screen"/>
       </div> 
     </div>
     <div class="card-row">
-      <div class="single-card">
-        <Responsive_Card :image="ISTSI_image" :title="ISTSI_title" :description="ISTSI_description" :main_color="ISTSI_main_color" :secondary_color="ISTSI_secondary_color" :left_padding="ISTSI_left_padding" :right_padding="ISTSI_right_padding" :zoom_height="ISTSI_zoom_height" :zoom_position="ISTSI_zoom_position" :top_flatted_screen="ISTSI_top_flatted_screen"/>
+      <div class="card">
+        <Responsive_Card :image="ISTSI.image" :title="ISTSI.title" :description="ISTSI.description" :main_color="ISTSI.main_color" :secondary_color="ISTSI.secondary_color" :left_padding="ISTSI.left_padding" :right_padding="ISTSI.right_padding" :zoom_height="ISTSI.zoom_height" :zoom_position="ISTSI.zoom_position" :top_flatted_screen="ISTSI.top_flatted_screen"/>
       </div>
+      <div class="card">
+        <Responsive_Card :image="recrutamento.image" :title="recrutamento.title" :description="recrutamento.description" :link="recrutamento.link" :link_message="recrutamento.link_message" :main_color="recrutamento.main_color" :secondary_color="recrutamento.secondary_color" :top_flatted_screen="recrutamento.top_flatted_screen" :left_padding="recrutamento.left_padding" :right_padding="recrutamento.right_padding" :zoom_height="recrutamento.zoom_height" :zoom_position="recrutamento.zoom_position"/>
+      </div> 
     </div>
   </div>
 </template>
@@ -93,6 +45,7 @@ import Responsive_Card from '../components/Responsive_Card'
 import arduino from "../assets/Activities/Arduino.png"
 import GoogleDrive from "../assets/Activities/GoogleDrive.png"
 import ISTSI from "../assets/Activities/ISTSI.png"
+import NEEC_Logo from "../assets/Logos/NEEC_Logo.png"
 
 export default {
   name: "home-page",
@@ -104,48 +57,66 @@ export default {
     return {
       hovering:-1,
       activities_image:'Activities/WhitePane.jpg',
-      //NOTE Google Drive
-      drive_image: GoogleDrive,
-      drive_link: "https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz",
-      drive_link_message: "Aceder",
-      drive_main_color: "#1FA463",
-      drive_secondary_color: "#FFD04B",
-      drive_top: 55,
-      drive_left: 50,
-      drive_zoom_height: 350,
-      drive_zoom_position: 85,
-      drive_title: "NEEC Drive",
-      drive_description: "Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras! Aulas, problemas, testes e exames, tanto de licenciatura como de mestrado. Também podes contribuir com material teu!",
-      drive_left_padding: 0,
-      drive_right_padding: 240,
-      drive_top_flatted_screen: 114,
-      //NOTE Arduino
-      arduino_image: arduino,
-      arduino_redirect_function: 'Projects',
-      arduino_link_message: "Visitar",
-      arduino_main_color: "#D0F2F2",
-      arduino_secondary_color: "#00979C",
-      arduino_top: 50,
-      arduino_left: 50,
-      arduino_image_height: 250,
-      arduino_zoom_height: 250,
-      arduino_zoom_position: 86,
-      arduino_title: "Projetos",
-      arduino_description: "Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda. Inspira-te em alguns dos nossos projetos internos ou inscreve-te nos nossos workshops!",
-      arduino_left_padding: 0,
-      arduino_right_padding: 250,
-      arduino_top_flatted_screen: 116,
-      //NOTE ISTSI
-      ISTSI_image: ISTSI,
-      ISTSI_main_color: "#7c587f",
-      ISTSI_secondary_color: "#a4bcbc",
-      ISTSI_title: "ISTSI",
-      ISTSI_description: "Queres experienciar o mundo de trabalho? Entra em contacto e candidata-te para estagiar no verão em empresas ligadas a todos os ramos de engenharia, para poderes enriquecer a tua experiência profissional.",
-      ISTSI_left_padding: 0,
-      ISTSI_right_padding: 225,
-      ISTSI_zoom_height: 400,
-      ISTSI_zoom_position: 85,
-      ISTSI_top_flatted_screen: 120,
+      drive:{
+        image: GoogleDrive,
+        link: "https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz",
+        link_message: "Aceder",
+        main_color: "#1FA463",
+        secondary_color: "#FFD04B",
+        top: 55,
+        left: 50,
+        zoom_height: 350,
+        zoom_position: 85,
+        title: "NEEC Drive",
+        description: "Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras! Aulas, problemas, testes e exames, tanto de licenciatura como de mestrado. Também podes contribuir com material teu!",
+        left_padding: 0,
+        right_padding: 240,
+        top_flatted_screen: 114,
+      },
+      arduino:{
+        image: arduino,
+        redirect_function: 'Projects',
+        link_message: "Visitar",
+        main_color: "#D0F2F2",
+        secondary_color: "#00979C",
+        top: 50,
+        left: 50,
+        image_height: 250,
+        zoom_height: 235,
+        zoom_position: 85,
+        title: "Projetos",
+        description: "Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda. Inspira-te em alguns dos nossos projetos internos ou inscreve-te nos nossos workshops!",
+        left_padding: 0,
+        right_padding: 250,
+        top_flatted_screen: 116,
+      },
+      ISTSI:{
+        image: ISTSI,
+        main_color: "#7c587f",
+        secondary_color: "#a4bcbc",
+        title: "ISTSI",
+        description: "Queres experienciar o mundo de trabalho? Entra em contacto e candidata-te para estagiar no verão em empresas ligadas a todos os ramos de engenharia, para poderes enriquecer a tua experiência profissional.",
+        left_padding: 0,
+        right_padding: 225,
+        zoom_height: 400,
+        zoom_position: 85,
+        top_flatted_screen: 120,
+      },
+      //NOTE Recrutamento
+      recrutamento:{
+        image: NEEC_Logo,
+        link: "mailto:contemcomigo@neecist.org",
+        link_message: "Candidatar",
+        main_color: "#F0FFF0",
+        secondary_color: "#C0C0C0", //#009DE0
+        zoom_height: 325,
+        zoom_position: 85,
+        title: "Recrutamento",
+        description: "O NEEC está a recrutar! Gostavas de te juntar a nós? Envia-nos a tua carta de motivação!",
+        left_padding: 0,
+        right_padding: 250,
+        top_flatted_screen: 115
+      },
       settings:{
             itemsToShow:1,
             itemsToScroll:1,
