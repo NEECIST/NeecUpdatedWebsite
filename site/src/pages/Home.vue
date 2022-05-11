@@ -1,47 +1,104 @@
 <template>
   <div class="home-app">
     <div class="carousel">
-      <Carousel :settings="settings" :breakpoints="breakpoints" :payload="payload"/>
+      <Carousel :settings="settings" :breakpoints="breakpoints"/>
     </div>
   </div>
-  <div class="NEEC-talks">
-    <div class="talksrow">
-      <div class="col-50">
-        <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
-          <img id="NEECtalksLOGO" src="../assets/Logos/NEECtalks.png">
-        </a>
-      </div>
-      <div class="col-50">
-        <div id="NEECtalksLatest">latest episode</div>
-      </div>
-      <div class="col-50">
-        <iframe id="NEECtalksPlayer" :src="episode" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" frameBorder="0"></iframe>
-      </div>
+    <div class="container"  :style="{padding: '10px', paddingBottom: '200px'}">
+        <div class="activities-row" >
+            <div class="col" data-aos="fade-right">
+                <i class="fa-solid fa-people-group fa-10x icon"  :style="{float: 'right', paddingRight: '100px'}"></i>
+            </div>
+            <div class="vl"></div>
+            <div class="col" data-aos="fade-left">
+                <div class="algo-card">
+                    <h2>Quem somos?</h2>
+                    <p>O Núcleo de Estudantes de Electrotecnia e Computadores é uma associação sem fins lucrativos que reúne os estudantes de LEEC e MEEC do IST.
+                     Somos formados por alunos que, através do seu trabalho voluntário e motivados pela tecnologia e associativismo, 
+                    procuram trazer novas ideias, projetos e iniciativas contribuindo para o desenvolvimento de todos os alunos.</p>
+                </div>
+            </div>
+        </div>
+        <div class="activities-row" >
+            <div class="col" data-aos="fade-right">
+                <div class="algo-card" :style="{float: 'right'}" >
+                    <h2>Workshops</h2>
+                    <p>Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda-te. Realizamos workshops de Eletrónica, Soldadura, Programação, Soft-Skills entre muitos outros... </p> 
+                    <p><a class = "address-text" href="https://linktr.ee/neecist"><i class="fa-solid fa-gear fa-xl"  :style="{paddingRight: '4px'}"></i>Inscreve-te!</a></p>
+                </div>
+            </div>
+            <div class="vl"></div>
+            <div class="col" data-aos="fade-left">
+                <i class="fa-solid fa-gear fa-10x icon"  :style="{float: 'left', paddingLeft: '100px'}"></i>
+            </div>
+        </div>
+        <div class="activities-row">
+            <div class="col" data-aos="fade-right">
+                <i class="fa-solid fa-folder-open fa-10x icon"  :style="{float: 'right', paddingRight: '100px'}"></i>
+            </div>
+            <div class="vl"></div>
+            <div class="col" data-aos="fade-left">
+                <div class="algo-card" :style="{float: 'left'}" :data-aos="fade-left" >
+                    <h2>Drive MEEC</h2>
+                    <p>Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras! Aulas, problemas,
+                     testes e exames, tanto de licenciatura como de mestrado. Também podes contribuir com material teu!</p>
+                    <p><a class = "address-text" href="https://drive.google.com/drive/u/3/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz"><i class="fa-solid fa-folder-open fa-xl"  :style="{paddingRight: '4px'}"></i>drive.neecist.org</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="activities-row">
+            <div class="col" data-aos="fade-right">
+                <div class="algo-card" :style="{float: 'right'}">
+                    <h2>IST SI</h2>
+                    <p>Queres experienciar o mundo de trabalho? Entra em contacto e candidata-te para estagiar no verão em empresas 
+                    ligadas a todos os ramos de engenharia, para poderes enriquecer a tua experiência profissional.</p>
+                    <p><a class = "address-text" href="https://ist-csm.symplicity.com/students/app/home"><i class="fa-solid fa-id-badge fa-xl"  :style="{paddingRight: '4px'}"></i>Explora!</a></p>
+                </div>
+            </div>
+            <div class="vl"></div>
+            <div class="col" data-aos="fade-left">
+                <i class="fa-solid fa-id-badge fa-10x icon"  :style="{float: 'left', paddingLeft: '100px'}"></i>
+            </div>
+        </div>
+         <div class="activities-row">
+            <div class="col" data-aos="fade-right">
+                <i class="fa-solid fa-microchip fa-10x icon"  :style="{float: 'right', paddingRight: '100px'}"></i>
+            </div>
+            <div class="vl"></div>
+            <div class="col" data-aos="fade-left">
+                <div class="algo-card">
+                    <h2>NEECLab</h2>
+                    <p>Precisas de ajuda para desenvolver o teu projeto pessoal? O NEECLab é um laboratório de eletrónica 
+                    com as ferramentas necessárias e uma equipa pronta a ajudar-te a transformares a tua ideia num sucesso!</p>
+                </div>
+            </div>
+        </div>
+        <div class="activities-row">
+            <div class="col" data-aos="fade-right">
+                <div class="algo-card" :style="{float: 'right'}">
+                    <h2>NEECTalks</h2>
+                    <p>NEECTalks é um podcast onde discutimos projectos, tecnologia e trazemos convidados experientes de diversos contextos
+                     que envolvem a nossa área no formato de uma conversa informal.
+                        Se és curioso e tens vontade de aprender, junta-te a nós!</p>
+                        <a class = "address-text" href="https://www.youtube.com/user/NEECIST" target="_blank">
+                        <i class="fa-brands fa-youtube fa-2x" :style="{ padding: '4px'}"></i>
+                        </a>
+                        <a class = "address-text" href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank"><i class="fa-brands fa-spotify fa-2x" :style="{ padding: '4px'}"></i></a>
+                </div>
+            </div>
+            <div class="vl"></div>
+            <div class="col" data-aos="fade-left">
+                <div class="col-50" :style="{width: '60%', float: 'left'}">
+                    <iframe id="NEECtalksPlayer" :src="episode" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" frameBorder="0"></iframe>
+                </div> 
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="activities-board">
-    <div class="card-row">
-      <div class="card">
-        <Responsive_Card :image="drive.image" :title="drive.title" :description="drive.description" :link="drive.link" :link_message="drive.link_message" :main_color="drive.main_color" :secondary_color="drive.secondary_color" :top="drive.top" :left="drive.left" :zoom_height="drive.zoom_height" :zoom_position="drive.zoom_position" :left_padding="drive.left_padding" :right_padding="drive.right_padding" :top_flatted_screen="drive.top_flatted_screen"/>
-      </div>
-      <div class="card">
-        <Responsive_Card :image="arduino.image" :title="arduino.title" :description="arduino.description" :redirect_function="arduino.redirect_function" :link_message="arduino.link_message" :main_color="arduino.main_color" :secondary_color="arduino.secondary_color" :top="arduino.top" :left="arduino.left" :zoom_height="arduino.zoom_height" :zoom_position="arduino.zoom_position" :left_padding="arduino.left_padding" :right_padding="arduino.right_padding" :image_height="arduino.image_height" :top_flatted_screen="arduino.top_flatted_screen"/>
-      </div> 
-    </div>
-    <div class="card-row">
-      <div class="card">
-        <Responsive_Card :image="ISTSI.image" :title="ISTSI.title" :description="ISTSI.description" :main_color="ISTSI.main_color" :secondary_color="ISTSI.secondary_color" :left_padding="ISTSI.left_padding" :right_padding="ISTSI.right_padding" :zoom_height="ISTSI.zoom_height" :zoom_position="ISTSI.zoom_position" :top_flatted_screen="ISTSI.top_flatted_screen"/>
-      </div>
-      <div class="card">
-        <Responsive_Card :image="recrutamento.image" :title="recrutamento.title" :description="recrutamento.description" :link="recrutamento.link" :link_message="recrutamento.link_message" :main_color="recrutamento.main_color" :secondary_color="recrutamento.secondary_color" :top_flatted_screen="recrutamento.top_flatted_screen" :left_padding="recrutamento.left_padding" :right_padding="recrutamento.right_padding" :zoom_height="recrutamento.zoom_height" :zoom_position="recrutamento.zoom_position"/>
-      </div> 
-    </div>
-  </div>
+ 
 </template>
 
 <script>
 import Carousel from '../components/Carousel'
-import Responsive_Card from '../components/Responsive_Card'
 import arduino from "../assets/Activities/Arduino.png"
 import GoogleDrive from "../assets/Activities/GoogleDrive.png"
 import ISTSI from "../assets/Activities/ISTSI.png"
@@ -51,12 +108,25 @@ export default {
   name: "home-page",
   components: {
     Carousel,
-    Responsive_Card
   },
   data() {
     return {
       hovering:-1,
       activities_image:'Activities/WhitePane.jpg',
+      aboutList: [
+                    {
+                        name: "Quem somos?",
+                        content: "O NEECIST - núcleo de Estudantes de Electrotecnia e Computadores - é uma associação sem fins lucrativos que reúne os estudantes de LEEC e MEEC do IST. Somos formados por alunos que, através do seu trabalho voluntário e motivados pela tecnologia e associativismo, procuram trazer novas ideias, projetos e iniciativas contribuindo para o desenvolvimnentos de todos os alunos."
+                    },
+                    {
+                        name: "O que fazemos?",
+                        content: "Procuramos ajudar os alunos a intregarem-se no mercado de trabalho e dar formação extra-curricular. Organizamos workshops, estágios de verão, uma hackathon e até um podcast! Tentamos proporcionar aos alunos de LEEC e de MEEC conteúdo e oportunidades para se desenvolverem a nível académico e profissional. "
+                    },
+                    {
+                        name: "Desde quando?",
+                        content: "O NEECIST foi fundado no dia 19 de setembro de 2003, como uma associação que representasse os alunos de LEEC. A jovem associação como objetivo a união e representação dos alunos, recorrendo à organização de atividades de caráter social e profissional. Hoje, tal como no início, estes objetivos mantém-se, em conjunto com muitos outros que procuram trazer mais oportunidades aos alunos de LEEC e MEEC."
+                    }
+                ],
       drive:{
         image: GoogleDrive,
         link: "https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz",
@@ -122,7 +192,7 @@ export default {
             wrapAround:true,
             snapAlign:'center',
             transition:300,
-            autoplay:3000,
+            autoplay:10000,
             breakpoints:null,
             modelValue:0,
             mouseDrag:true,
@@ -141,24 +211,11 @@ export default {
                 snapAlign: 'start',
             },
         },
-        episode2:"https://open.spotify.com/embed/episode/6m0bfUJ8qC5qE968BzC8G7?utm_source=generator",
-        episode1:"https://open.spotify.com/embed/episode/4521myIGDo3tCxexZgt74r?utm_source=generator",
-        episode:"https://open.spotify.com/embed/episode/0jmTSMg4x1USWTEZ70xSXD?utm_source=generator",
-        payload:[
-          {local:true,image: 'Events/python.jpg', page_url: 'https://linktr.ee/neecist',backsize:'contain',backcolor:'white',main_text:'Inscreve-te já!',mainfontSize:40,mainleftmargin:900,mainbottommargin:200,mainfont:'fantasy',secondary_text:'Clica Aqui',secondaryfontSize:20,secondaryfont:'Monaco'},
-          {local:true,image: 'Events/discord_invite.png', page_url: 'https://discord.gg/qr7bPe2zJR'},
-          {main_text: "StartUp the engine!",mainfont:"System-ui", maincolor: 'Snow', mainfontSize: 35, mainleftmargin: 75,mainbottommargin: -170,local:true,image: 'Events/NEECathon.png', page_url: null},
-        ]
+        episode:"https://open.spotify.com/embed/episode/7FcE8aZsuVhZNUAOp8HX9M?utm_source=generator&theme=0",
+        
     };
   },
   methods: {
-    randomizeEpisode: function () {
-      var random=Math.ceil(Math.random()*2)
-      if (random===1)
-        this.episode=this.episode1;
-      else
-        this.episode=this.episode2
-    },
     updateActivities: function(entry){
       this.hovering=entry;
       if(entry===0){
@@ -175,16 +232,13 @@ export default {
       this.show_menu = false;
       this.$router.push({ name: page });
     }
-  },
-  mounted: function(){
-    //this.randomizeEpisode() 
   }
 };
 </script>
 
 <style>
 .home-app{
-    padding-top: 100px;
+    padding-top: 60px;
     background-color:white;
     position: relative;
 }
@@ -193,10 +247,63 @@ export default {
   src: local("Vibur"),
    url(../assets/fonts/Vibur/Vibur-Regular.ttf) format("truetype");
 }
+.address-text{
+    color: #303633;
+}
+.address-text:hover{
+    color: #009DE0;
+}
+
+.about-container {
+    padding: 10px;
+    background-color:red;
+}
+.algo-card{
+    width: 50%;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.icon{
+    color:#303633;
+}
+.icon:hover{
+    color:#009DE0;
+}
+.algo-card p{
+    font-size: 20px;
+}
+
+.vl {
+  border-left: 4px solid #DCDCDC;
+  height: 100%;
+  border-radius: 8px;
+}
+.col {
+  width: 50%;
+  display: inline-block;
+}
+.about-card {
+    display: inline-block;
+    background-color:cyan;
+    border-radius: 4px;
+    width: 25%;
+    height: 100%;
+    margin: 10px;
+}
+
+.card-title{
+    background-color:yellow;
+    height: 25%;
+}
+.card-content{
+background-color:white;
+padding-left:10px;
+padding-right:10px;
+}
 
 .activities-board{
-  padding-top: 5px;
-  padding-bottom: 25px;
+    margin-top: 60px;
+    padding: 40px;
 }
 
 .activities-board .card-row{
@@ -301,6 +408,12 @@ export default {
   align-items: center;
   justify-content: center;
   height: 350px;
+}
+.activities-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
 }
 .row {
   display: flex;
@@ -421,12 +534,9 @@ export default {
   }
 }
 .carousel{
-    background-color:white;
-    width:98%;
+    width:100%;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 @media(max-width: 1200px)
 {
@@ -441,4 +551,5 @@ export default {
     padding-bottom: 210px;
   }
 }
+
 </style>

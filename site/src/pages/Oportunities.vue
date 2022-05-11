@@ -1,5 +1,5 @@
 <template>
-    <div class="oportunities-app">
+    <div class="oportunities-app" :style="{padding: '10px', paddingBottom: '200px', fontFamily: 'Roboto'}">
 
        <div class="description-opportunities">
            <div class="opportunities-text">

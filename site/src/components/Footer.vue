@@ -1,83 +1,58 @@
 <template>
     <div class="contacts-comp">
-       <!--<component-title title="Contact Us" subtitle=""/>-->
-
        <section id="contact" class="section-bg wow fadeInUp">
             <div class="container">
-                <div class="row contact-info">
-                <div class="col-md-4">
-                    <div class="contact-address">
-                    <h3>Address</h3>
-                    <address>Instituto Superior Técnico - Av. Rovisco Pais, 1049-001 Lisbon</address>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="location-adress">
+                            <p><i class="fa-solid fa-location-dot " :style="{ color:'white', marginRight: '4px'}"></i>
+                            Instituto Superior Técnico - Av. Rovisco Pais, 1049-001 Lisboa</p>
+                            <p><i class="fa-solid fa-building-flag " :style="{ color:'white', marginRight: '4px'}"></i>
+                            Sede do NEEC - Pavilhão de Electricidade, Piso 4, Sala 4i.13</p>
+                            <p><i class="fa-solid fa-flask" :style="{ color:'white', marginRight: '4px'}"></i>
+                            NEECLab - Pavilhão de Electricidade, Piso 1 (Junto à receção da SCDEEC)</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="contact-email">
-                    <i class="ion-ios-email-outline"></i>
-                    <h3>Email</h3>
-                    <p><a href="mailto:contacto@neecist.org">contacto@neecist.org</a></p>
+                    <div class="col-md-4">
+                        <div class="socials">
+                            <h2>Redes Sociais</h2>
+                            <a href="https://www.facebook.com/NEECIST/" target="_blank">
+                            <i class="fa-brands fa-facebook icon" :style="{ color:'white'}"></i>
+                            </a>
+                            <a href="https://twitter.com/NEECIST" target="_blank">
+                            <i class="fa-brands fa-twitter icon" :style="{ color:'white'}"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/2977028/" target="_blank">
+                            <i class="fa-brands fa-linkedin icon" :style="{ color:'white'}"></i>
+                            </a>
+                            <a href="https://www.instagram.com/neecist/" target="_blank">
+                            <i class="fa-brands fa-instagram icon" :style="{ color:'white'}"></i>
+                            </a>
+                            <a href="https://www.youtube.com/user/NEECIST" target="_blank">
+                            <i class="fa-brands fa-youtube icon" :style="{ color:'white'}"></i>
+                            </a>
+                            <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
+                            <i class="fa-brands fa-spotify icon" :style="{ color:'white'}"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="contact-phone">
-                    <h3>Phone</h3>
-                    <p><a href="tel:(+351) 218 419 056">(+351) 218 419 056</a></p>
+                    <div class="col-md-4">
+                        <div class="contact-adress">
+                            <p ><i class="fa-solid fa-phone" :style="{ color:'white', marginRight: '6px'}"></i>
+                            <a class="contact-address-text" href="tel:(+351) 218 419 056">(+351) 218 419 056</a></p>
+                            <p ><i class="fa-solid fa-envelope" :style="{ color:'white', marginRight: '6px'}"></i>
+                            <a class="contact-address-text" href="mailto:contacto@neecist.org">contacto@neecist.org</a></p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="socials">
-                    <h3>Check our socials</h3>
-                    <a href="https://www.facebook.com/NEECIST/" target="_blank">
-                      <img  align="center" alt="facebook" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/facebook/facebook-plain.svg">
-                    </a>
-                    <a href="https://twitter.com/NEECIST" target="_blank">
-                      <img  align="center" alt="twitter" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/twitter/twitter-original.svg">
-                    </a>
-                    <a href="https://www.linkedin.com/company/2977028/" target="_blank">
-                      <img  align="center" alt="linkedin" src="../../static/linkedin.svg">
-                    </a>
-                    <a href="https://www.instagram.com/neecist/" target="_blank">
-                      <img  align="center" alt="instagram" src="../../static/instagram.svg">
-                    </a>
-                    <a href="https://www.youtube.com/user/NEECIST" target="_blank">
-                      <img  align="center" alt="youtube" src="../../static/youtube2.svg">
-                    </a>
-                    <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
-                      <img  align="center" alt="spotify" src="../../static/spotify.svg">
-                    </a>
-                  </div>
-                </div>
-
                 </div>
             </div>
         </section>
-
-        <div class="container">
-          <div class="flexbox-imgs">
-            <a href="https://tecnico.ulisboa.pt/pt/" target="_blank"><img src="../../static/partner-logos/ist_logo.png"></a>
-
-            <a href="https://fenix.tecnico.ulisboa.pt/departamentos/deec" target="_blank"><img src="../../static/partner-logos/deec_logo.png"></a>
-          </div>
-        </div>
-
-        <div class="credits">
-          <a href="https://www.flaticon.com/free-icons/internship" title="internship icons">Internship icons created by rukanicon - Flaticon</a>
-        </div>
+        
         <div class="bottom-bar">
             <div id="copyright">
                 Copyright © 2022 - Núcleo de Estudantes de Eletrotécnica e de Computadores do Instituto Superior Técnico
             </div>
-            <div id="source-code">
-                Code hosted on 
-                <a href="https://github.com/NEECIST/NeecUpdatedWebsite" target="_blank">
-                  <img  align="center" alt="github" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg">
-                </a>
-            </div>
         </div>
-
     </div>
 </template>
 
@@ -93,27 +68,23 @@ export default {
 </script>
 
 <style>
+
 .socials{
   text-align: center;
+  font-size: 30px;
 }
-.socials h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #112363;
+.socials h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
 }
-.socials img {
-  height: 30px;
-  width: 40px;
-  opacity: .85;
-  transition: all .3s;
+.icon {
+    color: white;
+    margin: 5px;
 }
-.socials img:hover {
-	opacity: 1;
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-}
+
 #source-code img {
   height: 20px;
   width: 30px;
@@ -126,41 +97,37 @@ export default {
   filter: grayscale(0%);
 }
 .contacts-comp {
-  position: relative;
-  padding-top: 10px;
-  background-color: #ffffff;
+  position: absolute;
+  width:100% ;
+  bottom: 0;
+  background-color: #303633;
   text-align: left;
 }
 .bottom-bar {
   margin-top: 10px;
   width: 100%;
   height: 30px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: #303633;
+  color: white;
   position: relative;
   overflow: hidden;
-  text-align: left;
   bottom: 0;
 }
 #copyright {
   padding-left: 10px;
   padding-bottom: 5px;
-  padding-top: 9px;
   font-size: 13px;
   float: left;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 #source-code {
   float: right;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding-right: 10px;
   padding-bottom: 5px;
-  padding-top: 9px;
   font-size: 13px;
 }
-address {
-    font-style: normal;
-}
+
 .flexbox-imgs {
   display: -webkit-box;  /* iOS 6-, Safari 3.1-6, BB7 */
   display: -ms-flexbox;  /* IE 10 */
@@ -171,7 +138,13 @@ address {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
 }
 .flexbox-imgs img {
   justify-content: center;
@@ -224,44 +197,32 @@ address {
 .section-with-bg {
   background-color: #f6f7fd;
 }
-#contact .contact-info {
-  margin-bottom: 10px;
-  text-align: center;
-}
-#contact .contact-info i {
-  font-size: 48px;
-  display: inline-block;
-  margin-bottom: 10px;
-  color: #f82249;
-}
+
 .col-md-4 {
-  width: 25%;
+  width: 33%;
   display: inline-block;
 }
-#contact .contact-info address,
-#contact .contact-info p {
-  margin-bottom: 0;
-  color: #112363;
+
+.location-adress{
+    float: left;
+    font-size: 16px;  
+    font-family: 'Roboto';
+    color: white;
+    padding: 10px;
+    padding-left:10px;
 }
-#contact .contact-info h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #112363;
+.contact-adress{
+    float:right;
+    font-size: 16px;  
+    font-family: 'Roboto';
+    color: white;
+    padding: 20px;
 }
-#contact .contact-info a {
-  color: #4869df;
+.contact-address-text{
+    color: white;
 }
-#contact .contact-info a:hover {
-  color: #f82249;
-}
-#contact .contact-address,
-#contact .contact-phone,
-#contact .contact-email {
-  font-size: 18px;
-  margin-bottom: 10px;
-  margin-left: 30px;
+.contact-address-text:hover{
+    color: #009DE0;
 }
 @media screen and (max-width: 560px) {
   .col-md-4 {

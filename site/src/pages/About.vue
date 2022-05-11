@@ -1,5 +1,5 @@
 <template>
-    <div class="about-app">
+    <div class="about-app" :style="{padding: '10px', paddingBottom: '200px'}">
         <div class="description-about">
            <div class="about-text">
                 <div class="description-title">

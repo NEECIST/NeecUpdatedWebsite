@@ -7,7 +7,7 @@
     </router-link>
     
     <div class="sedeStatus">
-      <small> Sede is
+      <small> A Sede do NEEC está 
         <div class="sedeBtn">
           <span v-if="boolean_sede_state===true" class="blink_green"/>
           <span v-else class="blink_red"/>
@@ -15,20 +15,14 @@
       </small>
     </div>
 
-    <router-link router-link :to="{ name: 'Home' }">
-      <div class="navbar-title">Home</div>
-    </router-link>
     <router-link router-link :to="{ name: 'Team' }">
-      <div class="navbar-title">Team</div>
+      <div class="navbar-title">Equipa</div>
     </router-link>
     <router-link router-link :to="{ name: 'Oportunities' }">
       <div class="navbar-title">Oportunidades</div>
     </router-link>
-    <router-link router-link :to="{ name: 'About' }">
-      <div class="navbar-title">Sobre</div>
-    </router-link>
-    <router-link router-link :to="{ name: 'Scores' }">
-      <div class="navbar-title">JEEC22</div>
+     <router-link router-link :to="{ name: 'Home' }">
+      <div class="navbar-title">Home</div>
     </router-link>
 
     <div id="menuToggle">
@@ -40,11 +34,8 @@
 
       <ul id="menu">
         <li v-on:click="redirect('Home')">Home</li>
-        <li v-on:click="redirect('Team')">Team</li>
         <li v-on:click="redirect('Oportunities')">Oportunities</li>
-        <li v-on:click="redirect('Projects')">Projects</li>
-        <li v-on:click="redirect('About')">Sobre</li>
-        <li v-on:click="redirect('Scores')">JEEC22</li>
+        <li v-on:click="redirect('Team')">Equipa</li>
       </ul>
     </div>
   </div>
@@ -99,18 +90,15 @@ export default {
 <style>
 .navbar {
   width: 100%;
-  height: 70px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.16);
+  height: 60px;
   position: fixed;
   z-index: 1000;
   background-color: #ffffff;
 }
 .navbar-left-logo {
-  width: 120px;
+  width: 160px;
   margin-left: 20px;
-  margin-top: 17px;
+  margin-top: 10px;
   float: left;
 }
 .navbar-left-logo-mobile {
@@ -118,8 +106,10 @@ export default {
 }
 .sedeStatus{
   float: left;
-  margin-top: 25px;
-  margin-left: 30px;
+  margin-top: 20px;
+  margin-left: 40px;
+  font-size: 24px;
+  font-weight: bold;
 }
 .sedeStatus small{
   display: flex;
@@ -128,7 +118,7 @@ export default {
 }
 .sedeBtn{
   padding-left: 5px;
-  padding-top: 5px;
+
 }
 .platform-button {
   margin-top: 15px;
@@ -190,13 +180,15 @@ export default {
   margin-top: 23px;
   margin-right: 5vw;
   color: black;
-  font-size: 20px;
-  font-family: "Lato";
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
   -o-transition: 0.2s;
   -ms-transition: 0.2s;
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  font-size: 19px;
+  
 }
 .navbar-title:hover {
   color: rgb(55, 121, 184);
@@ -211,7 +203,7 @@ body {
   /* make it look decent enough */
   background: #232323;
   color: #cdcdcd;
-  font-family: "Avenir Next", "Avenir", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 a {
   text-decoration: none;
@@ -321,10 +313,7 @@ a:hover {
     margin-top: 10px;
     float: left;
   }
-  .navbar-title {
-    margin-top: 23px;
-    display: none;
-  }
+
   #menuToggle {
     display: block;
   }
@@ -333,10 +322,7 @@ a:hover {
     font-size: 14px;
     letter-spacing: 0.8px;
   }
-  .navbar-title {
-    font-size: 19px;
-    margin-top: 25px;
-  }
+
   .platform-button {
     margin-top: 15px;
     margin-left: 30px;
@@ -362,8 +348,8 @@ a:hover {
 }
 .blink_green {
   animation: blinker 2s linear infinite;
-  width: 10px;
-  height: 10px;
+  width: 16px;
+  height: 16px;
   display: inline-block;
   border: 1px solid green;
   background-color: green;
@@ -371,8 +357,8 @@ a:hover {
 }
 .blink_red {
   animation: blinker 2s linear infinite;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   display: inline-block;
   border: 1px solid red;
   background-color: red;

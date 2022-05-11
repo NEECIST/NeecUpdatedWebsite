@@ -1,104 +1,177 @@
 <template>
-    <div class="team-app">
-
-       <div class="description-team">
-           <div class="team-text">
-                <div class="description-title">
-                    <abbr title="Núcleo de Estudantes de Eletrotécnia e Computadores">NEEC</abbr> Team
-                </div>
-
-                <div class="description-text">Conhece a equipa por trás do projeto que não para de crescer!
-                </div>
-            </div>
-            <img src="../assets/NEECteam.png"/>
-        </div>
-
+    <div class="team-app" :style="{padding: '10px',paddingTop: '50px', paddingBottom: '200px', fontFamily: 'Roboto'}">
+        <h2>Conhece a nossa equipa!</h2>         
         <div class="team">
             <div class="team-flex">
-                <div v-for="member in team.members" :key="member.name">
+                <div v-for="member in board" :key='member["id"]' data-aos="zoom-in">
+                    <div >
+                        <div :style="{fontSize:'20px'}">
+                        <h3 v-if="member.team.includes('tesoureiro')">Tesoureira</h3>                   
+                        <h3 v-if="member.team.includes('presidente')">Presidente</h3>                   
+                        </div>
+                    </div>
                     <div class="teams_container">
                         <div class="team-member">
-                            <!--<img :src="member.image">-->
-                            <img :src="default_avatar">
-                        </div> 
-                        <!--<div class="linkedin-icons">
-                            <a :href="member.linkedin_url" target="_blank">
-                                <img class="icon-team-member" :src="linkedin_icon_link"/>
-                            </a>
-                        </div>
-                        <div class="insta-icons">
-                            <a :href="member.insta_url" target="_blank">
-                                <img class="icon-team-member" :src="insta_icon_link"/>
-                            </a>
-                        </div>
-                        <div class="git-icons">
-                            <a :href="member.git_url" target="_blank">
-                                <img class="icon-team-member" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"/>
-                            </a>
-                        </div>
-                        <div class="mail-icons">
-                            <a :href="member.mail" target="_blank">
-                                <img class="icon-team-member" :src="mail_icon_link"/>
-                            </a>
-                        </div>-->                                   
+                            <img :src=default_avatar>
+                        </div>        
                     </div>
                     <div class="team-member-name">
                         <p class="member-name">{{ member.name }}</p>
                     </div>
+                    
                 </div>
             </div>
+            <div class="team-flex">
+                <div v-for="member in members" :key='member["id"]' data-aos="zoom-in">
+                    <div class="teams_container">
+                        <div class="team-member">
+                            <img :src=default_avatar>
+                        </div>        
+                    </div>
+                    <div class="team-member-name">
+                        <p class="member-name">{{ member.name }}</p>
+                    </div>
+                    <div >
+                        <p :style="{fontSize:'30px', marginTop: '0px', paddingTop: '0px'}">
+                        <a href="#team-explaination"><i v-if="member.team.includes('NEECIT')" class="fa-solid fa-laptop-code team-badge" :style="{paddingRight: '4px'}"></i></a>
+                        <a href="#team-explaination"><i v-if="member.team.includes('Design')" class="fa-solid fa-pen team-badge" :style="{paddingRight: '4px'}"></i></a>
+                        <a href="#team-explaination"><i v-if="member.team.includes('Divulgacao')" class="fa-solid fa-newspaper team-badge" :style="{paddingRight: '4px'}"></i></a>
+                        <a href="#team-explaination"><i v-if="member.team.includes('Multimedia')" class="fa-solid fa-video team-badge" :style="{paddingRight: '4px'}"></i></a>                   
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2 :style="{paddingTop: '50px'}">
+                Interessado/a nas funções de cada uma das equipas?
+            </h2>
+
+            <div id="team-explaination" :style="{ paddingLeft: '50px', paddingRight: '50px'}">
+                <div class="activities-row" data-aos="zoom-in">
+                    <div class="col" :style="{ width: '25%'}">
+                        <i class="fa-solid fa-laptop-code fa-6x icon" ></i>
+                    </div>
+                    <div class="col" :style="{ width: '25%'}">
+                        <div :style="{ paddingLeft: '60px', paddingRight: '60px'}">
+                        <h3>Design</h3>
+                        <p>Design é a equipa que trata da imagem do núcleo. Utiliza ferramentas como
+                             Adobe Illustrator e Canva para fazer os nossos posts, stickers, flyers, posters, e muito mais.</p>
+                        </div>
+                    </div>
+                    <div class="col" :style="{ width: '25%'}">
+                        <i class="fa-solid fa-video fa-6x icon" ></i>
+                    </div>
+                    <div class="col" :style="{ width: '25%'}">
+                        <div :style="{ paddingLeft: '60px', paddingRight: '60px'}">
+                        <h3>Divulgação</h3>
+                        <p>A equipa de Divulgação é a equipa que gere as nossas redes sociais e caixa de entrada. É a equipa que
+                             contacta com o exterior e que trabalha para trazer oportunidades de estágios, bolsas, eventos, e tudo
+                              o que seja do interesse dos alunos do nosso curso.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hl" data-aos="zoom-in"></div>
+                
+                <div class="activities-row" data-aos="zoom-in">
+                    <div class="col" :style="{ width: '25%'}">
+                        <div :style="{ paddingLeft: '60px', paddingRight: '60px'}">
+                        <h3>NEECIT</h3>
+                        <p>O NEEC IT é a nossa equipa de desenvolvimento e de manutenção dos serviços do núcleo, como por exemplo a drive,
+                                o discord, e este mesmo site. Desenvolvemos também projetos mais pessoais que apresentamos na nossa banca em
+                                eventos oficiais, tais como o NEECBoto, o LevitaNEEC e o NEECQuick.</p>
+                        </div>
+                    </div>
+                    <div class="col" :style="{ width: '25%'}">
+                        <i class="fa-solid fa-pen fa-6x icon" ></i>
+                    </div>
+                    <div class="col" :style="{ width: '25%'}">
+                        <div :style="{ paddingLeft: '60px', paddingRight: '60px'}">
+                        <h3>Multimédia</h3>
+                        <p>Muito como o Design, Multimédia também lida com o conteúdo que lançamos ao público mas mais focado em conteúdo vídeo. 
+                            Esta é a equipa que trata dos nossos vídeos, recaps de eventos, e que organiza o nosso podcast - as NEECTalks!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col" :style="{ width: '25%'}">
+                        <i class="fa-solid fa-newspaper fa-6x icon" ></i>
+                    </div>
+                </div>    
+            </div>
+
         </div>
+        
     </div>
 </template>
 
 <script>
-import linkedin_logo from "../../static/linkedin.svg"
-import insta_logo from "../../static/instagram.svg"
-import gmail_logo from "../../static/gmail.svg"
-import tiago from "../assets/NEEC/Tiago.jpg"
-import alexandra from "../assets/NEEC/Alex.jpg"
-import midoes from "../assets/NEEC/Midoes.jpg"
-
+import 'vue3-carousel/dist/carousel.css';
+import axios from 'axios';
 export default {
   name: "team-page",
   data() {
       return {
         default_avatar: 'https://avatars.githubusercontent.com/u/51272291?v=4',
-        team: {
-            name: "NEEC",
-            description: "We are NEEC!",
-            members:[
-                {name: "Alexandra Fernandes",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Alice Rosa",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "André Pereira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Andre-MR-Pereira',insta_url: 'https://www.instagram.com/andre_periphery/',image: 'https://avatars.githubusercontent.com/u/54562621?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-                {name: "André Silva",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "António Coimbra",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/antoniocoimbraa',insta_url: 'https://www.instagram.com/antoniocoimbraa/',image: 'https://avatars.githubusercontent.com/u/65049521?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-                {name: "Diogo Ferreira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Duarte Cerdeira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Gabriel Marques",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Gonçalo Coelho",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Gonçalo Midões",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Midas-sudo',insta_url: 'https://www.instagram.com/goncalopm01/',image: midoes, linkedin_url: 'https://www.linkedin.com/in/goncalo-midoes/'},
-                {name: "Madalena Barros",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Margarida Pereira",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Inês Conceição",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Miguel Guerreiro",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Mónica Gomez",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/AlexaFernandes',insta_url: 'https://www.instagram.com/alex.cookiie/',image: alexandra, linkedin_url: 'https://www.linkedin.com/in/alexandra-fernandes-a6b356136/'},
-                {name: "Tiago Felizardo",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Varsenaiga',insta_url: 'https://www.instagram.com/tiago.angelico.goncalves/',image: tiago, linkedin_url: 'https://www.linkedin.com/in/tiago-gon%C3%A7alves-b5a87b183/'},
-                {name: "Tiago Gonçalves",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/Varsenaiga',insta_url: 'https://www.instagram.com/tiago.angelico.goncalves/',image: tiago, linkedin_url: 'https://www.linkedin.com/in/tiago-gon%C3%A7alves-b5a87b183/'},
-                {name: "Vasco Rodrigues",mail: 'mailto:andregdpereira@gmail.com',git_url: 'https://github.com/VascoDVRodrigues',insta_url: 'https://www.instagram.com/vascovrodrigues/',image: 'https://avatars.githubusercontent.com/u/34923176?v=4', linkedin_url: 'https://www.linkedin.com/in/andr%C3%A9-pereira-680209194/'},
-            ]
-        },
-        linkedin_icon_link: linkedin_logo,
-        insta_icon_link: insta_logo,
-        mail_icon_link: gmail_logo,
+        members:[],
+        board:[],
+        teamsData:[
+            {title: 'Design', desc: 'Design é a equipa que trata da imagem do núcleo. Utiliza ferramentas como Adobe Illustrator e Canva para fazer os nossos posts, stickers, flyers, posters, e muito mais.'},
+            {title: 'NEECIT', desc: 'O NEEC IT é a nossa equipa de desenvolvimento e de manutenção dos serviços do núcleo, como por exemplo a drive, o discord, e este mesmo site. Desenvolvemos também projetos mais pessoais que apresentamos na nossa banca em eventos oficiais, tais como o NEECBoto, o LevitaNEEC e o NEECQuick.'},
+            {title: 'Multimédia', desc: 'Muito como o Design, Multimédia também lida com o conteúdo que lançamos ao público mas mais focado em conteúdo vídeo. Esta é a equipa que trata dos nossos vídeos, recaps de eventos, e que organiza o nosso podcast - as NEECTalks!'},
+            {title: 'Divulgação', desc: 'A equipa de Divulgação é a equipa que gere as nossas redes sociais e caixa de entrada. É a equipa que contacta com o exterior e que trabalha para trazer oportunidades de estágios, bolsas, eventos, e tudo o que seja do interesse dos alunos do nosso curso.'}
+        ],
       }
-  }
+    },
+    created(){
+        axios.get("https://api.trello.com/1/lists/6235338fec5f311934a4d0c6/cards")
+        .then(response => {
+            for(var i =0; i<response.data.length; i++){
+                var teams = []
+                response.data[i].labels.forEach((x) => teams.push(x.name));
+                if(teams.includes('tesoureiro') ||teams.includes('presidente')){
+                    this.board.push({id: i, name: response.data[i].name, url: response.data[i].url, team:teams})
+                }else{
+                    this.members.push({id: i, name: response.data[i].name, url: response.data[i].url, team:teams})
+                }
+            }
+        })
+    },
 };
 </script>
 
 
 
 <style>
+.hl {
+  border: 3px solid #DCDCDC;
+  width: 100%;
+  height: 0px;
+  border-radius: 4px;
+}
+.team-item-title{
+    background-color: #009DE0;
+  min-height: 100px;
+  font-size: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team-item-desc{
+    background-color: #505050;
+  min-height: 400px;
+  font-size: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-badge{
+    color: #303633;
+}
+.team-badge:hover{
+    color: #009DE0;
+}
 .description-team{
     padding-top: 100px;
     height: 300px;
@@ -121,7 +194,6 @@ export default {
     z-index: 1;
 }
 .description-title{
-    font-family: 'Raleway', sans-serif;
     font-size: 50px;
     font-weight: bolder;
     color: #505050;
@@ -133,7 +205,6 @@ export default {
     background-color: #009DE0;
     border-radius: 5px;
     font-size: 30px;
-    font-family: 'Karla';
     width: 750px;
     padding-right: 40px;
     padding-top: 15px;
@@ -145,7 +216,6 @@ export default {
 }
 .team{
     padding-top: 40px;
-    background-color: #ecf7ff;
 }
 .team-flex{
     padding-left: 50px;
@@ -155,7 +225,6 @@ export default {
     justify-content: space-around;
     margin-right: 8vw;
     margin-left: 8vw;
-    margin-top: 30px;
 }
 .teams_container {
     position: relative;
@@ -214,12 +283,7 @@ export default {
     height:60px;
     transition: .5s ease;
 }
-.teams_container:hover .git-icons,
-.teams_container:hover .mail-icons,
-.teams_container:hover .insta-icons,
-.teams_container:hover .linkedin-icons {
-  opacity: 1;
-}
+
 .team-member-name {
     display: flex;
     flex-direction: row;
@@ -229,8 +293,7 @@ export default {
     transition: .5s ease;
 }
 .team-member img{ 
-    height: 220px;
-    width: 220px;
+    height: 160px;
     margin-right: 10px;
     margin-left: 10px;
 }
@@ -241,7 +304,6 @@ export default {
     width: 100px;
     font-size: 22px;
     text-align: center;
-    font-family:'Lato', sans-serif;
     color: #262626;
 }
 .icon-team-member {

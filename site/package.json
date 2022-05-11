@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --host localhost",
+    "serve": "vue-cli-service serve ",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "axios": "^0.26.1",
     "core-js": "^3.8.3",
     "firebase": "^9.6.9",
