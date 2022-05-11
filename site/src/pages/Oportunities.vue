@@ -15,7 +15,7 @@
         <div class="team">
              <ul v-if="cardList && cardList.length" style="list-style: none;display: flex; flex-direction: row; flex-wrap: wrap;">
                 <li v-for="(card,card_id) in cardList" :key="card_id" style=" flex: 0 1 50%;padding-bottom: 10px;">
-                    <div class="card" >
+                    <div class="card" >       
                         <h2>{{card.name}}</h2>
                         <p><span v-html="card.desc"/></p>
                     </div>
@@ -36,12 +36,13 @@ export default {
       }
   },
   created(){
-    axios.get("https://api.trello.com/1/lists/620256ba93c9f35b1c4c54ac/cards")
+    axios.get("https://api.trello.com/1/lists/620256ba93c9f35b1c4c54ac/cards?attachments=true")
     .then(response => {
+        for(var i =0; i<response.data.length; i++){
+            this.cardList.push({id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, desc:response.data[i].desc})
+        }
     // JSON responses are automatically parsed.
-    this.cardList = response.data
-    }).then(()=>
-    this.curateCardText(this.cardList)) 
+    })
   },
   methods:{
     curateCardText(List) {

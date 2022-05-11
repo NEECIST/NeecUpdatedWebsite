@@ -12,7 +12,7 @@
                     </div>
                     <div class="teams_container">
                         <div class="team-member">
-                            <img :src=default_avatar>
+                            <img :src='member[`url`]'>
                         </div>        
                     </div>
                     <div class="team-member-name">
@@ -25,7 +25,7 @@
                 <div v-for="member in members" :key='member["id"]' data-aos="zoom-in">
                     <div class="teams_container">
                         <div class="team-member">
-                            <img :src=default_avatar>
+                            <img :src='member[`url`]'>
                         </div>        
                     </div>
                     <div class="team-member-name">
@@ -122,17 +122,18 @@ export default {
       }
     },
     created(){
-        axios.get("https://api.trello.com/1/lists/6235338fec5f311934a4d0c6/cards")
+        axios.get("https://api.trello.com/1/lists/6235338fec5f311934a4d0c6/cards?attachments=true")
         .then(response => {
             for(var i =0; i<response.data.length; i++){
                 var teams = []
                 response.data[i].labels.forEach((x) => teams.push(x.name));
                 if(teams.includes('tesoureiro') ||teams.includes('presidente')){
-                    this.board.push({id: i, name: response.data[i].name, url: response.data[i].url, team:teams})
+                    this.board.push({id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, team:teams})
                 }else{
-                    this.members.push({id: i, name: response.data[i].name, url: response.data[i].url, team:teams})
+                    this.members.push({id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, team:teams})
                 }
             }
+        
         })
     },
 };
