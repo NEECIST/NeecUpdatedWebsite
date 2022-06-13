@@ -1,33 +1,31 @@
 <template>
   <div class="navbar">
-    <router-link router-link :to="{ name: 'Home' }">
-      <img class="navbar-left-logo" :src="navbar_logo_link" />
-
-      <img class="navbar-left-logo-mobile" :src="navbar_mobile_logo_link" />
-    </router-link>
-    
-    <div class="sedeStatus">
-      <small> A Sede do NEEC está 
-        <div class="sedeBtn">
-          <span v-if="boolean_sede_state===true" class="blink_green"/>
-          <span v-else class="blink_red"/>
-        </div>
-      </small>
+    <div class="nameState">
+      <router-link router-link :to="{ name: 'Home' }">
+        <img class="navbar-left-logo" :src="navbar_logo_link" />
+        <img class="navbar-left-logo-mobile" :src="navbar_mobile_logo_link" />
+      </router-link>
+      
+      <div class="sedeStatus">
+        A Sede do NEEC está <div class="sedeBtnContainer">
+        <span  class="sedeBtn" v-bind:style= "boolean_sede_state ? {backgroundColor: `green`} : {backgroundColor: `red`}"/>
+       </div>
+      </div>
     </div>
 
-    <router-link router-link :to="{ name: 'Team' }">
-      <div class="navbar-title">Equipa</div>
-    </router-link>
-    <router-link router-link :to="{ name: 'Oportunities' }">
-      <div class="navbar-title">Oportunidades</div>
-    </router-link>
-     <router-link router-link :to="{ name: 'Home' }">
-      <div class="navbar-title">Home</div>
-    </router-link>
-
+    <div class="pagesBox">
+      <router-link router-link :to="{ name: 'Team' }">
+        <div class="navbar-title">Equipa</div>
+      </router-link>
+      <router-link router-link :to="{ name: 'Oportunities' }">
+        <div class="navbar-title">Oportunidades</div>
+      </router-link>
+       <router-link router-link :to="{ name: 'Home' }">
+        <div class="navbar-title">Home</div>
+      </router-link>
+    </div>
     <div id="menuToggle">
       <input type="checkbox" :checked="show_menu" v-on:click="show_menu = !show_menu" />
-
       <span></span>
       <span></span>
       <span></span>
@@ -87,38 +85,59 @@ export default {
 };
 </script>
 
-<style>
+<style>´
+
+a, a:-webkit-any-link {
+text-decoration: none;
+}
+
 .navbar {
-  width: 100%;
-  height: 60px;
+  width: 100vw;
   position: fixed;
   z-index: 1000;
   background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vh 0;
 }
 .navbar-left-logo {
   width: 160px;
-  margin-left: 20px;
-  margin-top: 10px;
-  float: left;
 }
 .navbar-left-logo-mobile {
   display: none;
 }
+
+.nameState {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 0 2vw;
+}
+
+.pagesBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 35%;
+}
+
 .sedeStatus{
-  float: left;
-  margin-top: 20px;
-  margin-left: 40px;
-  font-size: 24px;
-  font-weight: bold;
+ font-weight: bold;
+ margin-left: 3vw;
+ font-size: larger;
+ display: flex;
+ align-items: center;
 }
 .sedeStatus small{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.sedeBtn{
+.sedeBtnContainer{
   padding-left: 5px;
-
+  line-height: 0;
 }
 .platform-button {
   margin-top: 15px;
@@ -172,15 +191,9 @@ export default {
 .register-button {
   display: inline-block;
 }
-.navbar a {
-  text-decoration: initial;
-}
+
 .navbar-title {
-  float: right;
-  margin-top: 23px;
-  margin-right: 5vw;
   color: black;
-  font-size: 18px;
   font-family: 'Roboto', sans-serif;
   -o-transition: 0.2s;
   -ms-transition: 0.2s;
@@ -188,51 +201,38 @@ export default {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: 19px;
+  padding-right: 3vw;
   
 }
 .navbar-title:hover {
   color: rgb(55, 121, 184);
   transform: scale(1.1);
 }
-a:hover {
-  cursor: pointer;
-}
+
 body {
   margin: 0;
   padding: 0;
-  /* make it look decent enough */
   background: #232323;
   color: #cdcdcd;
   font-family: 'Roboto', sans-serif;
 }
-a {
-  text-decoration: none;
-  color: #232323;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: tomato;
-}
+
 #menuToggle {
   display: none;
-  float: right;
-  position: relative;
-  top: 25px;
-  right: 5vw;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
 }
 #menuToggle input {
   display: block;
-  width: 40px;
-  height: 32px;
+  width: 10vw;
+  height: 100%;
   position: absolute;
-  top: -7px;
-  left: -5px;
+  right: 0;
+  top: 0;
   cursor: pointer;
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  opacity: 0;
+  z-index: 2;
   -webkit-touch-callout: none;
 }
 #menuToggle span {
@@ -266,22 +266,21 @@ a:hover {
 #menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
+
 #menu {
+  margin: 0;
+  right: 0;
+  top: 100%;
   position: absolute;
-  width: 100vw;
-  margin-left: -95vw;
-  padding: 50px;
-  padding-top: 50px;
-  margin-top: 18px;
+  padding: 5vh 12vw;
   background: #ffffff;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  box-shadow: 0 200px 300px 0 rgba(0, 0, 0, 0.3);
-  border-radius: 30px;
+  box-shadow: none;
+  border-radius: 0 0 0 10px;
   transform-origin: 0% 0%;
-  transform: translate(1100px, 0px);
-  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transform: translate(0px, -400px);
+  transition: transform 0.3s;
 }
 #menu li {
   padding: 20px 0;
@@ -289,6 +288,7 @@ a:hover {
 }
 #menuToggle input:checked ~ ul {
   transform: none;
+  box-shadow: 0 200px 300px 0 rgb(0 0 0 / 30%);
 }
 @media only screen and (max-width: 1250px) {
   .join-quote {
@@ -314,8 +314,17 @@ a:hover {
     float: left;
   }
 
+  .sedeStatus{
+    font-size: large;
+  }
+
+  .navbar-title{
+    display: none;
+  }
+
   #menuToggle {
     display: block;
+    width: 10vw;
   }
   .register-button {
     margin-top: 24px;
@@ -346,24 +355,14 @@ a:hover {
     margin-top: 30px;
   }
 }
-.blink_green {
+.sedeBtn{
   animation: blinker 2s linear infinite;
   width: 16px;
   height: 16px;
   display: inline-block;
-  border: 1px solid green;
-  background-color: green;
   border-radius: 100%;
 }
-.blink_red {
-  animation: blinker 2s linear infinite;
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  border: 1px solid red;
-  background-color: red;
-  border-radius: 100%;
-}
+
 @keyframes blinker {
   50% {
     opacity: 0.6;
