@@ -10,7 +10,36 @@ body {
 
 
 
+@media only screen and (max-width: 990px) {
+    .activities-row {
+        flex-direction: column;
+        height: auto;
+    }
 
+    .col.aos-init.aos-animate>i {
+        float: unset !important;
+        padding: 0 !important;
+    }
+
+    .col.aos-init.aos-animate>div.col-50 {
+        width: 100% !important;
+    }
+
+    .col {
+        width: 100% !important;
+    }
+
+    .algo-card {
+        float: unset !important;
+        padding: 0;
+        width: 80% !important;
+        margin: auto !important;
+    }
+
+    .iconss {
+        order: -1;
+    }
+}
 
 
 

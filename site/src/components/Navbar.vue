@@ -336,6 +336,9 @@ body {
     margin-top: 15px;
     margin-left: 30px;
   }
+  .team-app{
+      padding: 90px 11px 200px;
+  }
 }
 @media only screen and (max-width: 760px) {
   .brain-msg {

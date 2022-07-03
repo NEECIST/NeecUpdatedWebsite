@@ -6,7 +6,7 @@
   </div>
     <div class="container"  :style="{padding: '10px', paddingBottom: '200px'}">
         <div class="activities-row" >
-            <div class="col" data-aos="fade-right">
+            <div class="col iconss" data-aos="fade-right">
                 <i class="fa-solid fa-people-group fa-10x icon"  :style="{float: 'right', paddingRight: '100px'}"></i>
             </div>
             <div class="vl"></div>
@@ -28,12 +28,12 @@
                 </div>
             </div>
             <div class="vl"></div>
-            <div class="col" data-aos="fade-left">
+            <div class="col iconss" data-aos="fade-left">
                 <i class="fa-solid fa-gear fa-10x icon"  :style="{float: 'left', paddingLeft: '100px'}"></i>
             </div>
         </div>
         <div class="activities-row">
-            <div class="col" data-aos="fade-right">
+            <div class="col iconss" data-aos="fade-right">
                 <i class="fa-solid fa-folder-open fa-10x icon"  :style="{float: 'right', paddingRight: '100px'}"></i>
             </div>
             <div class="vl"></div>
@@ -56,12 +56,12 @@
                 </div>
             </div>
             <div class="vl"></div>
-            <div class="col" data-aos="fade-left">
+            <div class="col iconss" data-aos="fade-left">
                 <i class="fa-solid fa-id-badge fa-10x icon"  :style="{float: 'left', paddingLeft: '100px'}"></i>
             </div>
         </div>
          <div class="activities-row">
-            <div class="col" data-aos="fade-right">
+            <div class="col iconss" data-aos="fade-right">
                 <i class="fa-solid fa-microchip fa-10x icon"  :style="{float: 'right', paddingRight: '100px'}"></i>
             </div>
             <div class="vl"></div>
@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="vl"></div>
-            <div class="col" data-aos="fade-left">
+            <div class="col " data-aos="fade-left">
                 <div class="col-50" :style="{width: '60%', float: 'left'}">
                     <iframe id="NEECtalksPlayer" :src="episode" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" frameBorder="0"></iframe>
                 </div> 
