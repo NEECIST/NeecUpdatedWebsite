@@ -13,7 +13,7 @@ body {
 @media only screen and (max-width: 990px) {
     .activities-row {
         flex-direction: column;
-        height: auto;
+        height: auto !important;
     }
 
     .col.aos-init.aos-animate>i {
