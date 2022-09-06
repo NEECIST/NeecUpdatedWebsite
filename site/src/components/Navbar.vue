@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" id="navbar">
     <div class="nameState">
       <router-link router-link :to="{ name: 'Home' }">
         <img class="navbar-left-logo" :src="navbar_logo_link" />

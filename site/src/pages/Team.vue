@@ -1,5 +1,5 @@
 <template>
-    <div class="team-app" :style="{padding: '10px',paddingTop: '50px', paddingBottom: '200px', fontFamily: 'Roboto'}">
+    <div class="team-app" :style="{padding: '10px',paddingTop: '4vw', paddingBottom: '200px', fontFamily: 'Roboto'}">
         <h2>Conhece a nossa equipa!</h2>         
         <div class="team">
             <div class="team-flex">
@@ -47,7 +47,7 @@
 
             <div id="team-explaination" :style="{ paddingLeft: '50px', paddingRight: '50px'}">
                 <div class="activities-row" data-aos="zoom-in">
-                    <div class="col" :style="{ width: '25%', paddingLeft:'24px', paddingRight:'24px'}">
+                    <div class="col" :style="{ width: '25%', paddingLeft:'24px', paddingRight:'24px', flexDirection: 'column'}">
                         <i class="fa-solid fa-laptop-code fa-6x icon" ></i>
                         <h3>NEECIT</h3>
                         <p>O NEEC IT é a nossa equipa de desenvolvimento e de manutenção dos serviços do núcleo, como por exemplo a drive,
@@ -55,7 +55,7 @@
                         eventos oficiais, tais como o NEECBoto, o LevitaNEEC e o NEECQuick.</p>
                     </div>
                     <div class="vl"></div>
-                    <div class="col" :style="{ width: '25%', paddingLeft:'24px', paddingRight:'24px'}">
+                    <div class="col" :style="{ width: '25%', paddingLeft:'24px', paddingRight:'24px', flexDirection: 'column'}">
                         <i class="fa-solid fa-pen fa-6x icon" ></i>
                         <h3>Design</h3>
                         <p>Design é a equipa que trata da imagem do núcleo. Utiliza ferramentas como
@@ -63,14 +63,14 @@
                         
                     </div>
                     <div class="vl"></div>
-                    <div class="col" :style="{ width: '25%', paddingLeft:'24px', paddingRight:'24px'}">
+                    <div class="col" :style="{ width: '25%', paddingLeft:'24px', paddingRight:'24px', flexDirection: 'column'}">
                         <i class="fa-solid fa-video fa-6x icon" ></i>
                         <h3>Multimédia</h3>
                         <p>Muito como o Design, Multimédia também lida com o conteúdo que lançamos ao público mas mais focado em conteúdo vídeo. 
                             Esta é a equipa que trata dos nossos vídeos, recaps de eventos, e que organiza o nosso podcast - as NEECTalks!</p>
                     </div>
                     <div class="vl"></div>
-                    <div class="col" :style="{ width: '25%', paddingLeft:'24px', paddingRight:'24px'}">
+                    <div class="col" :style="{ width: '25%', paddingLeft:'24px', paddingRight:'24px', flexDirection: 'column'}">
                         <i class="fa-solid fa-newspaper fa-6x icon" ></i>
                         <h3>Divulgação</h3>
                         <p>A equipa de Divulgação é a equipa que gere as nossas redes sociais e caixa de entrada. É a equipa que
