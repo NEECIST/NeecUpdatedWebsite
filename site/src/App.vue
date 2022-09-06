@@ -5,7 +5,7 @@
   <div id="page">
     <Navbar/>
     <router-view/>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
