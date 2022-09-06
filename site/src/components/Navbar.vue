@@ -14,15 +14,19 @@
     </div>
 
     <div class="pagesBox">
+      
+       <router-link router-link :to="{ name: 'Home' }">
+        <div class="navbar-title">Home</div>
+      </router-link>       
       <router-link router-link :to="{ name: 'Team' }">
         <div class="navbar-title">Equipa</div>
       </router-link>
       <router-link router-link :to="{ name: 'Oportunities' }">
         <div class="navbar-title">Oportunidades</div>
       </router-link>
-       <router-link router-link :to="{ name: 'Home' }">
-        <div class="navbar-title">Home</div>
-      </router-link>
+      <!-- <router-link router-link :to="{ name: 'Projects' }">
+        <div class="navbar-title">Projetos</div>
+      </router-link> -->
     </div>
     <div id="menuToggle">
       <input type="checkbox" :checked="show_menu" v-on:click="show_menu = !show_menu" />
@@ -34,6 +38,8 @@
         <li v-on:click="redirect('Home')">Home</li>
         <li v-on:click="redirect('Oportunities')">Oportunities</li>
         <li v-on:click="redirect('Team')">Equipa</li>
+        <!-- <li v-on:click="redirect('Projects')">Projetos</li> -->
+
       </ul>
     </div>
   </div>
