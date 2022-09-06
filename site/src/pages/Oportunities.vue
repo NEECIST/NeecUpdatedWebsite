@@ -12,7 +12,7 @@
             <img src="../assets/oportunities.jpg"/>
         </div>
 
-        <div class="team">
+        <div class="team" v-if="initialized">
              <ul v-if="cardList && cardList.length" style="list-style: none;display: flex; flex-direction: row; flex-wrap: wrap;">
                 <li v-for="(card,card_id) in cardList" :key="card_id" style=" flex: 0 1 50%;padding-bottom: 10px;">
                     <div class="card" >       
@@ -22,45 +22,51 @@
                 </li>
             </ul>
         </div>
+        <div v-else>
+            <PulseLoader :color="'#009DE0'"></PulseLoader>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 
 export default {
-  name: "oportunities-page",
-  data() {
-      return {
-        cardList: []
-      }
-  },
-  created(){
-    axios.get("https://api.trello.com/1/lists/620256ba93c9f35b1c4c54ac/cards?attachments=true")
-    .then(response => {
-        for(var i =0; i<response.data.length; i++){
-            this.cardList.push({id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, desc:response.data[i].desc})
-        }
-    // JSON responses are automatically parsed.
-    })
-  },
-  methods:{
-    curateCardText(List) {
-        List.forEach(element => {
-            element.desc=this.linkify(element.desc)
+    name: "oportunities-page",
+    data() {
+        return {
+            initialized: false,
+            cardList: []
+        };
+    },
+    created() {
+        axios.get("https://api.trello.com/1/lists/620256ba93c9f35b1c4c54ac/cards?attachments=true")
+            .then(response => {
+            for (var i = 0; i < response.data.length; i++) {
+                this.cardList.push({ id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, desc: response.data[i].desc });
+            }
+        }).finally(() => {
+            this.initialized = true;
         });
     },
-    linkify(inputText) {
-        //eslint-disable-next-line
-        const pattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-        let text = inputText.replace(pattern1, '<a href="$1" target="_blank">$1</a>');
-        //eslint-disable-next-line
-        const pattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-        text = text.replace(pattern2, '$1<a href="http://$2" target="_blank">$2</a>');
-        
-        return text;
-    }
-  }
+    methods: {
+        curateCardText(List) {
+            List.forEach(element => {
+                element.desc = this.linkify(element.desc);
+            });
+        },
+        linkify(inputText) {
+            //eslint-disable-next-line
+            const pattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+            let text = inputText.replace(pattern1, "<a href=\"$1\" target=\"_blank\">$1</a>");
+            //eslint-disable-next-line
+            const pattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
+            text = text.replace(pattern2, "$1<a href=\"http://$2\" target=\"_blank\">$2</a>");
+            return text;
+        }
+    },
+    components: { PulseLoader }
 };
 </script>
 

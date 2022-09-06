@@ -2,45 +2,52 @@
     <div class="team-app" :style="{padding: '10px',paddingTop: '4vw', paddingBottom: '200px', fontFamily: 'Roboto'}">
         <h2>Conhece a nossa equipa!</h2>         
         <div class="team">
-            <div class="team-flex">
-                <div v-for="member in board" :key='member["id"]' data-aos="zoom-in">
-                    <div >
-                        <div :style="{fontSize:'20px'}">
-                        <h3 v-if="member.team.includes('tesoureiro')">Tesoureira</h3>                   
-                        <h3 v-if="member.team.includes('presidente')">Presidente</h3>                   
+            <div v-if="initialized">
+                <div class="team-flex">
+                    <div v-for="member in board" :key='member["id"]' data-aos="zoom-in">
+                        <div >
+                            <div :style="{fontSize:'20px'}">
+                            <h3 v-if="member.team.includes('tesoureiro')">Tesoureira</h3>                   
+                            <h3 v-if="member.team.includes('presidente')">Presidente</h3>                   
+                            </div>
+                        </div>
+                        <div class="teams_container">
+                            <div class="team-member">
+                                <img :src='member[`url`]'>
+                            </div>        
+                        </div>
+                        <div class="team-member-name">
+                            <p class="member-name">{{ member.name }}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+         
+                <div class="team-flex">
+                    <div v-for="member in members" :key='member["id"]' data-aos="zoom-in">
+                        <div class="teams_container">
+                            <div class="team-member">
+                                <img :src='member[`url`]'>
+                            </div>        
+                        </div>
+                        <div class="team-member-name">
+                            <p class="member-name">{{ member.name }}</p>
+                        </div>
+                        <div >
+                            <p :style="{fontSize:'30px', marginTop: '0px', paddingTop: '0px'}">
+                            <a href="#team-explaination"><i v-if="member.team.includes('NEECIT')" class="fa-solid fa-laptop-code team-badge" :style="{paddingRight: '4px'}"></i></a>
+                            <a href="#team-explaination"><i v-if="member.team.includes('Design')" class="fa-solid fa-pen team-badge" :style="{paddingRight: '4px'}"></i></a>
+                            <a href="#team-explaination"><i v-if="member.team.includes('Divulgacao')" class="fa-solid fa-newspaper team-badge" :style="{paddingRight: '4px'}"></i></a>
+                            <a href="#team-explaination"><i v-if="member.team.includes('Multimedia')" class="fa-solid fa-video team-badge" :style="{paddingRight: '4px'}"></i></a>                   
+                            </p>
                         </div>
                     </div>
-                    <div class="teams_container">
-                        <div class="team-member">
-                            <img :src='member[`url`]'>
-                        </div>        
-                    </div>
-                    <div class="team-member-name">
-                        <p class="member-name">{{ member.name }}</p>
-                    </div>
-                    
                 </div>
             </div>
-            <div class="team-flex">
-                <div v-for="member in members" :key='member["id"]' data-aos="zoom-in">
-                    <div class="teams_container">
-                        <div class="team-member">
-                            <img :src='member[`url`]'>
-                        </div>        
-                    </div>
-                    <div class="team-member-name">
-                        <p class="member-name">{{ member.name }}</p>
-                    </div>
-                    <div >
-                        <p :style="{fontSize:'30px', marginTop: '0px', paddingTop: '0px'}">
-                        <a href="#team-explaination"><i v-if="member.team.includes('NEECIT')" class="fa-solid fa-laptop-code team-badge" :style="{paddingRight: '4px'}"></i></a>
-                        <a href="#team-explaination"><i v-if="member.team.includes('Design')" class="fa-solid fa-pen team-badge" :style="{paddingRight: '4px'}"></i></a>
-                        <a href="#team-explaination"><i v-if="member.team.includes('Divulgacao')" class="fa-solid fa-newspaper team-badge" :style="{paddingRight: '4px'}"></i></a>
-                        <a href="#team-explaination"><i v-if="member.team.includes('Multimedia')" class="fa-solid fa-video team-badge" :style="{paddingRight: '4px'}"></i></a>                   
-                        </p>
-                    </div>
-                </div>
+            <div :style="{display: 'flex',justifyContent: 'center'}" v-else >
+                <PulseLoader :color="'#009DE0'"></PulseLoader>
             </div>
+            
             <h2 :style="{paddingTop: '50px'}">
                 Interessado/a nas funções de cada uma das equipas?
             </h2>
@@ -89,36 +96,40 @@
 <script>
 import 'vue3-carousel/dist/carousel.css';
 import axios from 'axios';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 export default {
-  name: "team-page",
-  data() {
-      return {
-        default_avatar: 'https://avatars.githubusercontent.com/u/51272291?v=4',
-        members:[],
-        board:[],
-        teamsData:[
-            {title: 'Design', desc: 'Design é a equipa que trata da imagem do núcleo. Utiliza ferramentas como Adobe Illustrator e Canva para fazer os nossos posts, stickers, flyers, posters, e muito mais.'},
-            {title: 'NEECIT', desc: 'O NEEC IT é a nossa equipa de desenvolvimento e de manutenção dos serviços do núcleo, como por exemplo a drive, o discord, e este mesmo site. Desenvolvemos também projetos mais pessoais que apresentamos na nossa banca em eventos oficiais, tais como o NEECBoto, o LevitaNEEC e o NEECQuick.'},
-            {title: 'Multimédia', desc: 'Muito como o Design, Multimédia também lida com o conteúdo que lançamos ao público mas mais focado em conteúdo vídeo. Esta é a equipa que trata dos nossos vídeos, recaps de eventos, e que organiza o nosso podcast - as NEECTalks!'},
-            {title: 'Divulgação', desc: 'A equipa de Divulgação é a equipa que gere as nossas redes sociais e caixa de entrada. É a equipa que contacta com o exterior e que trabalha para trazer oportunidades de estágios, bolsas, eventos, e tudo o que seja do interesse dos alunos do nosso curso.'}
-        ],
-      }
+    name: "team-page",
+    data() {
+        return {
+            initialized: false,
+            members: [],
+            board: [],
+            teamsData: [
+                { title: "Design", desc: "Design é a equipa que trata da imagem do núcleo. Utiliza ferramentas como Adobe Illustrator e Canva para fazer os nossos posts, stickers, flyers, posters, e muito mais." },
+                { title: "NEECIT", desc: "O NEEC IT é a nossa equipa de desenvolvimento e de manutenção dos serviços do núcleo, como por exemplo a drive, o discord, e este mesmo site. Desenvolvemos também projetos mais pessoais que apresentamos na nossa banca em eventos oficiais, tais como o NEECBoto, o LevitaNEEC e o NEECQuick." },
+                { title: "Multimédia", desc: "Muito como o Design, Multimédia também lida com o conteúdo que lançamos ao público mas mais focado em conteúdo vídeo. Esta é a equipa que trata dos nossos vídeos, recaps de eventos, e que organiza o nosso podcast - as NEECTalks!" },
+                { title: "Divulgação", desc: "A equipa de Divulgação é a equipa que gere as nossas redes sociais e caixa de entrada. É a equipa que contacta com o exterior e que trabalha para trazer oportunidades de estágios, bolsas, eventos, e tudo o que seja do interesse dos alunos do nosso curso." }
+            ],
+        };
     },
-    created(){
+    created() {
         axios.get("https://api.trello.com/1/lists/6235338fec5f311934a4d0c6/cards?attachments=true")
-        .then(response => {
-            for(var i =0; i<response.data.length; i++){
-                var teams = []
+            .then(response => {
+            for (var i = 0; i < response.data.length; i++) {
+                var teams = [];
                 response.data[i].labels.forEach((x) => teams.push(x.name));
-                if(teams.includes('tesoureiro') ||teams.includes('presidente')){
-                    this.board.push({id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, team:teams})
-                }else{
-                    this.members.push({id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, team:teams})
+                if (teams.includes("tesoureiro") || teams.includes("presidente")) {
+                    this.board.push({ id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, team: teams });
+                }
+                else {
+                    this.members.push({ id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, team: teams });
                 }
             }
-        
-        })
+        }).finally(()=>{
+          this.initialized = true
+        });
     },
+    components: { PulseLoader }
 };
 </script>
 

@@ -1,7 +1,10 @@
 <template>
   <div class="home-app">
-    <div class="carousel">
+    <div class="carousel" v-if="initialized">
       <Carousel :settings="settings" :breakpoints="breakpoints"/>
+    </div>
+    <div v-else>
+      <PulseLoader :color="'#009DE0'"></PulseLoader>
     </div>
   </div>
     <div class="container" :style="{padding: '10px', paddingBottom: '200px'}">
@@ -115,80 +118,21 @@
 
 <script>
 import Carousel from '../components/Carousel'
-import arduino from "../assets/Activities/Arduino.png"
-import GoogleDrive from "../assets/Activities/GoogleDrive.png"
-import ISTSI from "../assets/Activities/ISTSI.png"
-import NEEC_Logo from "../assets/Logos/NEEC_Logo.png"
+
 import axios from 'axios';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 
 export default {
   name: "home-page",
   components: {
     Carousel,
-  },
+    PulseLoader
+},
   data() {
     return {
       hovering:-1,
       activities_image:'Activities/WhitePane.jpg',
-      drive:{
-        image: GoogleDrive,
-        link: "https://drive.google.com/drive/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz",
-        link_message: "Aceder",
-        main_color: "#1FA463",
-        secondary_color: "#FFD04B",
-        top: 55,
-        left: 50,
-        zoom_height: 350,
-        zoom_position: 85,
-        title: "NEEC Drive",
-        description: "Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras! Aulas, problemas, testes e exames, tanto de licenciatura como de mestrado. Também podes contribuir com material teu!",
-        left_padding: 0,
-        right_padding: 240,
-        top_flatted_screen: 114,
-      },
-      arduino:{
-        image: arduino,
-        redirect_function: 'Projects',
-        link_message: "Visitar",
-        main_color: "#D0F2F2",
-        secondary_color: "#00979C",
-        top: 50,
-        left: 50,
-        image_height: 250,
-        zoom_height: 235,
-        zoom_position: 85,
-        title: "Projetos",
-        description: "Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda. Inspira-te em alguns dos nossos projetos internos ou inscreve-te nos nossos workshops!",
-        left_padding: 0,
-        right_padding: 250,
-        top_flatted_screen: 116,
-      },
-      ISTSI:{
-        image: ISTSI,
-        main_color: "#7c587f",
-        secondary_color: "#a4bcbc",
-        title: "ISTSI",
-        description: "Queres experienciar o mundo de trabalho? Entra em contacto e candidata-te para estagiar no verão em empresas ligadas a todos os ramos de engenharia, para poderes enriquecer a tua experiência profissional.",
-        left_padding: 0,
-        right_padding: 225,
-        zoom_height: 400,
-        zoom_position: 85,
-        top_flatted_screen: 120,
-      },
-      recrutamento:{
-        image: NEEC_Logo,
-        link: "mailto:contemcomigo@neecist.org",
-        link_message: "Candidatar",
-        main_color: "#F0FFF0",
-        secondary_color: "#C0C0C0", //#009DE0
-        zoom_height: 325,
-        zoom_position: 85,
-        title: "Recrutamento",
-        description: "O NEEC está a recrutar! Se queres pertencer ao nosso núcleo, envia a tua carta de motivação! As inscrições fecham à meia noite de domingo, 10/04.",
-        left_padding: 0,
-        right_padding: 250,
-        top_flatted_screen: 115
-      },
+      initialized: false,
       settings:{
             itemsToShow:1,
             itemsToScroll:1,
@@ -222,7 +166,9 @@ export default {
         .then(response => {
             console.log(response.data)
         
-        })
+        }).finally(()=>{
+          this.initialized = true
+        });
     },
   methods: {
     updateActivities: function(entry){

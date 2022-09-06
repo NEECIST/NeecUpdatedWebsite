@@ -12,59 +12,55 @@
             <img src="../assets/computer.png"/>
         </div>
 
-        <div class="team">
+        <div  v-if="initialized" class="team">
              <ul v-if="cardList && cardList.length" style="list-style: none;display: flex; flex-direction: row; flex-wrap: wrap;">
                 <li v-for="(card,card_id) in cardList" :key="card_id" style=" flex: 0 1 50%;padding-bottom: 10px;">
                     <div class="card" >
                         <img v-if="card.image" :src="card.image"/>
                         <h2>{{card.name}}</h2>
                         <h4 v-if="card.subtitle">{{card.subtitle}}</h4>
-                        <p><span v-html="card.desc"/></p>
+                        <p><span v-html="card.desc" /></p>
                     </div>
                 </li>
             </ul>
+        </div>
+        <div v-else>
+            <PulseLoader :color="'#009DE0'"></PulseLoader>
         </div>
     </div>
 </template>
 
 <script>
-import NEECTALKS from "../assets/Logos/NEECtalks.png"
-import NEECTVBGone from "../assets/Projects/tvbg.jpeg"
-import NEECPov from "../assets/Projects/pov.jpg"
-import NEEConsola from "../assets/Projects/NEEConsola.png"
-import NEECduino from "../assets/Projects/neecduino.png"
-import blinker from "../assets/Projects/blinker.jpg"
-import NEECathon from "../assets/Projects/neecathon_pug.png"
-import NEECReact from "../assets/Projects/NEECReact.jpg"
-import NEECuick from "../assets/Projects/NEECuick.jpg"
-import chaves from "../assets/Projects/chaves.jpg"
-import tiro from "../assets/Projects/tiro.jpg"
-import BanaNEEC from "../assets/Projects/BanaNEEC.jpg"
-import levitaNEEC from "../assets/Projects/levitaNEEC.jpg"
-import NEECSimon from "../assets/Projects/NEECSimon.jpg"
-
+// import NEECTALKS from "../assets/Logos/NEECtalks.png"
+// import NEECTVBGone from "../assets/Projects/tvbg.jpeg"
+// import NEECPov from "../assets/Projects/pov.jpg"
+// import NEEConsola from "../assets/Projects/NEEConsola.png"
+// import NEECduino from "../assets/Projects/neecduino.png"
+// import blinker from "../assets/Projects/blinker.jpg"
+// import NEECathon from "../assets/Projects/neecathon_pug.png"
+// import NEECReact from "../assets/Projects/NEECReact.jpg"
+// import NEECuick from "../assets/Projects/NEECuick.jpg"
+// import chaves from "../assets/Projects/chaves.jpg"
+// import tiro from "../assets/Projects/tiro.jpg"
+// import BanaNEEC from "../assets/Projects/BanaNEEC.jpg"
+// import levitaNEEC from "../assets/Projects/levitaNEEC.jpg"
+// import NEECSimon from "../assets/Projects/NEECSimon.jpg"
+import axios from 'axios';
+import PulseLoader from '../../node_modules/vue-spinner/src/PulseLoader.vue';
 export default {
   name: "projects-page",
   data() {
       return {
+        initialized: false,
         cardList: [
-            {name:'NEECathon',subtitle:"Uma Hackathon sem barreiras",desc:'Evento anual onde se simula uma componente de startup durante uma Hackaton de 48 horas.\n Para participar, só é necessário uma ideia.\nO NEEC trata do resto. Terás acesso a todos os componentes, todos o material necessário, apoio constante, impressoras 3D e comida à pala no local do evento.', image:NEECathon},
-            {name:'NEECTalks',subtitle:"Conversas sobre engenharia",desc:'Podcast onde discutimos projetos e tecnologia com convidados de renome de diversos contextos que envolvem a nossa área.\nSe és curioso e tens vontade de aprender, junta-te à conversa!\n\nSpotify: https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu\nYoutube: https://www.youtube.com/user/NEECIST/videos', image:NEECTALKS},
-            {name:'NEECReact',subtitle:'Um jogo de reação a dois',desc:'Junta-te a um amigo e confirma de uma vez por todas quem é o mais rápido!\n Usando apenas um neecduino, uma breadboard, resistências e LEDs, os jogadores têm que retirar as 3 vidas do adversário dependendo do comando gerado pelo LED central.', image:NEECReact},
-            {name:'NEECuick',subtitle:'Um jogo de memória e reação viciante',desc:'Se queres o jogo mais desafiante do NEEC, não procures mais.\n⚠️Necessário: Reação,Concentração,Memorização⚠️\n\n Um jogo criado somente com um neecduino,breadboard, LEDs e condensadores. É necessário clicar no botão correto consoante o LED que se acende, antes que o contador chegue a zero.', image:NEECuick},
-            {name:'NEEConsola',subtitle:'(Em desenvolvimento)',desc:'', image:NEEConsola},
-            {name:'LevitaNEEC',subtitle:'(Em desenvolvimento)',desc:'Consiste na construção de uma plataforma levitadora que é controlada através de campos eletromagnéticos criados por ímans e bobinas da base.\nTambém tem uma componente de IoT em que pretendemos mostrar valores lidos por sensores de hall utilizados para ajustar o controlador da plataforma levitadora e talvez controlar os movimentos da própria plataforma através de uma aplicação móvel.', image:levitaNEEC},
-            {name:'Sensor de Chaves',subtitle:null,desc:'Agora é possível saber sempre quando a sede do NEEC está aberta. Se vires um luz verde no estado da sede, alguém estará disponível para te ajudar!', image:chaves},
-            {name:'BanaNEEC',subtitle:null,desc:'Um projeto educativo para cultivar o interesse na ciência nos mais novos.\nCom um simples neecduino e um cacho de bananas, é possível fazer um instrumento musical ao alcance de todos.', image:BanaNEEC},
-            {name:"Tir'o NEEC",subtitle:'Testa a tua pontaria contra os teus amigos!',desc:'Com o uso de um neecduino, resistências LDR e um laser, criámos um jogo de tiro ao alvo. As pontuações atingidas dentro de um limite de tempo são utilizadas em eventos do NEEC.', image:tiro},
-            {name:'NEECduino',subtitle:'Um arduino que podes construir com o apoio do NEEC',desc:'Um dispositivo barato, funcional e fácil de programar, acessível a estudantes e projetistas amadores. Aprende a soldar e a programar um arduino desde raiz, com um apoio pessoal e personalizado atravês dos workshops do NEEC.\n\nA placa é composta por um microcontrolador, circuitos de entrada/saída, podendo ser facilmente conectada a um computador e programada via IDE utilizando uma linguagem baseada em C/C++.', image:NEECduino},
-            {name:'Blinker',subtitle:'O teu primeiro contacto com o NEEC',desc:'Um simples circuito eletrónico que pode ser montado em minutos, que podes levar na roupa para representar MEEC!', image:blinker},
-            {name:'NEECSimon',subtitle:'Jogo do Simon Says (Em desenvolvimento)',desc:'O famoso jogo agora numa consola portátil!', image:NEECSimon},
-            {name:'TVBGone',subtitle:null,desc:'O TV-Bgone é um controlo remoto universal para ligar ou desligar qualquer televisão!\nQuando ligado,começa a percorrer uma sequencia de códigos que controlam a função POWER de vários modelos de televisões. Estes códigos são enviados para os LEDs de Infra-Vermelho ligados à placa.', image:NEECTVBGone},
-            {name:'POV',subtitle:null,desc:'Display de LEDs que, piscando a uma frequência elevada, consegue escrever mensagens de luz no ar.', image:NEECPov},
+          
         ]
       }
   },
+  components:{
+    
+    PulseLoader
+},
   methods:{
     curateCardText(List) {
         List.forEach(element => {
@@ -84,7 +80,16 @@ export default {
   },
   mounted(){
     this.curateCardText(this.cardList);
-  }
+  },created(){
+        axios.get("https://api.trello.com/1/lists/62ab561ec85b68533787cf3c/cards?attachments=true")
+        .then(response => {
+            response.data.forEach(element => {
+              this.cardList.push({name: element.name, image: element.attachments[0].url, desc :this.linkify(element.desc)})
+            });
+        }).finally(()=>{
+          this.initialized = true
+        })
+    }
 };
 </script>
 
