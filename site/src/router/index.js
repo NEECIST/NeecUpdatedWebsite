@@ -6,6 +6,7 @@ import Team from '@/pages/Team'
 import Oportunities from '@/pages/Oportunities'
 import Projects from '@/pages/Projects'
 //import Scores from '@/pages/Scores'
+import Form from '@/pages/Form'
 
 const routes = [
     {
@@ -31,6 +32,11 @@ const routes = [
         path: '/projects',
         name: 'Projects',
         component: Projects
+    },
+    {
+        path: '/form',
+        name: 'Form',
+        component: Form
     },
     
 ]

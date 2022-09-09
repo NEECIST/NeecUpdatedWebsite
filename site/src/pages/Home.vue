@@ -6,14 +6,18 @@
     <div v-else>
       <PulseLoader :color="'#009DE0'"></PulseLoader>
     </div>
-  </div>
+    <div class="announcement">
+      <a class="hover-underline-animation" href="/form">Inscreve-te agora na nossa newsletter!</a>
+    </div>
+  
     <div class="container" :style="{padding: '10px', paddingBottom: '200px'}">
         <div class="activities-row" >
             <div class="col iconss" data-aos="fade-right" :style="{display: 'flex', flexDirection: 'row-reverse'}">
-              <div :style="{display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center'}" >
+              <div class="icon-holder" :style="{display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center'}" >
                 <i class="fa-solid fa-people-group fa-10x icon"></i>
 
               </div>
+
             </div>
             <div class="vl"></div>
             <div class="col" data-aos="fade-left">
@@ -35,7 +39,7 @@
             </div>
             <div class="vl"></div>
             <div class="col iconss" data-aos="fade-left"  :style="{display: 'flex', flexDirection: 'row'}">
-              <div :style="{display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center'}" >
+              <div class="icon-holder" :style="{display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center'}" >
 
                 <i class="fa-solid fa-gear fa-10x icon" ></i>
                 </div>
@@ -43,7 +47,7 @@
         </div>
         <div class="activities-row" >
             <div class="col iconss" data-aos="fade-right" :style="{display: 'flex', flexDirection: 'row-reverse'}">
-              <div :style="{display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center'}" >
+              <div class="icon-holder" :style="{display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center'}" >
                 <i class="fa-solid fa-folder-open fa-10x icon" ></i>
 
               </div>
@@ -69,7 +73,7 @@
             </div>
             <div class="vl"></div>
             <div class="col iconss" data-aos="fade-left"  :style="{display: 'flex', flexDirection: 'row'}">
-              <div :style="{display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center'}" >
+              <div class="icon-holder" :style="{display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center'}" >
 
                 <i class="fa-solid fa-id-badge fa-10x icon" ></i>
                 </div>
@@ -77,7 +81,7 @@
         </div>
         <div class="activities-row" >
             <div class="col iconss" data-aos="fade-right" :style="{display: 'flex', flexDirection: 'row-reverse'}">
-              <div :style="{display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center'}" >
+              <div class="icon-holder" :style="{display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center'}" >
                 <i class="fa-solid fa-microchip fa-10x icon"></i>
 
               </div>
@@ -106,14 +110,14 @@
             </div>
             <div class="vl"></div>
             <div class="col iconss" data-aos="fade-left"  :style="{display: 'flex', flexDirection: 'row'}">
-              <div :style="{display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center'}" >
+              <div class="icon-holder" :style="{display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center'}" >
 
                 <iframe id="NEECtalksPlayer" :src="episode" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" frameBorder="0"></iframe>
                 </div>
             </div>
         </div>
    </div>
- 
+ </div>
 </template>
 
 <script>
@@ -170,24 +174,6 @@ export default {
           this.initialized = true
         });
     },
-  methods: {
-    updateActivities: function(entry){
-      this.hovering=entry;
-      if(entry===0){
-        this.activities_image='Activities/Drive.png';
-      }else if(entry===1){
-        this.activities_image='Activities/ISTSI.jpg';
-      }else if(entry===2){
-        this.activities_image='Activities/projects.jpg';
-      }else if(entry===3){
-        this.activities_image='NEECteam.png';
-      }
-    },
-    redirect(page) {
-      this.show_menu = false;
-      this.$router.push({ name: page });
-    }
-  }
 };
 </script>
 
@@ -255,115 +241,44 @@ background-color:white;
 padding-left:10px;
 padding-right:10px;
 }
-
-.activities-board{
-    margin-top: 60px;
-    padding: 40px;
-}
-
-.activities-board .card-row{
+.announcement{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin:auto;
-}
+  align-items: center;
+  justify-content: center;
+  background-color: #303633;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
-.activities-board .card-row .card{
-  flex: 1;
+  white-space: nowrap; 
 }
-
-.activities-board .card-row .single-card{
-  flex: 0;
+.announcement a{
+  color: white;
+  font-size: 2rem;
 }
-
-.activities-board .card-row .card:first-child {
-  margin-right: 0px;
-} 
-.activities-container{
-  width:100%;
-  height: 75vh;
-  overflow:hidden;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  transition: 0.5s;
-}
-.activities-container .activities-column{
-  width:25%;
-  height: 100%;
-  float:left;
-  border-right: 2px solid rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-  z-index: 1;
-}
-.activities-container .activities-column:last-child{
-  border-right: none;
-}
-.activities-container .activities-column .activities-content{
+.hover-underline-animation {
+  display: inline-block;
   position: relative;
-  height: 50%;
+  color: #fff;
 }
-.activities-container .activities-column .activities-content h1{
+
+.hover-underline-animation:after {
+  content: '';
   position: absolute;
-  top: 50%;
-  transform: translateY(-20%);
-  background: rgba(0, 0, 0, 0.1);
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(173, 173, 173, 0.4);
-  font-size: 4em;
-  border-top: 2px solid rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-  height:276px;
-  /*margin-block-start: 0.67em;
-  margin-block-end: 0.67em;*/
+  transform: scaleX(0);
+  height: 0.2rem;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
-.activities-container .activities-column .activities-content .box{
-  width: 100%;
-  height: 111%;
-  position: absolute;
-  top: 95%;
-  transform: translateY(100%);
-  box-sizing: border-box;
-  padding:40px;
-  background: rgba(200, 200, 200,1);
-  transition: 0.5s;
-  margin:0;
-  padding:0;
-  opacity: 0;
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
-.activities-container .activities-column.active .activities-content .box{
-  opacity: 0.95;
-  transform: translateY(-50%);
-  background-color: snow;
-}
-.activities-container .activities-column .activities-content .box h2{
-  margin:0;
-  padding:0;
-  font-size: 30px;
-  color: #262626;
-}
-.activities-container .activities-column .activities-content .box p{
-  font-size: 18px;
-  color: #262626;
-}
-.activities-container .activities-column.active .bg{
-  position: absolute;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.talksrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 350px;
-}
+
 .activities-row {
   display: flex;
   align-items: center;
@@ -376,118 +291,13 @@ padding-right:10px;
   justify-content: center;
   height: 150px;
 }
-.NEEC-talks {
-  background-image: url(../assets/brickWall.png);
-  background-size: cover;
-  margin-bottom: 1vh;
-}
-.NEEC-talks li{
-  display: inline;
-  white-space: nowrap
-}
-.NEEC-talks iframe{
-  border-radius:12px;
-  width:75%;
-  height:232px;
-}
+
 #NEECtalksPlayer{
   border-radius:12px;
   width:75%;
   height:232px;
 }
-#NEECtalksLOGO{
-  width:95%;
-  text-align:center;
-  align-items:center;
-  flex-direction:row;
-  display:flex;
-  justify-content:left;
-}
-#NEECtalksLinks{
-  margin-left: 10vw;
-  margin-right: 8vw;
-}
-#NEECtalksSpotify{
-  animation: flickerSpotify 1.5s infinite alternate;
-  text-align:center;
-  align-items:center;
-  flex-direction:row;
-  display:flex;
-  justify-content:center;
-  font-size: 55px;
-  margin-bottom: 3.5vw;
-  color:#1db954;
-}
-#NEECtalksLatest{
-  animation: flickerLatest 1.5s infinite alternate;
-  text-align:center;
-  align-items:center;
-  flex-direction:row;
-  display:flex;
-  justify-content:center;
-  font-size: 100px;
-  color:#009DE0;
-  font-family: "Vibur", cursive;
-}
-#NEECtalksYoutube{
-  animation: flickerYoutube 1.5s infinite alternate;
-  text-align:center;
-  align-items:center;
-  flex-direction:row;
-  display:flex;
-  justify-content:center;
-  font-size: 55px;
-  margin-top: 3.5vw;
-  color:#ff0000;
-}
-@keyframes flickerSpotify {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    text-shadow:
-      0 0 4px rgb(125, 255, 212),
-      0 0 11px rgb(125, 255, 212),
-      0 0 19px rgb(125, 255, 212),
-      0 0 40px #1db954,
-      0 0 80px #1db954,
-      0 0 90px #1db954,
-      0 0 100px #1db954,
-      0 0 150px #1db954;
-  }
-  20%, 24%, 55% {       
-    text-shadow: none;
-  }
-}
-@keyframes flickerYoutube {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    text-shadow:
-      0 0 4px #ff846e,
-      0 0 11px #ff846e,
-      0 0 19px #ff846e,
-      0 0 40px #ff0000,
-      0 0 80px #ff0000,
-      0 0 90px #ff0000,
-      0 0 100px #ff0000,
-      0 0 150px #ff0000;
-  }
-  20%, 24%, 55% {       
-    text-shadow: none;
-  }
-}
-@keyframes flickerLatest {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    text-shadow:
-      0 0 4px #7cfbff,
-      0 0 11px #7cfbff,
-      0 0 19px #7cfbff,
-      0 0 40px #64e8ff,
-      0 0 80px #64e8ff,
-      0 0 90px #64e8ff,
-      0 0 100px #64e8ff,
-      0 0 150px #64e8ff;
-  }
-  20%, 24%, 55% {       
-    text-shadow: none;
-  }
-}
+
 .carousel{
     width:100%;
     justify-content: center;
@@ -495,16 +305,39 @@ padding-right:10px;
 }
 @media(max-width: 1200px)
 {
-  .activities-board .card-row .card{
-    flex: 0;
+
+  .icon-holder{
+    padding: 0px !important;
+    width: 100% !important;
   }
+  .col{
+    width: 100%
+  }
+  .announcement a{
+ text-decoration: underline;
+ 
+}
+.hover-underline-animation:after{
+  display: none;
+}
 }
 @media(max-width: 990px)
 {
-  .activities-board{
-    padding-top: 5px;
-    padding-bottom: 210px;
+
+  .icon-holder{
+    padding: 0px !important;
+    width: 100% !important;
+
   }
+  .col{
+    width: 100%
+  }
+  .announcement a{
+ text-decoration: underline;
+}
+.hover-underline-animation:after{
+  display: none;
+}
 }
 
 </style>
