@@ -7,6 +7,7 @@ import Oportunities from '@/pages/Oportunities'
 import Projects from '@/pages/Projects'
 //import Scores from '@/pages/Scores'
 import Form from '@/pages/Form'
+import Certificate from '@/pages/Certificate'
 
 const routes = [
     {
@@ -37,7 +38,15 @@ const routes = [
         path: '/form',
         name: 'Form',
         component: Form
-    },
+    },{ 
+        path: '/certificate', 
+        component: Error_Handling 
+    }
+    ,{
+        path: '/certificate/:id',
+        name: 'Certificate',
+        component: Certificate
+    }
     
 ]
 
