@@ -46,9 +46,6 @@ export default {
 
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-   .contacts-comp {
-	position: unset;
-    }
     .certificate-app{
     padding-top: 10vh;
     padding-bottom: 7vh;
@@ -65,7 +62,10 @@ export default {
    }
 </style>
 <style>
-
+#page {
+    display: flex;
+    flex-direction: column;
+}
 
 @media only screen and (max-width: 1080px){
     .contacts-comp .row .col-md-4:first-child {
@@ -74,5 +74,6 @@ export default {
    }
 .contacts-comp {
 	position: unset;
+	margin-top: auto;
 }
 </style>
