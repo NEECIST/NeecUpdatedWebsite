@@ -46,10 +46,33 @@ export default {
 
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-
+   .contacts-comp {
+	position: unset;
+    }
     .certificate-app{
-    padding-top: 4vw;
-    padding-bottom: 12vw;
+    padding-top: 10vh;
+    padding-bottom: 7vh;
     font-family: Roboto;
     } 
+    .certificate-app img{
+	width: 80vw;
+	box-shadow: 0 0 7px 3px #888;
+    }
+   @media only screen and (max-width: 1080px){
+    .certificate-app {
+         padding-top: 80px;
+    }
+   }
+</style>
+<style>
+
+
+@media only screen and (max-width: 1080px){
+    .contacts-comp .row .col-md-4:first-child {
+         display: none;
+    }
+   }
+.contacts-comp {
+	position: unset;
+}
 </style>
