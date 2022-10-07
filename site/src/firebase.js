@@ -1,14 +1,13 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/database";
-let config = {
-    apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
-    authDomain: "neec-chaves.firebaseapp.com",
-    databaseURL: "https://neec-chaves-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "neec-chaves",
-    storageBucket: "neec-chaves.appspot.com",
-    messagingSenderId: "823950398509",
-    appId: process.env.VUE_APP_FIREBASE_APP_ID,
-    measurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT_ID
+let config ={
+  apiKey: "AIzaSyD5glPSPEAf5PARDf5-_L2m6u76uco6BfA",
+  authDomain: "estado-sede.firebaseapp.com",
+  databaseURL: "https://estado-sede-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "estado-sede",
+  storageBucket: "estado-sede.appspot.com",
+  messagingSenderId: "286347567520",
+  appId: "1:286347567520:web:458fb56f986bca14fd44c5",
+  measurementId: "G-C94EQ4L921"
 };
 firebase.initializeApp(config);
-export default firebase.database();
