@@ -1,5 +1,5 @@
 import firebase from "../firebase";
-const db = firebase.ref("/Sede");
+const db = firebase.ref("/sede/aberta");
 class DataService {
   getAll() {
     return db;
