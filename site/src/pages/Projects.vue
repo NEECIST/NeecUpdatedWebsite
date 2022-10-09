@@ -4,7 +4,9 @@
         <div  v-if="initialized" class="projects-holder">
                 <div class="card" v-for="(card,card_id) in cardList" :key="card_id">
                     <div :style="{padding: '3vw'}">
-                        <img v-if="card.image" :src="card.image"/>
+                        <div class="img-box">
+                            <img v-if="card.image" :src="card.image"/>
+                        </div>
                         <h1 class="card-name">{{card.name}}</h1>
                         <p class="card-desc" v-html="card.desc"></p>
                     </div>
@@ -67,6 +69,7 @@ export default {
 </script>
 
 <style scoped>
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 .projects-app{
     /* background: rgba(0,157,224,1); */
@@ -93,20 +96,35 @@ font-family: 'Roboto', sans-serif;
     text-align: center;
     margin-top: 2vw;
     margin-bottom: 2vw;
-    width: 35%;
+    width: 30%;
     color: #ffffff;
     background-color: #303633;
 }
 
+.card .img-box{
+    height: 45vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
 .card img{
+    width: auto;
     border-radius: 12px;
+    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .card-name{
     font-family: 'Michroma', sans-serif;
 }
-.card-desc{    font-size: 1.2rem;
-    opacity: 0.8;}
+.card-desc{    
+    font-size: 1.2rem;
+    opacity: 0.8;
+    white-space: break-spaces;
+}
 
 
 @media screen and (max-width: 1200px) {
@@ -192,5 +210,11 @@ font-family: 'Roboto', sans-serif;
     .member-name{
         margin-left:6%;
     }
+}
+</style>
+
+<style> 
+a {
+    overflow-wrap: anywhere;
 }
 </style>
