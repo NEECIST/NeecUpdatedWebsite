@@ -6,15 +6,6 @@
         <img class="navbar-left-logo-mobile" :src="navbar_mobile_logo_link" />
       </router-link>
       
-      <div class="sedeStatus">
-        A Sede do NEEC está <div class="sedeBtnContainer">
-        <span  class="sedeBtn" v-bind:style= "boolean_sede_state ? {backgroundColor: `green`} : {backgroundColor: `red`}"/>
-       </div>
-      </div>
-    </div>
-
-    <div class="pagesBox">
-      
        <router-link router-link :to="{ name: 'Home' }">
         <div class="navbar-title">Home</div>
       </router-link>       
@@ -27,6 +18,15 @@
       <!-- <router-link router-link :to="{ name: 'Projects' }">
         <div class="navbar-title">Projetos</div>
       </router-link> -->
+    </div>
+
+    <div class="pagesBox">
+      <div class="sedeStatus">
+        A Sede do NEEC está <div class="sedeBtnContainer">
+        <span  class="sedeBtn" v-bind:style= "boolean_sede_state ? {backgroundColor: `green`} : {backgroundColor: `red`}"/>
+       </div>
+      </div>
+      
     </div>
     <div id="menuToggle">
       <input type="checkbox" :checked="show_menu" v-on:click="show_menu = !show_menu" />
@@ -43,6 +43,7 @@
       </ul>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -65,33 +66,56 @@ export default {
   },
   methods: {
     onDataChange(items) {
-      let payload = [];
-      items.forEach((item) => {
-        let key = item.key;
-        let data = item.val();
-        payload.push({
-          key: key,
-          status: data,
-        });
-      });
-      this.sede_state = payload;
-      this.boolean_sede_state = this.sede_state[0].status==='True'
+      //let payload = [];
+      // items.val().forEach((item) => {
+      //   let key = item.key;
+      //   let data = item.val();
+      //   payload.push({
+      //     key: key,
+      //     status: data,
+      //   });
+      // });
+      // console.log(items.val());
+      // this.sede_state = payload;
+      this.boolean_sede_state = items.val()['aberta'] === 'True';
     },
     redirect(page) {
       this.show_menu = false;
       this.$router.push({ name: page });
+    },
+    handleScroll() {
+      if (window.scrollY > 710) {
+        document.getElementById("navbar").classList.add("dark");
+        document.getElementById("menu").classList.add("dark");
+      } else {
+        document.getElementById("navbar").classList.remove("dark");
+        document.getElementById("menu").classList.remove("dark");
+      }
     }
   },
   mounted(){
+    window.addEventListener('scroll', this.handleScroll);
     DataService.getAll().on("value", this.onDataChange);
   },
   beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
     DataService.getAll().off("value", this.onDataChange);
   }
 };
 </script>
 
-<style>´
+<style>
+#navbar.dark{
+  background-color: #383838;
+  color:#fff;
+}
+#menu.dark{
+  background-color: #383838;
+  color:#fff;
+}
+#navbar.dark > .nameState  .navbar-title{
+  color:#fff;
+}
 
 a, a:-webkit-any-link {
 text-decoration: none;
@@ -126,12 +150,11 @@ text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 35%;
 }
 
 .sedeStatus{
  font-weight: bold;
- margin-left: 3vw;
+ margin-right: 3vw;
  font-size: larger;
  display: flex;
  align-items: center;
@@ -199,7 +222,7 @@ text-decoration: none;
 }
 
 .navbar-title {
-  color: black;
+  color:   #2c3e50;
   font-family: 'Roboto', sans-serif;
   -o-transition: 0.2s;
   -ms-transition: 0.2s;
@@ -207,7 +230,8 @@ text-decoration: none;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: 19px;
-  padding-right: 3vw;
+  padding-inline: 3vw 1vw;
+  font-weight: bold;
   
 }
 .navbar-title:hover {
