@@ -3,7 +3,7 @@
 
         <div  v-if="initialized" class="projects-holder">
                 <div class="card" v-for="(card,card_id) in cardList" :key="card_id">
-                    <div :style="{padding: '3vw'}">
+                    <div class="inner-card">
                         <div class="img-box">
                             <img v-if="card.image" :src="card.image"/>
                         </div>
@@ -83,24 +83,30 @@ font-family: 'Roboto', sans-serif;
     padding-bottom: 190px;
     padding-top: 100px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-evenly;
+    align-items: stretch;
 }
 
 .card {
     border-radius: 32px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;    
+    box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     text-align: center;
     margin-top: 2vw;
-    margin-bottom: 2vw;
-    width: 30%;
+    margin-inline: 3vw;
+    height: 35vh;
     color: #ffffff;
     background-color: #303633;
 }
 
+.card .inner-card{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .card .img-box{
     height: 45vh;
     align-items: center;
