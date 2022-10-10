@@ -108,9 +108,13 @@ font-family: 'Roboto', sans-serif;
     align-items: center;
 }
 .card .img-box{
-    height: 45vh;
-    align-items: center;
+    height: 90%;
+    width: 20vw;
+    flex-shrink: 0;
     display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
     justify-content: center;
 }
 
@@ -125,11 +129,14 @@ font-family: 'Roboto', sans-serif;
 
 .card-name{
     font-family: 'Michroma', sans-serif;
+    padding-inline: 1vw;
+    flex-shrink: 0;
 }
 .card-desc{    
     font-size: 1.2rem;
     opacity: 0.8;
     white-space: break-spaces;
+    padding-inline: 1vw;
 }
 
 
