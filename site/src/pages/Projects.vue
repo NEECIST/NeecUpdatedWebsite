@@ -222,5 +222,6 @@ font-family: 'Roboto', sans-serif;
 <style> 
 a {
     overflow-wrap: anywhere;
+    color:aqua;
 }
 </style>
