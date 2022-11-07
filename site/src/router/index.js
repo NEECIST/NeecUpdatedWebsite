@@ -5,6 +5,7 @@ import Error_Handling from '@/pages/Error_Handling'
 import Team from '@/pages/Team'
 import Oportunities from '@/pages/Oportunities'
 import Projects from '@/pages/Projects'
+import Drive from '@/pages/Drive'
 //import Scores from '@/pages/Scores'
 import Form from '@/pages/Form'
 import Certificate from '@/pages/Certificate'
@@ -49,7 +50,8 @@ const routes = [
     }
     , {
         path: '/redirect/drive',
-        redirect: 'https://drive.google.com/open?id=1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz'
+        name: 'Drive',
+        component: Drive
     }
 
 ]
