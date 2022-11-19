@@ -26,7 +26,7 @@
             </div>
         </div>
       </div>
-      <div v-if="initialized1 && initialized2" :style="{overflow: 'scroll', width:'100%'}">
+      <div v-if="initialized1 && initialized2" :style="{overflow: 'auto', width:'100%'}">
         <div class="table100" >
           <table>
             <thead>
