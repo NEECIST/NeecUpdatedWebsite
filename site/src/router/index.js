@@ -56,7 +56,7 @@ const routes = [
     }
     , {
         path: '/copa',
-        name: 'Copa 2022',
+        name: 'Copa',
         component: Copa
     }
 
