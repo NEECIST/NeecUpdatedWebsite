@@ -138,7 +138,7 @@ export default {
       .then((json) => {
         updated = json;
       }).then(() => {
-        updated.result = e.target.innerText;
+        updated.final = e.target.innerText;
         fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
           method: "PUT",
           headers: {
@@ -146,7 +146,7 @@ export default {
           },
           body: JSON.stringify(updated),
         });
-        this.matches[match].result = e.target.innerText;
+        this.matches[match].final = e.target.innerText;
       });
     }
   },
