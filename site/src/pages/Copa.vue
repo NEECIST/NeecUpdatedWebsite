@@ -100,7 +100,7 @@ export default {
       });
       this.passwords.push({ name: this.username, password: this.password });  
       
-      fetch("http://copa22.midas-cloud.xyz/passwords", {
+      fetch("https://copa22.midas-cloud.xyz/passwords", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -115,13 +115,13 @@ export default {
       var name = e.target.className;
       this.matches[match].bets[name] = e.target.innerText;
 
-      fetch(`http://copa22.midas-cloud.xyz/jogos/${match}`)
+      fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
       .then((response) => response.json())
       .then((json) => {
         updated = json;
       }).then(() => {
         updated.bets[name] = e.target.innerText;
-        fetch(`http://copa22.midas-cloud.xyz/jogos/${match}`, {
+        fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -136,7 +136,7 @@ export default {
     }
   },
   created() {
-    fetch("http://copa22.midas-cloud.xyz/jogos")
+    fetch("https://copa22.midas-cloud.xyz/jogos")
       .then((response) => response.json())
       .then((json) => {
         json.forEach((match) => {
@@ -146,7 +146,7 @@ export default {
       .finally(() => {
         this.initialized1 = true;
       });
-    fetch("http://copa22.midas-cloud.xyz/passwords")
+    fetch("https://copa22.midas-cloud.xyz/passwords")
       .then((response) => response.json())
       .then((json) => {
         this.passwords = json;
