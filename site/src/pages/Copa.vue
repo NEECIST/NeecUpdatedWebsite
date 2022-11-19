@@ -58,7 +58,7 @@
 <script>
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 export default {
-  name: "team-page",
+  name: "copa-page",
   data() {
     return {
       initialized1: false,
