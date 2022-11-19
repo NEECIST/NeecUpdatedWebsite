@@ -41,7 +41,7 @@
               <tr v-for="(match, id) in matches" :key="match.id">
                 <td>{{ match.date }}</td>
                 <td>{{ match.team1 }} vs {{ match.team2 }}</td>
-                <td>{{ match.final }}</td>
+                <td :match="id" @input="resultChange" :contenteditable="this.password == 'omelhor' ? true : false">{{ match.final }}</td>
                 <td v-for="person in passwords" :key="person.name" :class=[person.name] :match="id" @input="cellChange" :contenteditable="this.password == person.password ? true : false">{{ match.bets[person.name] }}</td>
               </tr>
             </tbody>
@@ -110,7 +110,6 @@ export default {
     },
     cellChange(e) {
       var updated;
-      console.log(e.target.innerText);
       var match = e.target.getAttribute("match");
       var name = e.target.className;
       this.matches[match].bets[name] = e.target.innerText;
@@ -131,8 +130,24 @@ export default {
         this.matches[match].bets = updated.bets;
       });
     },
-    saveChanges() {
-            
+    resultChange(e){
+      var updated;
+      var match = e.target.getAttribute("match");
+      fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
+      .then((response) => response.json())
+      .then((json) => {
+        updated = json;
+      }).then(() => {
+        updated.result = e.target.innerText;
+        fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updated),
+        });
+        this.matches[match].result = e.target.innerText;
+      });
     }
   },
   created() {
