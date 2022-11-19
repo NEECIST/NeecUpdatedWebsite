@@ -105,7 +105,7 @@ export default {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ name: this.username, password: this.password })
+        body: JSON.stringify({ name: this.username, password: window.btoa(this.password) })
       });
     },
     cellChange(e) {
@@ -165,6 +165,11 @@ export default {
       .then((response) => response.json())
       .then((json) => {
         this.passwords = json;
+        var decoded
+        for (var i = 0; i < this.passwords.length; i++) {
+          decoded = window.atob(this.passwords[i].password);
+          this.passwords[i].password = decoded;
+        }
       })
       .finally(() => {
         this.initialized2 = true;
