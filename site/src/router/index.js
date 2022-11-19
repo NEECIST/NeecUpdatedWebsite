@@ -55,7 +55,7 @@ const routes = [
         component: Drive
     }
     , {
-        path: '/copa-2022',
+        path: '/copa2022',
         name: 'Copa 2022',
         component: Copa
     }
