@@ -9,7 +9,6 @@
 
 <script>
 
-import PulseLoader from '../../node_modules/vue-spinner/src/PulseLoader.vue';
 export default {
   name: "projects-page",
   data() {
@@ -18,7 +17,6 @@ export default {
       }
   },
   components:{
-    PulseLoader
 },
   mounted(){
   },
