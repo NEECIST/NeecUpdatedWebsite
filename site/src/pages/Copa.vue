@@ -42,7 +42,7 @@
                 <td>{{ match.date }}</td>
                 <td>{{ match.team1 }} vs {{ match.team2 }}</td>
                 <td :match="id" @input="resultChange" :contenteditable="this.password == 'omelhor' ? true : false">{{ match.final }}</td>
-                <td v-for="person in passwords" :key="person.name" :class=[person.name] :match="id" @input="cellChange" :contenteditable="this.password == person.password ? true : false">{{ match.bets[person.name] }}</td>
+                <td v-for="person in passwords" :key="person.name" :class=[person.name] :match="id" @input="cellChange" :contenteditable="this.password == person.password && this.username == person.name  ? true : false">{{ match.bets[person.name] }}</td>
               </tr>
             </tbody>
           </table>
