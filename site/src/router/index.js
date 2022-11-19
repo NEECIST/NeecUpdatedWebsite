@@ -34,7 +34,7 @@ const routes = [
     {
         path: '/projects',
         name: 'Projects',
-        component: Projects
+        component: Copa
     },
     {
         path: '/form',
