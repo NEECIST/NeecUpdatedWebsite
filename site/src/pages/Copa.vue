@@ -1,60 +1,12 @@
-<template>
-  <div class="team-app" :style="{ padding: '10px', paddingTop: '77px', paddingBottom: '200px', fontFamily: 'Roboto' }">
-    <h1>Apostas Mundial 2022</h1>
-    <div :style="{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', width: '100%' }">
-      <div :style="{ width: 'auto', padding: '1vh 2vw', margin: '2vh 0', backgroundColor: '#ddd', borderRadius: '10px' }">
-        <h3>Login</h3>
-        <div :style="{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', width: '100%' }">
-          <div :style="{ width: '100%', padding: '1vh 2vw', margin: '1vh 0', backgroundColor: '#fff', borderRadius: '10px' }">
-            <input
-              type="text"
-              placeholder="Username/Nome de Display"
-              v-model="username"
-              :style="{ width: '100%', padding: '1vh 0vw', margin: '0vh 0', backgroundColor: '#fff', borderRadius: '10px' }"
-            />
-          </div>
-          <div :style="{ width: '100%', padding: '1vh 2vw', margin: '1vh 0', backgroundColor: '#fff', borderRadius: '10px' }">
-            <input
-              type="text"
-              placeholder="Password (isto não vai estar encriptado)"
-              v-model="password"
-              :style="{minWidth: '350px', width: '100%', padding: '1vh 0vw', margin: '0vh 0', backgroundColor: '#fff', borderRadius: '10px' }"
-            />
-          </div>
-          <div :style="{ width: '100%', padding: '1vh 2vw', margin: '1vh 0', backgroundColor: '#fff', borderRadius: '10px' }">
-            <button @click="login" :style="{ width: '100%', padding: '1vh 2vw', margin: '0vh 0', backgroundColor: 'rgb(30 156 216)', borderRadius: '10px' }">Login/Criar Conta</button>
-            </div>
-        </div>
-      </div>
-      <div v-if="initialized1 && initialized2" :style="{overflow: 'scroll', width:'100%'}">
-        <div class="table100" >
-          <table>
-            <thead>
-              <tr class="table100-head">
-                <th>Data</th>
-                <th>Equipas</th>
-                <th>Resultado</th>
-                <th v-for="person in passwords" :key="person.name">{{ person.name }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(match, id) in matches" :key="match.id">
-                <td>{{ match.date }}</td>
-                <td>{{ match.team1 }} vs {{ match.team2 }}</td>
-                <td>{{ match.final }}</td>
-                <td v-for="person in passwords" :key="person.name" :class=[person.name] :match="id" @input="cellChange" :contenteditable="this.password == person.password ? true : false">{{ match.bets[person.name] }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div :style="{ display: 'flex', justifyContent: 'center' }" v-else>
-        <PulseLoader :color="'#009DE0'"></PulseLoader>
-      </div>
-    </div>
-  </div>
-</template>
 
+<template>
+    <div class="error-comp">
+        <div>
+            <img src="https://clipart.info/images/ccovers/1496175203emoji-android-heavy-exclamation-mark-symbol.png">
+        </div>
+        <div class="error-msg">A redirecionar para a drive<p>Por favor aguarda</p></div>
+    </div>
+</template>
 <script>
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 export default {
