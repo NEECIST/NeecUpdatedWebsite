@@ -119,7 +119,10 @@ export default {
         }
       });
       if(this.password !== pass) return;
-      if(this.matches[match].closed == 1) return;
+      if(this.matches[match].closed == 1){
+        alert("As apostas para este jogo já estão fechadas");
+        return;
+      }
 
       this.matches[match].bets[name] = e.target.innerText;
 
