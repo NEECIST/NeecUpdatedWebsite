@@ -112,6 +112,15 @@ export default {
       var updated;
       var match = e.target.getAttribute("match");
       var name = e.target.className;
+      var pass;
+      passwords.forEach((person) => {
+        if (person.name == name) {
+          pass = person.password;
+        }
+      });
+      if(this.password !== pass) return;
+      if(this.matches[match].closed == 1) return;
+
       this.matches[match].bets[name] = e.target.innerText;
 
       fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
@@ -131,6 +140,7 @@ export default {
       });
     },
     resultChange(e){
+
       var updated;
       var match = e.target.getAttribute("match");
       fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
