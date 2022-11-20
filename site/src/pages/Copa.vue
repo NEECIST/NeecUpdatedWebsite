@@ -18,16 +18,16 @@
               type="text"
               placeholder="Password (isto não vai estar encriptado)"
               v-model="password"
-              :style="{ minWidth: '350px', width: '100%', padding: '1vh 0vw', margin: '0vh 0', backgroundColor: '#fff', borderRadius: '10px' }"
+              :style="{minWidth: '350px', width: '100%', padding: '1vh 0vw', margin: '0vh 0', backgroundColor: '#fff', borderRadius: '10px' }"
             />
           </div>
           <div :style="{ width: '100%', padding: '1vh 2vw', margin: '1vh 0', backgroundColor: '#fff', borderRadius: '10px' }">
             <button @click="login" :style="{ width: '100%', padding: '1vh 2vw', margin: '0vh 0', backgroundColor: 'rgb(30 156 216)', borderRadius: '10px' }">Login/Criar Conta</button>
-          </div>
+            </div>
         </div>
       </div>
-      <div v-if="initialized1 && initialized2" :style="{ overflow: 'auto', width: '100%' }">
-        <div class="table100">
+      <div v-if="initialized1 && initialized2" :style="{overflow: 'auto', width:'100%'}">
+        <div class="table100" >
           <table>
             <thead>
               <tr class="table100-head">
@@ -36,7 +36,6 @@
                 <th>Resultado</th>
                 <th v-for="person in passwords" :key="person.name">{{ person.name }}</th>
                 <th v-if="this.username == 'Midas' && this.password == 'omelhor'">Fechar Jogo</th>
-                <th v-if="this.username == 'Midas' && this.password == 'omelhor'">Calcular Scores</th>
               </tr>
             </thead>
             <tbody>
@@ -44,28 +43,11 @@
                 <td>{{ match.date }}</td>
                 <td>{{ match.team1 }} vs {{ match.team2 }}</td>
                 <td :match="id" @input="resultChange" :contenteditable="this.password == 'omelhor' ? true : false">{{ match.final }}</td>
-                <td
-                  :style="match.closed ? { cursor: 'not-allowed' } : null"
-                  v-for="person in passwords"
-                  :key="person.name"
-                  :class="[person.name]"
-                  :match="id"
-                  @input="cellChange"
-                  :contenteditable="this.password == person.password && this.username == person.name ? true : false"
-                  :title="match.closed ? 'As apostas para este jogo já fecharam!' : null"
-                >
-                  {{ match.bets[person.name] }}
-                </td>
-                <td v-if="this.username == 'Midas' && this.password == 'omelhor'">
-                  <input type="checkbox" :match="id" @change="closeMatch" :checked="match.closed" :disabled="this.password == 'omelhor' ? false : true" />
-                </td>
-                <td v-if="this.username == 'Midas' && this.password == 'omelhor'">
-                  <button :match="id" @click="calculateScores" :disabled="this.password == 'omelhor' ? false : true">Calcular Scores</button>
-                </td>
+                <td :style="match.closed ? {cursor: 'not-allowed'}:null" v-for="person in passwords" :key="person.name" :class=[person.name] :match="id" @input="cellChange" :contenteditable="this.password == person.password && this.username == person.name  ? true : false" :title="match.closed ? 'As apostas para este jogo já fecharam!':null">{{ match.bets[person.name] }}</td>
+                <td v-if="this.username == 'Midas' && this.password == 'omelhor'"><input type="checkbox" :match="id" @change="closeMatch" :checked="match.closed" :disabled="this.password == 'omelhor' ? false : true" /></td>
               </tr>
             </tbody>
           </table>
-          <button @click="updateIDs" :style="{ width: '100%', padding: '1vh 2vw', margin: '0vh 0', backgroundColor: 'rgb(30 156 216)', borderRadius: '10px' }">Update IDs</button>
         </div>
       </div>
       <div :style="{ display: 'flex', justifyContent: 'center' }" v-else>
@@ -74,6 +56,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
@@ -87,7 +70,7 @@ export default {
       bets: [],
       passwords: [],
       username: "",
-      password: "",
+      password: ""
     };
   },
   methods: {
@@ -101,6 +84,7 @@ export default {
       this.passwords.forEach((person) => {
         console.log(person.name, this.username);
         if (person.name == this.username) {
+          
           existsName = true;
           console.log(person.password, this.password);
           if (person.password != this.password) {
@@ -109,20 +93,21 @@ export default {
           }
         }
       });
-      if (existsName) return;
+      if(existsName)
+        return;
 
-      alert("Conta criada, para editar os resultados clica no resultado a alterar");
+      alert('Conta criada, para editar os resultados clica no resultado a alterar');
       Object.entries(this.matches).forEach((match) => {
         this.matches[match[0]].bets[this.username] = "0-0";
       });
-      this.passwords.push({ name: this.username, password: this.password });
-
+      this.passwords.push({ name: this.username, password: this.password });  
+      
       fetch("https://copa22.midas-cloud.xyz/passwords", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify({ name: this.username, password: window.btoa(this.password) }),
+        body: JSON.stringify({ name: this.username, password: window.btoa(this.password) })
       });
     },
     cellChange(e) {
@@ -135,11 +120,11 @@ export default {
           pass = person.password;
         }
       });
-      if (this.password !== pass) {
-        alert("Malandro a tentar alterar as apostas dos outros");
+      if(this.password !== pass){
+        alert('Malandro a tentar alterar as apostas dos outros');
         return;
       }
-      if (this.matches[match].closed) {
+      if(this.matches[match].closed){
         alert("As apostas para este jogo já estão fechadas");
         return;
       }
@@ -147,130 +132,60 @@ export default {
       this.matches[match].bets[name] = e.target.innerText;
 
       fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
-        .then((response) => response.json())
-        .then((json) => {
-          updated = json;
-        })
-        .then(() => {
-          updated.bets[name] = e.target.innerText;
-          fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updated),
-          });
-          this.matches[match].bets = updated.bets;
+      .then((response) => response.json())
+      .then((json) => {
+        updated = json;
+      }).then(() => {
+        updated.bets[name] = e.target.innerText;
+        fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updated),
         });
+        this.matches[match].bets = updated.bets;
+      });
     },
-    resultChange(e) {
+    resultChange(e){
+
       var updated;
       var match = e.target.getAttribute("match");
       fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
-        .then((response) => response.json())
-        .then((json) => {
-          updated = json;
-        })
-        .then(() => {
-          updated.final = e.target.innerText;
-          fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updated),
-          });
-          this.matches[match].final = e.target.innerText;
+      .then((response) => response.json())
+      .then((json) => {
+        updated = json;
+      }).then(() => {
+        updated.final = e.target.innerText;
+        fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updated),
         });
-    },
-    closeMatch(e) {
-      let updated;
-      let match = e.target.getAttribute("match");
+        this.matches[match].final = e.target.innerText;
+      });
+    }, 
+    closeMatch(e){
+      var updated;
+      var match = e.target.getAttribute("match");
       fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
-        .then((response) => response.json())
-        .then((json) => {
-          updated = json;
-        })
-        .then(() => {
-          updated.closed = e.target.checked;
-          fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updated),
-          });
-          this.matches[match].closed = e.target.checked;
+      .then((response) => response.json())
+      .then((json) => {
+        updated = json;
+      }).then(() => {
+        updated.closed = e.target.checked;
+        fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updated),
         });
-    },
-    calculateScores(e) {
-      let updated;
-      let match = e.target.getAttribute("match");
-
-      this.passwords.forEach((person) => {
-        fetch(`https://copa22.midas-cloud.xyz/scores?name=${person.name}`)
-          .then((response) => response.json())
-          .then((json) => {
-            updated = json;
-          })
-          .then(() => {
-            updated.score = this.calculatePoints(person.name, updated.score, match);
-            fetch(`https://copa22.midas-cloud.xyz/scores?name=${person.name}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(updated),
-            });
-          });
+        this.matches[match].closed = e.target.checked;
       });
-    },
-    calculatePoints(name, previousScore, match) {
-      let score = previousScore;
-      let matchScore = this.matches[match].final.split("-");
-      let betScore = this.matches[match].bets[name].split("-");
-      if (matchScore[0] == betScore[0] && matchScore[1] == betScore[1]) {
-        score += 2;
-      }
-      if (matchScore[0] > matchScore[1] && betScore[0] > betScore[1]) {
-        score += 1;
-      }
-      if (matchScore[0] < matchScore[1] && betScore[0] < betScore[1]) {
-        score += 1;
-      }
-      if (matchScore[0] == matchScore[1] && betScore[0] == betScore[1]) {
-        score += 1;
-      }
-      return score;
-    },
-    updateIDs() {
-      let updated;
-      let apiIds = [
-        391882, 391887, 391881, 391888, 391893, 391899, 391894, 391900, 391911, 391905, 391906, 391912, 391917, 391923, 391924, 391918, 391889, 391883, 391884, 391890, 391901, 391895, 391902, 391896,
-        391907, 391913, 391914, 391908, 391919, 391925, 391920, 391926, 391885, 391886, 391891, 391892, 391903, 391904, 391897, 391898, 391915, 391916, 391909, 391910, 391927, 391928, 391921, 391922,
-        391929, 391930, 391931, 391932, 391933, 391934, 391935, 391936, 391937, 391938, 391939, 391940, 391941, 391942, 391943, 391944,
-      ];
-      Object.keys(this.matches).forEach((match) => {
-        setTimeout(()=> {
-        fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
-          .then((response) => response.json())
-          .then((json) => {
-            updated = json;
-          })
-          .then(() => {
-            updated.apiID = apiIds[match];
-            fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(updated),
-            });
-          });
-        }, 1000*this.matches[match].id)
-        
-      });
-    },
+    }
   },
   created() {
     fetch("https://copa22.midas-cloud.xyz/jogos")
@@ -278,18 +193,6 @@ export default {
       .then((json) => {
         json.forEach((match) => {
           this.matches[match.id] = match;
-          fetch(`https://api.football-data.org/v4/matches/${match.apiID}`,{
-            headers: {
-             'Content-Type': 'application/json',
-             "X-Authorization":'bae60b78ce294214a6f0c68746df030f'        
-             }
-          })
-            .then((response) => response.json())
-            .then((json) => {
-              console.log(json.score.fullTime.home + "-" + json.score.fullTime.away)
-              this.matches[match].final = json.score.fullTime.home + "-" + json.score.fullTime.away;
-              this.matches[match].closed = json.status == 'FINISHED';
-            })
         });
       })
       .finally(() => {
@@ -299,7 +202,7 @@ export default {
       .then((response) => response.json())
       .then((json) => {
         this.passwords = json;
-        var decoded;
+        var decoded
         for (var i = 0; i < this.passwords.length; i++) {
           decoded = window.atob(this.passwords[i].password);
           this.passwords[i].password = decoded;
@@ -308,8 +211,6 @@ export default {
       .finally(() => {
         this.initialized2 = true;
       });
-    
-
   },
 
   components: { PulseLoader },
