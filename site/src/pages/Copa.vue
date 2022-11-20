@@ -2,8 +2,9 @@
   <div class="copa-app" :style="{ padding: '10px', paddingTop: '77px', paddingBottom: '200px', fontFamily: 'Roboto' }">
     <h1>Apostas Mundial 2022</h1>
     <div :style="{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', width: '100%' }">
+      
       <div :style="{ width: 'auto', padding: '1vh 2vw', margin: '2vh 0', backgroundColor: '#ddd', borderRadius: '10px' }">
-        <h3>Login</h3>
+        <h2>Login</h2>
         <div :style="{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', width: '100%' }">
           <div :style="{ width: '100%', padding: '1vh 2vw', margin: '1vh 0', backgroundColor: '#fff', borderRadius: '10px' }">
             <input
@@ -26,7 +27,14 @@
           </div>
         </div>
       </div>
-      <div v-if="initialized1 && initialized2" :style="{ overflow: 'auto', width: '100%' }">
+      <div :style="{ width: 'auto', padding: '1vh 2vw', margin: '0 0 2vh 0 ', backgroundColor: '#ddd', borderRadius: '10px' }">
+        <h2>Regras Pontuações:</h2>
+        <ul>
+          <li>Acertar o resultado final: +1 pontos</li>
+          <li>Acertar o resultado final e o número de golos de cada equipa: +2 pontos</li>
+        </ul>
+      </div>
+      <div v-if="initialized1 && initialized2 && initialized3" :style="{ overflow: 'auto', width: '100%' }">
         <div class="table100">
           <table>
             <thead>
@@ -45,7 +53,7 @@
                 <td>{{ match.team1 }} vs {{ match.team2 }}</td>
                 <td :match="id" @input="resultChange" :contenteditable="this.password == 'omelhor' ? true : false">{{ match.final }}</td>
                 <td
-                  :style="match.closed ? { cursor: 'not-allowed' } : null"
+                  :style="  {cursor: match.closed ?'not-allowed' : pointer, backgroundColor: scores[person.id].individual[id] == 3 ? '#a8ffa8' : scores[person.id].individual[id] == 1 ? '#ffffa7' : unset } "
                   v-for="person in passwords"
                   :key="person.name"
                   :class="[person.name]"
@@ -64,8 +72,20 @@
                 </td>
               </tr>
             </tbody>
+            <tfoot>
+              <tr class="table100-head">
+                <th colspan="3">Scores</th>
+                <th v-for="person in scores" :key="person.name">{{ person.score }}</th>
+              </tr>
+            </tfoot>
           </table>
-          <button v-if="this.username == 'Midas' && this.password == 'omelhor'" @click="updateIDs" :style="{ width: '100%', padding: '1vh 2vw', margin: '0vh 0', backgroundColor: 'rgb(30 156 216)', borderRadius: '10px' }">Update IDs</button>
+          <button
+            v-if="this.username == 'Midas' && this.password == 'omelhor'"
+            @click="updateIDs"
+            :style="{ width: '100%', padding: '1vh 2vw', margin: '0vh 0', backgroundColor: 'rgb(30 156 216)', borderRadius: '10px' }"
+          >
+            Update IDs
+          </button>
         </div>
       </div>
       <div :style="{ display: 'flex', justifyContent: 'center' }" v-else>
@@ -83,6 +103,8 @@ export default {
     return {
       initialized1: false,
       initialized2: false,
+      initialized3: false,
+      scores: {},
       matches: {},
       bets: [],
       passwords: [],
@@ -117,12 +139,20 @@ export default {
       });
       this.passwords.push({ name: this.username, password: this.password });
 
+
       fetch("https://copa22.midas-cloud.xyz/passwords", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ name: this.username, password: window.btoa(this.password) }),
+      });
+      fetch("https://copa22.midas-cloud.xyz/scores", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: this.username, score: 0}),
       });
     },
     cellChange(e) {
@@ -203,30 +233,39 @@ export default {
           this.matches[match].closed = e.target.checked;
         });
     },
-    calculateScores(e) {
-      let updated;
-      let match = e.target.getAttribute("match");
+    calculateScores() {
+      console.log("Calculating scores");
+      console.log(this.scores);
+      this.scores.forEach((person, index) => {
+        let updated_scores = Array.apply(null, Array(this.matches.length)).map(function () {
+          return 0;
+        });
+        Object.keys(this.matches).forEach((match) => {
+          if (this.matches[match].finished) {
+            console.log(person);
+            updated_scores[match] = this.calculatePoints(person.name, match);
+          }
+        });
+        console.log(updated_scores, index);
+        this.scores[index].individual = updated_scores;
+        this.scores[index].score = updated_scores.reduce((a, b) => a + b, 0);
+      });
 
-      this.passwords.forEach((person) => {
-        fetch(`https://copa22.midas-cloud.xyz/scores?name=${person.name}`)
-          .then((response) => response.json())
-          .then((json) => {
-            updated = json;
-          })
-          .then(() => {
-            updated.score = this.calculatePoints(person.name, updated.score, match);
-            fetch(`https://copa22.midas-cloud.xyz/scores?name=${person.name}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(updated),
-            });
+      this.scores.forEach((person) => {
+        setTimeout(() => {
+          fetch(`https://copa22.midas-cloud.xyz/scores/${person.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(person),
           });
+        }, 1000 * person.id);
       });
     },
-    calculatePoints(name, previousScore, match) {
-      let score = previousScore;
+    calculatePoints(name, match) {
+      if( this.matches[match].bets[name] == undefined) return 0;
+      let score = 0;
       let matchScore = this.matches[match].final.split("-");
       let betScore = this.matches[match].bets[name].split("-");
       if (matchScore[0] == betScore[0] && matchScore[1] == betScore[1]) {
@@ -251,24 +290,23 @@ export default {
         391929, 391930, 391931, 391932, 391933, 391934, 391935, 391936, 391937, 391938, 391939, 391940, 391941, 391942, 391943, 391944,
       ];
       Object.keys(this.matches).forEach((match) => {
-        setTimeout(()=> {
-        fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
-          .then((response) => response.json())
-          .then((json) => {
-            updated = json;
-          })
-          .then(() => {
-            updated.apiID = apiIds[match];
-            fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(updated),
+        setTimeout(() => {
+          fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
+            .then((response) => response.json())
+            .then((json) => {
+              updated = json;
+            })
+            .then(() => {
+              updated.apiID = apiIds[match];
+              fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updated),
+              });
             });
-          });
-        }, 1000*this.matches[match].id)
-        
+        }, 1000 * this.matches[match].id);
       });
     },
   },
@@ -278,18 +316,6 @@ export default {
       .then((json) => {
         json.forEach((match) => {
           this.matches[match.id] = match;
-          fetch(`https://api.football-data.org/v4/matches/${match.apiID}`,{
-            headers: {
-             'Content-Type': 'application/json',
-             "X-Authorization":'bae60b78ce294214a6f0c68746df030f'        
-             }
-          })
-            .then((response) => response.json())
-            .then((json) => {
-              console.log(json.score.fullTime.home + "-" + json.score.fullTime.away)
-              this.matches[match].final = json.score.fullTime.home + "-" + json.score.fullTime.away;
-              this.matches[match].closed = json.status == 'FINISHED';
-            })
         });
       })
       .finally(() => {
@@ -308,8 +334,17 @@ export default {
       .finally(() => {
         this.initialized2 = true;
       });
-    
 
+    fetch("https://copa22.midas-cloud.xyz/scores")
+      .then((response) => response.json())
+      .then((json) => {
+        json.forEach((person) => {
+          this.scores[person.id] = person;
+        });
+      })
+      .finally(() => {
+        this.initialized3 = true;
+      });
   },
 
   components: { PulseLoader },
@@ -421,7 +456,8 @@ table * {
 table {
   padding-left: 8px;
 }
-table thead tr {
+table thead tr,
+table tfoot tr {
   height: 60px;
   background: #36304a;
 }
@@ -433,7 +469,8 @@ table tbody tr:last-child {
 }
 table td,
 table th {
-  text-align: left;
+  text-align: center;
+  font-weight: bold;
 }
 table td.l,
 table th.l {
@@ -447,7 +484,8 @@ table td.r,
 table th.r {
   text-align: center;
 }
-.table100-head th {
+.table100-head th,
+tfoot th {
   font-size: 18px;
   color: #fff;
   line-height: 1.2;
