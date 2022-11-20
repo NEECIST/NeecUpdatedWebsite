@@ -35,6 +35,7 @@
                 <th>Equipas</th>
                 <th>Resultado</th>
                 <th v-for="person in passwords" :key="person.name">{{ person.name }}</th>
+                <th v-if="this.username == 'Midas' && this.password == 'omelhor'">Fechar Jogo</th>
               </tr>
             </thead>
             <tbody>
@@ -42,7 +43,8 @@
                 <td>{{ match.date }}</td>
                 <td>{{ match.team1 }} vs {{ match.team2 }}</td>
                 <td :match="id" @input="resultChange" :contenteditable="this.password == 'omelhor' ? true : false">{{ match.final }}</td>
-                <td v-for="person in passwords" :key="person.name" :class=[person.name] :match="id" @input="cellChange" :contenteditable="this.password == person.password && this.username == person.name  ? true : false">{{ match.bets[person.name] }}</td>
+                <td :style="match.closed ? {cursor: 'not-allowed'}:null" v-for="person in passwords" :key="person.name" :class=[person.name] :match="id" @input="cellChange" :contenteditable="this.password == person.password && this.username == person.name  ? true : false" :title="match.closed ? 'As apostas para este jogo já fecharam!':null">{{ match.bets[person.name] }}</td>
+                <td v-if="this.username == 'Midas' && this.password == 'omelhor'"><input type="checkbox" :match="id" @change="closeMatch" :checked="match.closed" :disabled="this.password == 'omelhor' ? false : true" /></td>
               </tr>
             </tbody>
           </table>
@@ -113,13 +115,16 @@ export default {
       var match = e.target.getAttribute("match");
       var name = e.target.className;
       var pass;
-      passwords.forEach((person) => {
+      this.passwords.forEach((person) => {
         if (person.name == name) {
           pass = person.password;
         }
       });
-      if(this.password !== pass) return;
-      if(this.matches[match].closed == 1){
+      if(this.password !== pass){
+        alert('Malandro a tentar alterar as apostas dos outros');
+        return;
+      }
+      if(this.matches[match].closed){
         alert("As apostas para este jogo já estão fechadas");
         return;
       }
@@ -160,6 +165,25 @@ export default {
           body: JSON.stringify(updated),
         });
         this.matches[match].final = e.target.innerText;
+      });
+    }, 
+    closeMatch(e){
+      var updated;
+      var match = e.target.getAttribute("match");
+      fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`)
+      .then((response) => response.json())
+      .then((json) => {
+        updated = json;
+      }).then(() => {
+        updated.closed = e.target.checked;
+        fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updated),
+        });
+        this.matches[match].closed = e.target.checked;
       });
     }
   },
