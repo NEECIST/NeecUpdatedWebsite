@@ -53,7 +53,7 @@
                 <td>{{ match.team1 }} vs {{ match.team2 }}</td>
                 <td :match="id" @input="resultChange" :contenteditable="this.password == 'omelhor' ? true : false">{{ match.final }}</td>
                 <td
-                 
+                 :style="  {cursor: match.closed ?'not-allowed' : pointer, backgroundColor: scores[person.id].individual[id] == 3 ? '#a8ffa8' : scores[person.id].individual[id] == 1 ? '#ffffa7' : unset } "
                   v-for="person in passwords"
                   :key="person.name"
                   :class="[person.name]"
