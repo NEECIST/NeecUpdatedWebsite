@@ -53,7 +53,7 @@
                 <td>{{ match.team1 }} vs {{ match.team2 }}</td>
                 <td :match="id" @input="resultChange" :contenteditable="this.password == 'omelhor' ? true : false">{{ match.final }}</td>
                 <td
-                 :style="  {cursor: match.closed ?'not-allowed' : pointer, backgroundColor: scores[person.id].individual[id] == 3 ? '#a8ffa8' : scores[person.id].individual[id] == 1 ? '#ffffa7' : unset } "
+                 :style="  {cursor: match.closed ?'not-allowed' : 'pointer', backgroundColor: scores[person.id].individual[id] == 3 ? '#a8ffa8' : scores[person.id].individual[id] == 1 ? '#ffffa7' : 'unset' } "
                   v-for="person in passwords"
                   :key="person.name"
                   :class="[person.name]"
@@ -223,6 +223,7 @@ export default {
         })
         .then(() => {
           updated.closed = e.target.checked;
+          updated.finished = e.target.checked;
           fetch(`https://copa22.midas-cloud.xyz/jogos/${match}`, {
             method: "PUT",
             headers: {
@@ -236,31 +237,31 @@ export default {
     calculateScores() {
       console.log("Calculating scores");
       console.log(this.scores);
-      this.scores.forEach((person, index) => {
+     Object.keys(this.scores).forEach((person) => {
+      console.log(person, this.scores[person].name);
         let updated_scores = Array.apply(null, Array(this.matches.length)).map(function () {
           return 0;
         });
         Object.keys(this.matches).forEach((match) => {
           if (this.matches[match].finished) {
-            console.log(person);
-            updated_scores[match] = this.calculatePoints(person.name, match);
+            console.log("Match finished", match);
+            updated_scores[match] = this.calculatePoints(this.scores[person].name, match);
           }
         });
-        console.log(updated_scores, index);
-        this.scores[index].individual = updated_scores;
-        this.scores[index].score = updated_scores.reduce((a, b) => a + b, 0);
+        this.scores[person].individual = updated_scores;
+        this.scores[person].score = updated_scores.reduce((a, b) => a + b, 0);
       });
 
-      this.scores.forEach((person) => {
+      Object.keys(this.scores).forEach((person) => {
         setTimeout(() => {
-          fetch(`https://copa22.midas-cloud.xyz/scores/${person.id}`, {
+          fetch(`https://copa22.midas-cloud.xyz/scores/${person}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(person),
+            body: JSON.stringify(this.scores[person]),
           });
-        }, 1000 * person.id);
+        }, 1000 * person);
       });
     },
     calculatePoints(name, match) {
