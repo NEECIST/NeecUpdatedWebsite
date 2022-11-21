@@ -31,7 +31,7 @@
         <h2>Regras Pontuações:</h2>
         <ul>
           <li>Acertar o resultado final: +1 pontos</li>
-          <li>Acertar o resultado final e o número de golos de cada equipa: +2 pontos</li>
+          <li>Acertar o número de golos de cada equipa: +2 pontos</li>
         </ul>
       </div>
       <div v-if="initialized1 && initialized2 && initialized3" :style="{ overflow: 'auto', width: '100%' }">
