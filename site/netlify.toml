@@ -1,58 +1,72 @@
-
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
 
 [[redirects]]
   from = "/redirect/drive"     
-  to = "https://www.istsi.org/"
+  to = "https://drive.google.com/open?id=1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/istsi"
   to = "https://www.istsi.org/"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/estagios"
   to = "https://www.istsi.org/"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/facebook"
   to = "https://www.facebook.com/NEECIST/"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/jeec"
   to = "https://jeec.ist/"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/linkedin"
   to = "https://www.linkedin.com/company/2977028/"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/maps"
   to = "https://encrypted.google.com/maps/place/NEECIST"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/salas"
   to = "https://fenix.tecnico.ulisboa.pt/conteudos-publicos/pesquisa-de-espacos"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/twitter"
   to = "https://twitter.com/NEECIST/"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/youtube"
   to = "https://www.youtube.com/user/NEECIST/"
+  force = true
   status = 301
 
 [[redirects]]
   from = "/redirect/instagram"
   to = "https://www.instagram.com/neecist/"
+  force = true
   
 
 
