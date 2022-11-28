@@ -2,3 +2,8 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/redirect/drive"     
+  to = "https://drive.google.com/open?id=1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz"
+  status = 301
