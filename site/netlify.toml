@@ -1,12 +1,8 @@
 [[redirects]]
   from = "/*"
-  to = "/"
+  to = "/404"
   status = 200
 
-[[redirects]]
-  from = "/redirect/drive"     
-  to = "https://drive.google.com/open?id=1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz"
-  status = 301
 
 [[redirects]]
   from = "/redirect/istsi"
