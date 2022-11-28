@@ -23,10 +23,6 @@ const routes = [
         component: Team
     },
     {
-        path: '/404',
-        component: Error_Handling
-    },
-    {
         path: '/oportunities',
         name: 'Oportunities',
         component: Oportunities
@@ -58,6 +54,10 @@ const routes = [
         path: '/copa',
         name: 'Copa',
         component: Copa
+    },
+    {
+        path: '*',
+        component: Error_Handling
     }
 
 ]
