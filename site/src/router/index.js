@@ -56,7 +56,7 @@ const routes = [
         component: Copa
     },
     {
-        path: '*',
+        path: '/*',
         component: Error_Handling
     }
 
