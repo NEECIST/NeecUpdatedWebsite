@@ -68,6 +68,6 @@
 #Este tem que estar no fim para não dar override a todos os outros
 [[redirects]]
   from = "/*"
-  to = "/404"
+  to = "/"
   status = 200
 
