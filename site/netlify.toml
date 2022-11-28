@@ -1,8 +1,12 @@
 [[redirects]]
   from = "/*"
-  to = "/404"
+  to = "/"
   status = 200
 
+[[redirects]]
+  from = "/redirect/drive"     
+  to = "https://www.istsi.org/"
+  status = 301
 
 [[redirects]]
   from = "/redirect/istsi"
@@ -52,7 +56,7 @@
 [[redirects]]
   from = "/redirect/instagram"
   to = "https://www.instagram.com/neecist/"
-  status = 301
+  
 
 
 
