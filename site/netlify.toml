@@ -1,9 +1,4 @@
 [[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
-
-[[redirects]]
   from = "/redirect/drive"     
   to = "https://drive.google.com/open?id=1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz"
   force = true
