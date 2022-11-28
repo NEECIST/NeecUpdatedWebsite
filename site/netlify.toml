@@ -1,3 +1,5 @@
+
+
 [[redirects]]
   from = "/redirect/drive"     
   to = "https://drive.google.com/open?id=1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz"
@@ -62,7 +64,10 @@
   from = "/redirect/instagram"
   to = "https://www.instagram.com/neecist/"
   force = true
-  
 
-
+#Este tem que estar no fim para não dar override a todos os outros
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 200
 
