@@ -3706,47 +3706,47 @@ export default {
       leaderboardFaseGrupos: [
         {
           name: "Midas",
-          score: 45
+          score: 45,
         },
         {
           name: "dishadow",
-          score: 32
-        },
-        {
-          name: "moniquita",
-          score: 31
-        },
-        {
-          name: "Madalena",
-          score: 31
-        },
-        {
-          name: "Gabriel",
-          score: 30
+          score: 41,
         },
         {
           name: "cerdas",
-          score: 30
+          score: 38,
         },
         {
-          name: "Antunes",
-          score: 27
+          name: "Gabriel",
+          score: 37,
+        },
+        {
+          name: "Madalena",
+          score: 32,
         },
         {
           name: "14Animes",
-          score: 26
+          score: 32,
+        },
+        {
+          name: "moniquita",
+          score: 31,
         },
         {
           name: "MO",
-          score: 26
+          score: 30,
+        },
+        {
+          name: "Antunes",
+          score: 27,
         },
         {
           name: "André Pereira",
-          score: 24
+          score: 24,
         },
         {
           name: "Not mimi",
-          score: 20
+          score: 20,
         },
       ],
       matches: {},
