@@ -68,7 +68,7 @@
         </ul>
       </div>
       <div v-if="initialized1 && initialized2 && initialized3" :style="{ overflow: 'auto', width: '100%' }">
-        <h2 :style="{ marginTop: '3vh' }">Oitavos de Final</h2>
+        <h2 :style="{ marginTop: '3vh' }">Quartos de Final</h2>
         <div class="table100">
           <table>
             <thead>
@@ -123,6 +123,468 @@
           >
             Update IDs
           </button>
+        </div>
+        <h2 :style="{ marginTop: '3vh' }">Oitavos de Final</h2>
+        <div class="table100" data-v-570d5bb6="">
+          <table data-v-570d5bb6="">
+            <thead data-v-570d5bb6="">
+              <tr class="table100-head" data-v-570d5bb6="">
+                <th data-v-570d5bb6="">Data</th>
+                <th data-v-570d5bb6="">Equipas</th>
+                <th data-v-570d5bb6="">Resultado</th>
+                <th data-v-570d5bb6="">Midas</th>
+                <th data-v-570d5bb6="">14Animes</th>
+                <th data-v-570d5bb6="">Gabriel</th>
+                <th data-v-570d5bb6="">dishadow</th>
+                <th data-v-570d5bb6="">cerdas</th>
+                <th data-v-570d5bb6="">MO</th>
+                <th data-v-570d5bb6="">Madalena</th>
+                <th data-v-570d5bb6="">Paulo Portas</th>
+              </tr>
+            </thead>
+            <tbody data-v-570d5bb6="">
+              <tr data-v-570d5bb6="">
+                <td data-v-570d5bb6="">Sábado, 2/dez 15:00</td>
+                <td data-v-570d5bb6="">Holanda vs Estados Unidos</td>
+                <td match="0" contenteditable="false" data-v-570d5bb6="">3-1</td>
+                <td class="Midas" match="0" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  2-1
+                </td>
+                <td
+                  class="14Animes"
+                  match="0"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  1-0
+                </td>
+                <td
+                  class="Gabriel"
+                  match="0"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td
+                  class="dishadow"
+                  match="0"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-1
+                </td>
+                <td class="cerdas" match="0" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed">(V) 1-1</td>
+                <td class="MO" match="0" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset">1-2</td>
+                <td class="Madalena" match="0" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed">(V) 1-1</td>
+                <td class="Paulo Portas" match="0" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset">
+                  1-1
+                </td>
+              </tr>
+              <tr data-v-570d5bb6="">
+                <td data-v-570d5bb6="">Sábado, 2/dez 19:00</td>
+                <td data-v-570d5bb6="">Argentina vs Austrália</td>
+                <td match="1" contenteditable="false" data-v-570d5bb6="">2-1</td>
+                <td class="Midas" match="1" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  2-0
+                </td>
+                <td
+                  class="14Animes"
+                  match="1"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td
+                  class="Gabriel"
+                  match="1"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td
+                  class="dishadow"
+                  match="1"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  3-1
+                </td>
+                <td
+                  class="cerdas"
+                  match="1"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td class="MO" match="1" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  2-0
+                </td>
+                <td class="Madalena" match="1" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed">(V) 1-1</td>
+                <td
+                  class="Paulo Portas"
+                  match="1"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+              </tr>
+              <tr data-v-570d5bb6="">
+                <td data-v-570d5bb6="">Domingo, 3/dez 15:00</td>
+                <td data-v-570d5bb6="">França vs Polónia</td>
+                <td match="2" contenteditable="false" data-v-570d5bb6="">3-1</td>
+                <td class="Midas" match="2" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  2-0
+                </td>
+                <td
+                  class="14Animes"
+                  match="2"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td
+                  class="Gabriel"
+                  match="2"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td
+                  class="dishadow"
+                  match="2"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  3-0
+                </td>
+                <td
+                  class="cerdas"
+                  match="2"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td class="MO" match="2" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  3-0
+                </td>
+                <td class="Madalena" match="2" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset"></td>
+                <td
+                  class="Paulo Portas"
+                  match="2"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+              </tr>
+              <tr data-v-570d5bb6="">
+                <td data-v-570d5bb6="">Domingo, 3/dez 19:00</td>
+                <td data-v-570d5bb6="">Inglaterra vs Senegal</td>
+                <td match="3" contenteditable="false" data-v-570d5bb6="">3-0</td>
+                <td class="Midas" match="3" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  2-0
+                </td>
+                <td
+                  class="14Animes"
+                  match="3"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-1
+                </td>
+                <td
+                  class="Gabriel"
+                  match="3"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-1
+                </td>
+                <td
+                  class="dishadow"
+                  match="3"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  4-0
+                </td>
+                <td
+                  class="cerdas"
+                  match="3"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(168, 255, 168)"
+                >
+                  3-0
+                </td>
+                <td class="MO" match="3" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset">2-3</td>
+                <td class="Madalena" match="3" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset"></td>
+                <td
+                  class="Paulo Portas"
+                  match="3"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+              </tr>
+              <tr data-v-570d5bb6="">
+                <td data-v-570d5bb6="">Segunda, 5/dez 15:00</td>
+                <td data-v-570d5bb6="">Japão vs Croácia</td>
+                <td match="4" contenteditable="false" data-v-570d5bb6="">1-1 (V)</td>
+                <td class="Midas" match="4" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(168, 255, 168)">
+                  1-1 (V)
+                </td>
+                <td class="14Animes" match="4" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset">2-1</td>
+                <td class="Gabriel" match="4" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset">1-0</td>
+                <td
+                  class="dishadow"
+                  match="4"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  (V) 1-1
+                </td>
+                <td class="cerdas" match="4" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset">2-1</td>
+                <td class="MO" match="4" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset">1-0</td>
+                <td class="Madalena" match="4" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset"></td>
+                <td
+                  class="Paulo Portas"
+                  match="4"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  1-1
+                </td>
+              </tr>
+              <tr data-v-570d5bb6="">
+                <td data-v-570d5bb6="">Segunda, 5/dez 19:00</td>
+                <td data-v-570d5bb6="">Brasil vs Coreia do Sul</td>
+                <td match="5" contenteditable="false" data-v-570d5bb6="">4-1</td>
+                <td class="Midas" match="5" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  3-0
+                </td>
+                <td
+                  class="14Animes"
+                  match="5"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  3-0
+                </td>
+                <td
+                  class="Gabriel"
+                  match="5"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  3-1
+                </td>
+                <td
+                  class="dishadow"
+                  match="5"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td
+                  class="cerdas"
+                  match="5"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  3-0
+                </td>
+                <td class="MO" match="5" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  2-1
+                </td>
+                <td class="Madalena" match="5" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: unset"></td>
+                <td
+                  class="Paulo Portas"
+                  match="5"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+              </tr>
+              <tr data-v-570d5bb6="">
+                <td data-v-570d5bb6="">Terça, 6/dez 15:00</td>
+                <td data-v-570d5bb6="">Marrocos vs Espanha</td>
+                <td match="6" contenteditable="false" data-v-570d5bb6="">(V) 0-0</td>
+                <td class="Midas" match="6" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed">0-2</td>
+                <td class="14Animes" match="6" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed">1-3</td>
+                <td
+                  class="Gabriel"
+                  match="6"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: unset; background-color: rgb(255, 255, 167)"
+                >
+                  2-1
+                </td>
+                <td class="dishadow" match="6" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed">1-3</td>
+                <td
+                  class="cerdas"
+                  match="6"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td class="MO" match="6" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed">0-2</td>
+                <td class="Madalena" match="6" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed">1-2</td>
+                <td class="Paulo Portas" match="6" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed">0-2</td>
+              </tr>
+              <tr data-v-570d5bb6="">
+                <td data-v-570d5bb6="">Terça, 6/dez 19:00</td>
+                <td data-v-570d5bb6="">Portugal vs Suiça</td>
+                <td match="7" contenteditable="false" data-v-570d5bb6="">6-1</td>
+                <td class="Midas" match="7" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  2-1
+                </td>
+                <td
+                  class="14Animes"
+                  match="7"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td
+                  class="Gabriel"
+                  match="7"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  3-1
+                </td>
+                <td
+                  class="dishadow"
+                  match="7"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <td
+                  class="cerdas"
+                  match="7"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-1
+                </td>
+                <td class="MO" match="7" contenteditable="false" title="As apostas para este jogo já fecharam!" data-v-570d5bb6="" style="cursor: not-allowed; background-color: rgb(255, 255, 167)">
+                  1-0
+                </td>
+                <td
+                  class="Madalena"
+                  match="7"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  3-2
+                </td>
+                <td
+                  class="Paulo Portas"
+                  match="7"
+                  contenteditable="false"
+                  title="As apostas para este jogo já fecharam!"
+                  data-v-570d5bb6=""
+                  style="cursor: not-allowed; background-color: rgb(255, 255, 167)"
+                >
+                  2-0
+                </td>
+                <!----><!---->
+              </tr>
+            </tbody>
+            <tfoot data-v-570d5bb6="">
+              <tr class="table100-head" data-v-570d5bb6="">
+                <th colspan="3" data-v-570d5bb6="">Scores</th>
+                <th data-v-570d5bb6="">10</th>
+                <th data-v-570d5bb6="">6</th>
+                <th data-v-570d5bb6="">7</th>
+                <th data-v-570d5bb6="">9</th>
+                <th data-v-570d5bb6="">8</th>
+                <th data-v-570d5bb6="">4</th>
+                <th data-v-570d5bb6="">1</th>
+                <th data-v-570d5bb6="">8</th>
+              </tr>
+            </tfoot>
+          </table>
+          <!---->
         </div>
         <h2 :style="{ marginTop: '3vh' }">Fase de Grupos</h2>
         <div class="table100" data-v-58113781="">
@@ -3244,69 +3706,47 @@ export default {
       leaderboardFaseGrupos: [
         {
           name: "Midas",
-          score: 35,
-          id: 1,
-          individual: [1, 1, 3, 3, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 3, 3, 0, 0, 1, 3, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 3, 1, 0, 1, 0, 0, 0, 1, 1, 0],
+          score: 45
         },
         {
           name: "dishadow",
-          score: 32,
-          id: 6,
-          individual: [3, 1, 1, 3, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 3, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0],
+          score: 32
         },
         {
           name: "moniquita",
-          score: 31,
-          id: 5,
-          individual: [1, 1, 1, 3, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 3, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 3, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0],
+          score: 31
         },
         {
           name: "Madalena",
-          score: 31,
-          individual: [0, 0, 1, 3, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 3, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 3, 1, 1, 0, 1, 0, 0, 1, 1, 0],
-          id: 9,
+          score: 31
         },
         {
           name: "Gabriel",
-          score: 30,
-          id: 3,
-          individual: [1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 3, 0, 1, 0, 0, 0, 3, 3, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 3, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 3],
+          score: 30
         },
         {
           name: "cerdas",
-          score: 30,
-          id: 7,
-          individual: [0, 1, 1, 0, 0, 0, 3, 1, 0, 0, 1, 3, 3, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 1, 0, 1, 1, 1, 3, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0],
+          score: 30
         },
         {
           name: "Antunes",
-          score: 27,
-          individual: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 1, 0, 0, 0, 3, 3, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3, 0, 1, 0, 0, 3, 1, 1, 0, 1, 0, 0, 1, 1, 0],
-          id: 15,
+          score: 27
         },
         {
           name: "14Animes",
-          score: 26,
-          id: 2,
-          individual: [3, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 1, 1, 1, 1, 0, 3, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0],
+          score: 26
         },
         {
           name: "MO",
-          score: 26,
-          id: 8,
-          individual: [0, 1, 3, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 3, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 3, 0, 0, 0, 1, 0, 0, 1, 1, 0],
+          score: 26
         },
         {
           name: "André Pereira",
-          score: 24,
-          individual: [0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 1, 0, 1, 1, 3, 0, 0, 0, 1, 1, 1, 3, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0],
-          id: 13,
+          score: 24
         },
         {
           name: "Not mimi",
-          score: 20,
-          individual: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 3, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0],
-          id: 14,
+          score: 20
         },
       ],
       matches: {},
