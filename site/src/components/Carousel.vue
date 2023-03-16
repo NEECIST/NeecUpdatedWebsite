@@ -74,10 +74,11 @@ export default {
     cards:[]
     }
   },created(){
+        const urlRegex = /\[(.*?)\]/;
         axios.get("https://api.trello.com/1/lists/628621c66fc12b020d3a62e0/cards?attachments=true")
         .then(response => {
             response.data.forEach(element => {
-              this.cards.push({text: element.name, image: element.attachments[0].url, page_url :element.desc})
+              this.cards.push({text: element.name, image: element.attachments[0].url, page_url : element.desc.match(urlRegex)[1]})
             });
         }).finally(()=>{
           this.initialized = true
