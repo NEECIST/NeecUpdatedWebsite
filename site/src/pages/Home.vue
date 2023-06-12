@@ -162,13 +162,13 @@ export default {
                 snapAlign: 'start',
             },
         },
-        episode:"https://open.spotify.com/embed/episode/1lP9Kqd09NEcuDGyC7pmnn?utm_source=generator&theme=0",
+        episode:"",
         
     };
   },created(){
-        axios.get("https://api.trello.com/1/lists/628621c66fc12b020d3a62e0/cards?attachments=true")
+        axios.get("https://api.neec.midas-cloud.xyz/api/anuncios?filters[id_episodio_spotify][$notNull]=true")
         .then(response => {
-            console.log(response.data)
+            this.episode = "https://open.spotify.com/embed/episode/" + response.data.data[0].attributes.id_episodio_spotify;
         
         }).finally(()=>{
           this.initialized = true
