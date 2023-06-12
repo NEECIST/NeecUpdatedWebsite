@@ -134,7 +134,7 @@ export default {
     };
 
     axios
-      .get("http://api.neec.midas-cloud.xyz/api/membros?populate=Foto&filters[active][$eq]=true", config)
+      .get("https://api.neec.midas-cloud.xyz/api/membros?populate=Foto&filters[active][$eq]=true", config)
       .then((response) => {
         console.log(response.data);
         response.data.data.forEach((element) => {
