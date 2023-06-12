@@ -112,7 +112,7 @@
             <div class="col iconss" data-aos="fade-left"  :style="{display: 'flex', flexDirection: 'row'}">
               <div class="icon-holder" :style="{display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center'}" >
 
-                <iframe id="NEECtalksPlayer" :src="episode" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" frameBorder="0"></iframe>
+                <iframe v-if="initialized" id="NEECtalksPlayer" :src="episode" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" frameBorder="0"></iframe>
                 </div>
             </div>
         </div>
