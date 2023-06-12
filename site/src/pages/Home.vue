@@ -1,10 +1,12 @@
 <template>
   <div class="home-app">
-    <div class="carousel" v-if="initialized">
-      <Carousel :settings="settings" :breakpoints="breakpoints" />
-    </div>
-    <div v-else :style="{minHeight: '600px'}">
-      <PulseLoader :color="'#009DE0'"></PulseLoader>
+    <div :style="{ minHeight: '600px' }">
+      <div class="carousel" v-if="initialized">
+        <Carousel :settings="settings" :breakpoints="breakpoints" />
+      </div>
+      <div v-else class="loading">
+        <PulseLoader :color="'#009DE0'"></PulseLoader>
+      </div>
     </div>
     <div class="announcement">
       <a class="hover-underline-animation" href="/form">Inscreve-te agora na nossa newsletter!</a>
@@ -353,6 +355,26 @@ export default {
   }
   .hover-underline-animation:after {
     display: none;
+  }
+}
+
+.loading {
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ececec;
+  margin: 20px;
+  border-radius: 35px;
+  animation: 1s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95) breathing-color--dark;
+}
+
+@keyframes breathing-color--dark {
+  from {
+    background-color: hsl(0 0% 80% / 1);
+  }
+  to {
+    background-color: hsl(0 0% 95% / 1);
   }
 }
 </style>
