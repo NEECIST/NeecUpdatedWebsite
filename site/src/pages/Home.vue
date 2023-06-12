@@ -3,7 +3,7 @@
     <div class="carousel" v-if="initialized">
       <Carousel :settings="settings" :breakpoints="breakpoints" />
     </div>
-    <div v-else>
+    <div v-else :style="{minHeight: '600px'}">
       <PulseLoader :color="'#009DE0'"></PulseLoader>
     </div>
     <div class="announcement">
