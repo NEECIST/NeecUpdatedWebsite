@@ -39,7 +39,7 @@
                     <div class="col-md-4">
                         <div class="contact-adress">
                             <p ><i class="fa-solid fa-phone" :style="{ color:'white', marginRight: '6px'}"></i>
-                            <a class="contact-address-text" href="tel:(+351) 218 419 056">(+351) 218 419 056</a></p>
+                            <a class="contact-address-text" href="tel:(+351) 218 419 056">(+351) 218 417 745</a></p>
                             <p ><i class="fa-solid fa-envelope" :style="{ color:'white', marginRight: '6px'}"></i>
                             <a class="contact-address-text" href="mailto:contacto@neecist.org">contacto@neecist.org</a></p>
                         </div>
