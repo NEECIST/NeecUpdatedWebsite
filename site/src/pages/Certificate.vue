@@ -45,6 +45,7 @@ export default {
         let background_w = response.data.data[0].attributes.Background.data.attributes.width;
         let background_h = response.data.data[0].attributes.Background.data.attributes.height;
         let name = response.data.data[0].attributes.participant;
+        let color = response.data.data[0].attributes.color;
 
 
         // Create certificate
@@ -61,7 +62,7 @@ export default {
         background.onload = function () {
           ctx.drawImage(background, 0, 0, background_w, background_h);
           ctx.font = "bold 50px Arial";
-          ctx.fillStyle = "#000000";
+          ctx.fillStyle = color;
           ctx.textAlign = "center";
           ctx.fillText(name, background_w / 2, background_h / 2 + 100);
             that.certificateUrl = canvas.toDataURL();
