@@ -98,7 +98,8 @@ export default {
 }
 
 .certificate-app img {
-  width: 80vw;
+  max-width: 80vw;
+  max-height: 77vh;
   box-shadow: 0 0 7px 3px #888;
 }
 
