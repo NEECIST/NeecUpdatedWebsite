@@ -191,7 +191,7 @@ export default {
     };
 
     axios
-      .get("https://api.neec.midas-cloud.xyz/api/anuncios?filters[id_episodio_spotify][$notNull]=true", config)
+      .get("https://api.neecist.org/api/anuncios?filters[id_episodio_spotify][$notNull]=true", config)
       .then((response) => {
         this.episode = "https://open.spotify.com/embed/episode/" + response.data.data[0].attributes.id_episodio_spotify;
       })

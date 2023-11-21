@@ -39,7 +39,7 @@ export default {
     };
     const canvas = createCanvas();
     axios
-      .get("https://api.neec.midas-cloud.xyz/api/certificados?filters[cert_uid][$eq]=" + this.$route.params.id + "&populate=Background&populate=signature", config)
+      .get("https://api.neecist.org/api/certificados?filters[cert_uid][$eq]=" + this.$route.params.id + "&populate=Background&populate=signature", config)
       .then((response) => {
         let url_back = "https://api.neec.midas-cloud.xyz" + response.data.data[0].attributes.Background.data.attributes.url;
         let background_w = response.data.data[0].attributes.Background.data.attributes.width;
@@ -47,12 +47,11 @@ export default {
         let name = response.data.data[0].attributes.participant;
         let color = response.data.data[0].attributes.color;
 
-
         // Create certificate
         // Get background size
         canvas.width = background_w;
         canvas.height = background_h;
-        
+
         const ctx = canvas.getContext("2d");
 
         // Draw background
@@ -65,8 +64,8 @@ export default {
           ctx.fillStyle = color;
           ctx.textAlign = "center";
           ctx.fillText(name, background_w / 2, background_h / 2 + 100);
-            that.certificateUrl = canvas.toDataURL();
-            that.initialized = true;
+          that.certificateUrl = canvas.toDataURL();
+          that.initialized = true;
         };
         background.src = url_back;
       })

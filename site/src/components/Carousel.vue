@@ -78,7 +78,7 @@ export default {
     };
 
     axios
-      .get("https://api.neec.midas-cloud.xyz/api/anuncios?populate=image", config)
+      .get("https://api.neecist.org/api/anuncios?populate=image", config)
       .then((response) => {
         response.data.data.forEach((element) => {
           const imgUrl = "https://api.neec.midas-cloud.xyz" + element.attributes.image.data.attributes.url;
