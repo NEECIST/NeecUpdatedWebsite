@@ -139,7 +139,7 @@ export default {
         console.log(response.data);
         response.data.data.forEach((element) => {
           const attributes = element.attributes;
-          const imgUrl = "https://api.neec.midas-cloud.xyz" + attributes.Foto.data.attributes.url;
+          const imgUrl = "https://api.neecist.org" + attributes.Foto.data.attributes.url;
           if (attributes.Presidente || attributes.Tesoureiro) {
             this.board.push({ id: element.id, name: attributes.frstlstName, url: imgUrl, president: attributes.Presidente, treasurer: attributes.Tesoureiro });
           } else {

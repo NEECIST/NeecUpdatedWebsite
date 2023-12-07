@@ -81,7 +81,7 @@ export default {
       .get("https://api.neecist.org/api/anuncios?populate=image", config)
       .then((response) => {
         response.data.data.forEach((element) => {
-          const imgUrl = "https://api.neec.midas-cloud.xyz" + element.attributes.image.data.attributes.url;
+          const imgUrl = "https://api.neecist.org" + element.attributes.image.data.attributes.url;
           this.cards.push({ text: element.attributes.title, image: imgUrl, page_url: element.attributes.url, order_id: element.attributes.order_id });
         });
         this.cards.sort((a, b) => a.order_id - b.order_id);

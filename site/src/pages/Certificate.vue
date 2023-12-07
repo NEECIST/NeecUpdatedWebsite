@@ -41,7 +41,7 @@ export default {
     axios
       .get("https://api.neecist.org/api/certificados?filters[cert_uid][$eq]=" + this.$route.params.id + "&populate=Background&populate=signature", config)
       .then((response) => {
-        let url_back = "https://api.neec.midas-cloud.xyz" + response.data.data[0].attributes.Background.data.attributes.url;
+        let url_back = "https://api.neecist.org" + response.data.data[0].attributes.Background.data.attributes.url;
         let background_w = response.data.data[0].attributes.Background.data.attributes.width;
         let background_h = response.data.data[0].attributes.Background.data.attributes.height;
         let name = response.data.data[0].attributes.participant;
