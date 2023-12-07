@@ -10,6 +10,7 @@ import Copa from '@/pages/Copa'
 //import Scores from '@/pages/Scores'
 import Form from '@/pages/Form'
 import Certificate from '@/pages/Certificate'
+import acessos from '@/pages/Acessos'
 
 const routes = [
     {
@@ -58,6 +59,11 @@ const routes = [
     {
         path: '/:pathMatch(.*)*',
         component: Error_Handling
+    },
+    {
+        path: '/acessos_sede',
+        name: 'Acessos',
+        component: acessos
     }
 
 ]
