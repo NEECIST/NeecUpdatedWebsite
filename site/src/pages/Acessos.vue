@@ -21,8 +21,8 @@
         </tbody>
       </table>
     </div>
-    <a class="buttons" :href="'http://localhost:8080/acessos_sede?page=' + page_before">Anterior</a>
-    <a class="buttons" :href="'http://localhost:8080/acessos_sede?page=' + page">Mais registos</a>
+    <a class="buttons" :href="'https://neecist.org/acessos_sede?page=' + page_before">Anterior</a>
+    <a class="buttons" :href="'https://neecist.org/acessos_sede?page=' + page">Mais registos</a>
     <div v-if="error">
       <p>Error fetching data: {{ error }}</p>
     </div>
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     fetchData(page) {
-      fetch("http://neecdoor.neec.midas-cloud.xyz/records?page=" + page)
+      fetch("https://neecdoor.neec.midas-cloud.xyz/records?page=" + page)
         .then((response) => response.json())
         .then((data) => {
           this.logs = data;
