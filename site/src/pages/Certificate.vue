@@ -46,6 +46,8 @@ export default {
         let background_h = response.data.data[0].attributes.Background.data.attributes.height;
         let name = response.data.data[0].attributes.participant;
         let color = response.data.data[0].attributes.color;
+        let size = response.data.data[0].attributes.size != null ? response.data.data[0].attributes.size : 50;
+        let offset = response.data.data[0].attributes.offset != null ? parseFloat(response.data.data[0].attributes.offset) : 0;
 
         // Create certificate
         // Get background size
@@ -60,10 +62,10 @@ export default {
         let that = this;
         background.onload = function () {
           ctx.drawImage(background, 0, 0, background_w, background_h);
-          ctx.font = "bold 50px Arial";
+          ctx.font = "bold"+ size + "Arial";
           ctx.fillStyle = color;
           ctx.textAlign = "center";
-          ctx.fillText(name, background_w / 2, background_h / 2 + 100);
+          ctx.fillText(name, background_w / 2, background_h / 2 + 100 - offset);
           that.certificateUrl = canvas.toDataURL();
           that.initialized = true;
         };
