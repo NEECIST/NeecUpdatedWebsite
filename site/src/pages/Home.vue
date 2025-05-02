@@ -111,8 +111,7 @@
           <div class="algo-card">
             <h2>NEECTalks</h2>
             <p>
-              NEECTalks é um podcast onde discutimos projectos, tecnologia e trazemos convidados experientes de diversos contextos que envolvem a nossa área no formato de uma conversa informal. Se és
-              curioso e tens vontade de aprender, junta-te a nós!
+              olá
             </p>
             <a class="address-text" href="https://www.youtube.com/user/NEECIST" target="_blank">
               <i class="fa-brands fa-youtube fa-2x" :style="{ padding: '4px' }"></i>
