@@ -17,22 +17,22 @@
             <div class="socials">
               <h2>Redes Sociais</h2>
               <a href="https://www.facebook.com/NEECIST/" target="_blank">
-                <i class="fa-brands fa-facebook icon"></i>
+                <i class="fa-brands fa-facebook icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
               <a href="https://github.com/NEECIST" target="_blank">
-                <i class="fa-brands fa-github icon"></i>
+                <i class="fa-brands fa-github icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
               <a href="https://www.linkedin.com/company/2977028/" target="_blank">
-                <i class="fa-brands fa-linkedin icon"></i>
+                <i class="fa-brands fa-linkedin icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
               <a href="https://www.instagram.com/neecist/" target="_blank">
-                <i class="fa-brands fa-instagram icon"></i>
+                <i class="fa-brands fa-instagram icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
               <a href="https://www.youtube.com/user/NEECIST" target="_blank">
-                <i class="fa-brands fa-youtube icon"></i>
+                <i class="fa-brands fa-youtube icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
               <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
-                <i class="fa-brands fa-spotify icon"></i>
+                <i class="fa-brands fa-spotify icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
             </div>
           </div>
