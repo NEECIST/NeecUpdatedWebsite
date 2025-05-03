@@ -111,7 +111,9 @@
           <div class="algo-card">
             <h2>NEECTalks</h2>
             <p>
-              olá
+              NEECTalks é um podcast onde discutimos projectos, tecnologia
+              e trazemos convidados experientes de diversos contextos que envolvem a nossa área no formato de uma conversa informal.
+              Se és curioso e tens vontade de aprender, junta-te a nós!
             </p>
             <a class="address-text" href="https://www.youtube.com/user/NEECIST" target="_blank">
               <i class="fa-brands fa-youtube fa-2x" :style="{ padding: '4px' }"></i>
@@ -204,7 +206,7 @@ export default {
 <style>
 .home-app {
   padding-top: 60px;
-  background-color: white;
+  background-color: #FFF4E8;
   position: relative;
 }
 @font-face {
@@ -212,7 +214,7 @@ export default {
   src: local("Vibur"), url(../assets/fonts/Vibur/Vibur-Regular.ttf) format("truetype");
 }
 .address-text {
-  color: #303633;
+  color: #252525;
 }
 .address-text:hover {
   color: #009de0;
@@ -268,20 +270,20 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #303633;
+  background-color: #252525;
   padding-top: 20px;
   padding-bottom: 20px;
 
   white-space: nowrap;
 }
 .announcement a {
-  color: white;
+  color: #FFF4E8;
   font-size: 2rem;
 }
 .hover-underline-animation {
   display: inline-block;
   position: relative;
-  color: #fff;
+  color: #FFF4E8;
 }
 
 .hover-underline-animation:after {
@@ -292,7 +294,7 @@ export default {
   height: 0.2rem;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #FFF4E8;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }

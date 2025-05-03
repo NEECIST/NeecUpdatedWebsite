@@ -110,11 +110,11 @@ export default {
 
 <style>
 #navbar.dark{
-  background-color: #383838;
+  background-color: #252525;
   color:#FFF4E8;
 }
 #menu.dark{
-  background-color: #383838;
+  background-color: #252525;
   color:#FFF4E8;
 }
 #navbar.dark > .nameState  .navbar-title{
@@ -232,7 +232,7 @@ text-decoration: none;
 }
 
 .navbar-title {
-  color:   #2c3e50;
+  color:   #252525;
   font-family: 'Montserrat', sans-serif;
   -o-transition: 0.2s;
   -ms-transition: 0.2s;

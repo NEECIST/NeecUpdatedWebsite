@@ -108,7 +108,7 @@ export default {
 .carousel__main__text {
   font-size: 52px;
   margin-bottom: -320px;
-  color: white;
+  color: #FFF4E8;
   text-align: center;
   font-weight: bold;
 }
