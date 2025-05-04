@@ -14,9 +14,12 @@
                 <h3 v-if="member.president">Presidente</h3>
               </div>
             </div>
-            <div class="teams_container">
+            <div class="teams_container" @click="toggleOverlay(member.id)">
               <div class="team-member">
                 <img :src="member.url" />
+                <div class="overlay" :class="{ active: activeOverlay === member.id }">
+                  <div class="text">Hello World</div>
+                </div>
               </div>
             </div>
             <div class="team-member-name">
@@ -28,9 +31,12 @@
         <div class="team-flex">
           <!-- for members=[Diogo, Gonçalo, Margarida .....] -->
           <div v-for="member in members" :key="member.id" data-aos="zoom-in">
-            <div class="teams_container">
+            <div class="teams_container" @click="toggleOverlay(member.id)">
               <div class="team-member">
                 <img :src="member.url" />
+                <div class="overlay" :class="{ active: activeOverlay === member.id }">
+                  <div class="text">Hello World</div>
+                </div>
               </div>
             </div>
             <div class="team-member-name">
@@ -106,6 +112,7 @@ export default {
       initialized: false,
       members: [],
       board: [],
+      activeOverlay: null, // ID do membro com overlay ativo
       teamsData: [
         {
           title: "Design",
@@ -125,6 +132,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    toggleOverlay(memberId) {
+      this.activeOverlay = this.activeOverlay === memberId ? null : memberId;
+    },
   },
   created() {
     const config = {
@@ -157,7 +169,7 @@ export default {
 
 <style>
 .hl {
-  border: 3px solid #dcdcdc;
+  border: 3px solid #FFF4E8;
   width: 100%;
   height: 0px;
   border-radius: 4px;
@@ -172,7 +184,7 @@ export default {
   align-items: center;
 }
 .vl {
-  border-left: 4px solid #dcdcdc;
+  border-left: 4px solid #505050;
   height: 100%;
   border-radius: 8px;
 }
@@ -197,7 +209,7 @@ export default {
 .description-team {
   padding-top: 100px;
   height: 300px;
-  background-color: white;
+  background-color: #FFF4E8;
   position: relative;
 }
 .description-team img {
@@ -238,6 +250,7 @@ export default {
 }
 .team {
   padding-top: 40px;
+  background-color: #FFF4E8;
 }
 .team-flex {
   padding-left: 50px;
@@ -246,7 +259,14 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   margin-right: 8vw;
+  background-color: #FFF4E8;
   margin-left: 8vw;
+}
+
+.team-app {
+  background-color: #FFF4E8;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .teams_container {
   position: relative;
@@ -319,8 +339,35 @@ export default {
   margin-right: 10px;
   margin-left: 10px;
 }
-.teams_container:hover .team-member {
-  opacity: 0.5;
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-color: #FFF4E8;
+  z-index: 10;
+}
+
+.teams_container:hover .overlay,
+.overlay.active {
+  opacity: 1;
+}
+
+.text {
+  color: #505050;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .member-name {
   width: 100px;

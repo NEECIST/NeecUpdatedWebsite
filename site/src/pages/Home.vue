@@ -193,9 +193,9 @@ export default {
 
     axios
       .get("https://api.neecist.org/api/anuncios?filters[id_episodio_spotify][$notNull]=true", config)
-      .then((response) => {
-        this.episode = "https://open.spotify.com/embed/episode/" + response.data.data[0].attributes.id_episodio_spotify;
-      })
+      /*.then((response) => {                 Comentei pq tava a dar erro
+        this.episode = "https://operesponsen.spotify.com/embed/episode/" + response.data[0].attributes.id_episodio_spotify;
+      })*/
       .finally(() => {
         this.initialized = true;
       });
