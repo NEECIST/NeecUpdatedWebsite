@@ -68,6 +68,7 @@ export default {
   flex-wrap: wrap;
   max-width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .project-card.reverse {
@@ -76,16 +77,18 @@ export default {
 
 .left-side {
   flex: 1;
-  min-width: 200px;
+  min-width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .project-image {
-  width: 100%;
-  max-width: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 8px;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .right-side {
@@ -95,11 +98,22 @@ export default {
   word-wrap: break-word;
   overflow-wrap: break-word;
   box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center ;
 }
 
 .project-desc {
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -115,14 +129,29 @@ export default {
 
   .left-side {
     min-width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .project-image {
-    max-width: 100%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
   }
 
   .right-side {
     padding: 1rem 0;
+    align-items: center;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .project-desc {
+    font-size: 1rem;
+    margin-bottom: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
   }
 }
 </style>

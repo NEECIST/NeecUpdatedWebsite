@@ -12,6 +12,9 @@
       <router-link router-link :to="{ name: 'Team' }">
         <div class="navbar-title">Equipa</div>
       </router-link>
+      <router-link router-link :to="{ name: 'Projects' }">
+        <div class="navbar-title">Projetos</div>
+      </router-link>
       <router-link router-link :to="{ name: 'Oportunities' }">
         <div class="navbar-title">Oportunidades</div>
       </router-link>
@@ -122,7 +125,7 @@ text-decoration: none;
 }
 
 .navbar {
-  width: 100vw;
+  width: 105vw;
   position: fixed;
   z-index: 1000;
   background-color: #ffffff;
