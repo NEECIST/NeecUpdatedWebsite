@@ -14,9 +14,13 @@
                 <h3 v-if="member.president">Presidente</h3>
               </div>
             </div>
-            <div class="teams_container">
+            <div class="teams_container" @click="toggleOverlay(member.id)">
               <div class="team-member">
                 <img :src="member.url" />
+                <div class="overlay" :class="{ active: activeOverlay === member.id }">
+                  <!-- basicamente o que tinha posto no figma, quando damos hover por cima nas img dos membros -->
+                  <div class="text">Hello World</div>
+                </div>
               </div>
             </div>
             <div class="team-member-name">
@@ -28,9 +32,13 @@
         <div class="team-flex">
           <!-- for members=[Diogo, Gonçalo, Margarida .....] -->
           <div v-for="member in members" :key="member.id" data-aos="zoom-in">
-            <div class="teams_container">
+            <div class="teams_container" @click="toggleOverlay(member.id)">
               <div class="team-member">
                 <img :src="member.url" />
+                <div class="overlay" :class="{ active: activeOverlay === member.id }">
+                  <!-- basicamente o que tinha posto no figma quando damos hover nas fotos dos membros -->
+                  <div class="text">Hello World</div>
+                </div>
               </div>
             </div>
             <div class="team-member-name">
@@ -38,10 +46,14 @@
             </div>
             <div>
               <p :style="{ fontSize: '30px', marginTop: '0px', paddingTop: '0px' }">
-                <a href="#team-explaination"><i v-if="member.team.includes('NEECIT')" class="fa-solid fa-laptop-code team-badge" :style="{ paddingRight: '4px' }"></i></a>
-                <a href="#team-explaination"><i v-if="member.team.includes('Design')" class="fa-solid fa-pen team-badge" :style="{ paddingRight: '4px' }"></i></a>
-                <a href="#team-explaination"><i v-if="member.team.includes('Divulgacao')" class="fa-solid fa-newspaper team-badge" :style="{ paddingRight: '4px' }"></i></a>
-                <a href="#team-explaination"><i v-if="member.team.includes('Multimedia')" class="fa-solid fa-video team-badge" :style="{ paddingRight: '4px' }"></i></a>
+                <a href="#team-explaination"><i v-if="member.team.includes('NEECIT')"
+                    class="fa-solid fa-laptop-code team-badge" :style="{ paddingRight: '4px' }"></i></a>
+                <a href="#team-explaination"><i v-if="member.team.includes('Design')" class="fa-solid fa-pen team-badge"
+                    :style="{ paddingRight: '4px' }"></i></a>
+                <a href="#team-explaination"><i v-if="member.team.includes('Divulgacao')"
+                    class="fa-solid fa-newspaper team-badge" :style="{ paddingRight: '4px' }"></i></a>
+                <a href="#team-explaination"><i v-if="member.team.includes('Multimedia')"
+                    class="fa-solid fa-video team-badge" :style="{ paddingRight: '4px' }"></i></a>
               </p>
             </div>
           </div>
@@ -57,35 +69,43 @@
 
       <div id="team-explaination" :style="{ paddingLeft: '50px', paddingRight: '50px' }">
         <div class="activities-row" data-aos="zoom-in">
-          <div class="col" :style="{ width: '25%', paddingLeft: '24px', paddingRight: '24px', flexDirection: 'column' }">
+          <div class="col"
+            :style="{ width: '25%', paddingLeft: '24px', paddingRight: '24px', flexDirection: 'column' }">
             <i class="fa-solid fa-laptop-code fa-6x icon"></i>
             <h3>NEECIT</h3>
             <p>
-              O NEEC IT é a nossa equipa de desenvolvimento e de manutenção dos serviços do núcleo, como por exemplo a drive, o discord, e este mesmo site. Desenvolvemos também projetos mais pessoais
+              O NEEC IT é a nossa equipa de desenvolvimento e de manutenção dos serviços do núcleo, como por exemplo a
+              drive, o discord, e este mesmo site. Desenvolvemos também projetos mais pessoais
               que apresentamos na nossa banca em eventos oficiais, tais como o NEECBoto, o LevitaNEEC e o NEECQuick.
             </p>
           </div>
           <div class="vl"></div>
-          <div class="col" :style="{ width: '25%', paddingLeft: '24px', paddingRight: '24px', flexDirection: 'column' }">
+          <div class="col"
+            :style="{ width: '25%', paddingLeft: '24px', paddingRight: '24px', flexDirection: 'column' }">
             <i class="fa-solid fa-pen fa-6x icon"></i>
             <h3>Design</h3>
-            <p>Design é a equipa que trata da imagem do núcleo. Utiliza ferramentas como Adobe Illustrator e Canva para fazer os nossos posts, stickers, flyers, posters, e muito mais.</p>
+            <p>Design é a equipa que trata da imagem do núcleo. Utiliza ferramentas como Adobe Illustrator e Canva para
+              fazer os nossos posts, stickers, flyers, posters, e muito mais.</p>
           </div>
           <div class="vl"></div>
-          <div class="col" :style="{ width: '25%', paddingLeft: '24px', paddingRight: '24px', flexDirection: 'column' }">
+          <div class="col"
+            :style="{ width: '25%', paddingLeft: '24px', paddingRight: '24px', flexDirection: 'column' }">
             <i class="fa-solid fa-video fa-6x icon"></i>
             <h3>Multimédia</h3>
             <p>
-              Muito como o Design, Multimédia também lida com o conteúdo que lançamos ao público mas mais focado em conteúdo vídeo. Esta é a equipa que trata dos nossos vídeos, recaps de eventos, e
+              Muito como o Design, Multimédia também lida com o conteúdo que lançamos ao público mas mais focado em
+              conteúdo vídeo. Esta é a equipa que trata dos nossos vídeos, recaps de eventos, e
               que organiza o nosso podcast - as NEECTalks!
             </p>
           </div>
           <div class="vl"></div>
-          <div class="col" :style="{ width: '25%', paddingLeft: '24px', paddingRight: '24px', flexDirection: 'column' }">
+          <div class="col"
+            :style="{ width: '25%', paddingLeft: '24px', paddingRight: '24px', flexDirection: 'column' }">
             <i class="fa-solid fa-newspaper fa-6x icon"></i>
             <h3>Divulgação</h3>
             <p>
-              A equipa de Divulgação é a equipa que gere as nossas redes sociais e caixa de entrada. É a equipa que contacta com o exterior e que trabalha para trazer oportunidades de estágios,
+              A equipa de Divulgação é a equipa que gere as nossas redes sociais e caixa de entrada. É a equipa que
+              contacta com o exterior e que trabalha para trazer oportunidades de estágios,
               bolsas, eventos, e tudo o que seja do interesse dos alunos do nosso curso.
             </p>
           </div>
@@ -106,6 +126,7 @@ export default {
       initialized: false,
       members: [],
       board: [],
+      activeOverlay: null, // ID do membro com overlay ativo
       teamsData: [
         {
           title: "Design",
@@ -125,6 +146,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    toggleOverlay(memberId) {
+      this.activeOverlay = this.activeOverlay === memberId ? null : memberId;
+    },
   },
   created() {
     const config = {
@@ -157,11 +183,12 @@ export default {
 
 <style>
 .hl {
-  border: 3px solid #dcdcdc;
+  border: 3px solid #FFF4E8;
   width: 100%;
   height: 0px;
   border-radius: 4px;
 }
+
 .team-item-title {
   background-color: #009de0;
   min-height: 100px;
@@ -171,11 +198,13 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 .vl {
-  border-left: 4px solid #dcdcdc;
+  border-left: 4px solid #505050;
   height: 100%;
   border-radius: 8px;
 }
+
 .team-item-desc {
   background-color: #505050;
   min-height: 400px;
@@ -185,21 +214,26 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 #team-explaination {
   padding-bottom: 2vh;
 }
+
 .team-badge {
   color: #303633;
 }
+
 .team-badge:hover {
   color: #009de0;
 }
+
 .description-team {
   padding-top: 100px;
   height: 300px;
-  background-color: white;
+  background-color: #FFF4E8;
   position: relative;
 }
+
 .description-team img {
   width: 700px;
   /*transform: rotate(30deg);*/
@@ -209,12 +243,14 @@ export default {
   left: -60px;
   z-index: 0;
 }
+
 .team-text {
   float: right;
   padding-right: 40px;
   position: relative;
   z-index: 1;
 }
+
 .description-title {
   font-size: 50px;
   font-weight: bolder;
@@ -222,6 +258,7 @@ export default {
   text-align: right;
   padding-top: 30px;
 }
+
 .description-text {
   margin-top: 10px;
   background-color: #009de0;
@@ -236,9 +273,12 @@ export default {
   color: #ffffff;
   line-height: 50px;
 }
+
 .team {
   padding-top: 40px;
+  background-color: #FFF4E8;
 }
+
 .team-flex {
   padding-left: 50px;
   padding-right: 50px;
@@ -246,13 +286,22 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   margin-right: 8vw;
+  background-color: #FFF4E8;
   margin-left: 8vw;
 }
+
+.team-app {
+  background-color: #FFF4E8;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .teams_container {
   position: relative;
   height: auto;
   width: auto;
 }
+
 .linkedin-icons {
   opacity: 0;
   position: absolute;
@@ -266,6 +315,7 @@ export default {
   height: 60px;
   transition: 0.5s ease;
 }
+
 .insta-icons {
   opacity: 0;
   position: absolute;
@@ -279,6 +329,7 @@ export default {
   height: 60px;
   transition: 0.5s ease;
 }
+
 .git-icons {
   opacity: 0;
   position: absolute;
@@ -292,6 +343,7 @@ export default {
   height: 60px;
   transition: 0.5s ease;
 }
+
 .mail-icons {
   opacity: 0;
   position: absolute;
@@ -311,26 +363,59 @@ export default {
   flex-direction: row;
   justify-content: space-around;
 }
+
 .team-member {
   transition: 0.5s ease;
 }
+
 .team-member img {
   height: 160px;
   margin-right: 10px;
   margin-left: 10px;
 }
-.teams_container:hover .team-member {
-  opacity: 0.5;
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-color: #FFF4E8;
+  z-index: 10;
 }
+
+.teams_container:hover .overlay,
+.overlay.active {
+  opacity: 1;
+}
+
+.text {
+  color: #505050;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .member-name {
   width: 100px;
   font-size: 22px;
   text-align: center;
   color: #262626;
 }
+
 .icon-team-member {
   height: 60px;
 }
+
 @media screen and (max-width: 1200px) {
   .team-flex {
     padding-left: 12px;
@@ -338,16 +423,19 @@ export default {
     margin-left: 5vw;
   }
 }
+
 @media screen and (max-width: 800px) {
   .description-title {
     font-size: 40px;
   }
+
   .description-text {
     font-size: 18px;
     width: 320px;
     padding-right: 40px;
     line-height: 28px;
   }
+
   .description-team img {
     width: 475px;
     top: 200px;
@@ -358,6 +446,7 @@ export default {
     margin-right: 5vw;
     margin-left: 5vw;
   }
+
   .team-flex img {
     height: 140px;
     width: 140px;
@@ -365,10 +454,12 @@ export default {
     flex: 0 0 50%;
     margin-right: 10px;
   }
+
   .member-name {
     font-size: 17px;
     margin-left: 13%;
   }
+
   .icon-team-member {
     height: 40px !important;
     width: 40px !important;
@@ -376,16 +467,19 @@ export default {
     margin-right: 0px !important;
   }
 }
+
 @media screen and (max-width: 400px) {
   .description-team {
     height: 200px;
     background-color: white;
     position: relative;
   }
+
   .description-title {
     font-size: 30px;
     padding-top: 10px;
   }
+
   .description-text {
     font-size: 16px;
     width: 250px;
@@ -393,10 +487,12 @@ export default {
     padding-left: 20px;
     line-height: 24px;
   }
+
   .description-team img {
     width: 475px;
     top: 150px;
   }
+
   .team {
     padding-top: 20px;
   }
@@ -405,6 +501,7 @@ export default {
     margin-right: 2vw;
     margin-left: 2vw;
   }
+
   .team-flex img {
     height: 120px;
     width: 120px;
@@ -412,6 +509,7 @@ export default {
     flex: 0 0 50%;
     margin-right: 10px;
   }
+
   .member-name {
     margin-left: 6%;
   }

@@ -5,41 +5,41 @@
         <div class="row">
           <div class="col-md-4">
             <div class="location-adress">
-              <p><i class="fa-solid fa-location-dot" :style="{ color: 'white', marginRight: '4px' }"></i> Instituto Superior Técnico - Av. Rovisco Pais, 1049-001 Lisboa</p>
+              <p><i class="fa-solid fa-location-dot" :style="{marginRight: '4px' }"></i> Instituto Superior Técnico - Av. Rovisco Pais, 1049-001 Lisboa</p>
               <p>
-                <i class="fa-solid fa-building-flag" :style="{ color: 'white', marginRight: '4px' }"></i>
+                <i class="fa-solid fa-building-flag" :style="{marginRight: '4px' }"></i>
                 <a style="color: white" href="https://neecist.org/acessos_sede">Sede do NEEC - Pavilhão de Electricidade, Piso 4, Sala 4i.13</a>
               </p>
-              <p><i class="fa-solid fa-flask" :style="{ color: 'white', marginRight: '4px' }"></i> NEECLab - Pavilhão de Electricidade, Piso 1 (Junto à receção da SCDEEC)</p>
+              <p><i class="fa-solid fa-flask" :style="{marginRight: '4px' }"></i> NEECLab - Pavilhão de Electricidade, Piso 1 (Junto à receção da SCDEEC)</p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="socials">
               <h2>Redes Sociais</h2>
               <a href="https://www.facebook.com/NEECIST/" target="_blank">
-                <i class="fa-brands fa-facebook icon" :style="{ color: 'white' }"></i>
+                <i class="fa-brands fa-facebook icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
-              <a href="https://twitter.com/NEECIST" target="_blank">
-                <i class="fa-brands fa-twitter icon" :style="{ color: 'white' }"></i>
+              <a href="https://github.com/NEECIST" target="_blank">
+                <i class="fa-brands fa-github icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
               <a href="https://www.linkedin.com/company/2977028/" target="_blank">
-                <i class="fa-brands fa-linkedin icon" :style="{ color: 'white' }"></i>
+                <i class="fa-brands fa-linkedin icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
               <a href="https://www.instagram.com/neecist/" target="_blank">
-                <i class="fa-brands fa-instagram icon" :style="{ color: 'white' }"></i>
+                <i class="fa-brands fa-instagram icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
               <a href="https://www.youtube.com/user/NEECIST" target="_blank">
-                <i class="fa-brands fa-youtube icon" :style="{ color: 'white' }"></i>
+                <i class="fa-brands fa-youtube icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
               <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
-                <i class="fa-brands fa-spotify icon" :style="{ color: 'white' }"></i>
+                <i class="fa-brands fa-spotify icon" :style="{ color: '#FFF4E8' }"></i>
               </a>
             </div>
           </div>
           <div class="col-md-4">
             <div class="contact-adress">
-              <p><i class="fa-solid fa-phone" :style="{ color: 'white', marginRight: '6px' }"></i> <a class="contact-address-text" href="tel:(+351) 218 419 056">(+351) 218 417 745</a></p>
-              <p><i class="fa-solid fa-envelope" :style="{ color: 'white', marginRight: '6px' }"></i> <a class="contact-address-text" href="mailto:contacto@neecist.org">contacto@neecist.org</a></p>
+              <p><i class="fa-solid fa-phone" :style="{marginRight: '6px' }"></i> <a class="contact-address-text" href="tel:(+351) 218 419 056">(+351) 218 417 745</a></p>
+              <p><i class="fa-solid fa-envelope" :style="{marginRight: '6px' }"></i> <a class="contact-address-text" href="mailto:contacto@neecist.org">contacto@neecist.org</a></p>
             </div>
           </div>
         </div>
@@ -71,10 +71,10 @@ export default {
   margin-bottom: 10px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #FFF4E8;
 }
 .icon {
-  color: white;
+  color: #FFF4E8;
   margin: 5px;
 }
 
@@ -93,15 +93,16 @@ export default {
   position: absolute;
   width: 100%;
   bottom: 0;
-  background-color: #303633;
+  background-color: #252525;
   text-align: left;
+  color: #FFF4E8;
 }
 .bottom-bar {
   margin-top: 10px;
   width: 100%;
   height: 30px;
-  background-color: #303633;
-  color: white;
+  background-color: #252525;
+  color: #FFF4E8;
   position: relative;
   overflow: hidden;
   bottom: 0;
@@ -199,7 +200,7 @@ export default {
   float: left;
   font-size: 16px;
   font-family: "Roboto";
-  color: white;
+  color: #FFF4E8;
   padding: 10px;
   padding-left: 10px;
 }
@@ -207,11 +208,11 @@ export default {
   float: right;
   font-size: 16px;
   font-family: "Roboto";
-  color: white;
+  color: #FFF4E8;
   padding: 20px;
 }
 .contact-address-text {
-  color: white;
+  color: #FFF4E8;
 }
 .contact-address-text:hover {
   color: #009de0;

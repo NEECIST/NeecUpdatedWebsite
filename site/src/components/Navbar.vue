@@ -1,36 +1,37 @@
 <template>
   <div class="navbar" id="navbar">
     <div class="nameState">
+      <!-- NEECIST Logo -->
       <router-link router-link :to="{ name: 'Home' }">
         <img class="navbar-left-logo" :src="navbar_logo_link" />
         <img class="navbar-left-logo-mobile" :src="navbar_mobile_logo_link" />
       </router-link>
       
-       <router-link router-link :to="{ name: 'Home' }">
-        <div class="navbar-title">Home</div>
-      </router-link>       
-      <router-link router-link :to="{ name: 'Team' }">
-        <div class="navbar-title">Equipa</div>
-      </router-link>
-      <router-link router-link :to="{ name: 'Projects' }">
-        <div class="navbar-title">Projetos</div>
-      </router-link>
-      <router-link router-link :to="{ name: 'Oportunities' }">
-        <div class="navbar-title">Oportunidades</div>
-      </router-link>
-      <!-- <router-link router-link :to="{ name: 'Projects' }">
-        <div class="navbar-title">Projetos</div>
-      </router-link> -->
+      <!-- Rest of Navbar Entries -->
+      <div class="navbar-links">
+        <router-link router-link :to="{ name: 'Team' }">
+          <div class="navbar-title">Equipa</div>
+        </router-link>       
+        <router-link router-link :to="{ name: 'Projects' }">
+          <div class="navbar-title">Projetos</div>
+        </router-link>
+        <router-link router-link :to="{ name: 'NEECATHON' }">
+          <div class="navbar-title">NEECATHON</div>
+        </router-link>
+      </div>
     </div>
 
+    <!-- Old NEEC Room status -->
+    <!--
     <div class="pagesBox">
       <div class="sedeStatus">
         A Sede do NEEC está <div class="sedeBtnContainer">
-        <span  class="sedeBtn" v-bind:style= "boolean_sede_state ? {backgroundColor: `green`} : {backgroundColor: `red`}"/>
-       </div>
+          <span  class="sedeBtn" v-bind:style= "boolean_sede_state ? {backgroundColor: `green`} : {backgroundColor: `red`}"/>
+        </div>
       </div>
-      
     </div>
+    -->
+
     <div id="menuToggle">
       <input type="checkbox" :checked="show_menu" v-on:click="show_menu = !show_menu" />
       <span></span>
@@ -109,15 +110,15 @@ export default {
 
 <style>
 #navbar.dark{
-  background-color: #383838;
-  color:#fff;
+  background-color: #252525;
+  color:#FFF4E8;
 }
 #menu.dark{
-  background-color: #383838;
-  color:#fff;
+  background-color: #252525;
+  color:#FFF4E8;
 }
 #navbar.dark > .nameState  .navbar-title{
-  color:#fff;
+  color:#FFF4E8;
 }
 
 a, a:-webkit-any-link {
@@ -128,7 +129,7 @@ text-decoration: none;
   width: 105vw;
   position: fixed;
   z-index: 1000;
-  background-color: #ffffff;
+  background-color: #FFF4E8;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -144,8 +145,8 @@ text-decoration: none;
 .nameState {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 50%;
+  justify-content: space-between;
+  width: 100%;
   padding: 0 2vw;
 }
 
@@ -224,9 +225,15 @@ text-decoration: none;
   display: inline-block;
 }
 
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+}
+
 .navbar-title {
-  color:   #2c3e50;
-  font-family: 'Roboto', sans-serif;
+  color:   #252525;
+  font-family: 'Montserrat', sans-serif;
   -o-transition: 0.2s;
   -ms-transition: 0.2s;
   -moz-transition: 0.2s;

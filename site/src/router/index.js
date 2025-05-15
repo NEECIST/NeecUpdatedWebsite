@@ -3,8 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/pages/Home'
 import Error_Handling from '@/pages/Error_Handling'
 import Team from '@/pages/Team'
-import Oportunities from '@/pages/Oportunities'
-import Projects from '@/pages/Projects_Mobile'
+//import Oportunities from '@/pages/Oportunities'
+import Projects from '@/pages/Projects'
+import NEECATHON from '@/pages/NEECATHON'
 import Drive from '@/pages/Drive'
 import Copa from '@/pages/Copa'
 //import Scores from '@/pages/Scores'
@@ -24,10 +25,17 @@ const routes = [
         component: Team
     },
     {
+        path: '/NEECATHON',
+        name: 'NEECATHON',
+        component: NEECATHON
+    },
+    /*
+    {
         path: '/oportunities',
         name: 'Oportunities',
         component: Oportunities
     },
+    */
     {
         path: '/projects',
         name: 'Projects',

@@ -1,14 +1,19 @@
 <template>
   <div class="projects-page">
     <main class="projects-container">
+      <h1 class="main-title">Projetos</h1>
 
-      <div class="project-card" v-for="(card, index) in cardList" :key="index" :class="{ 'reverse': index % 2 === 1 }">
+      <div class="project-card" v-for="(card, index) in cardList" :key="index">
         <div class="left-side">
           <img :src="card.image" alt="Imagem do projeto" class="project-image" />
         </div>
 
         <div class="right-side">
           <p class="project-desc" v-html="card.desc"></p>
+          <div class="people-icons">
+            <div class="person-icon" v-for="n in 3" :key="n"></div>
+          </div>
+          <button class="learn-more">Saber mais</button>
         </div>
       </div>
     </main>
@@ -53,6 +58,18 @@ export default {
   min-height: 100vh;
 }
 
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 4rem 0 2rem 0;
+}
 
 .projects-container {
   padding: 0 2rem;
@@ -66,12 +83,6 @@ export default {
   margin: 2rem 0;
   padding: 1.5rem;
   flex-wrap: wrap;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.project-card.reverse {
-  flex-direction: row-reverse;
 }
 
 .left-side {
@@ -91,10 +102,6 @@ export default {
 .right-side {
   flex: 2;
   padding: 1rem;
-  max-width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  box-sizing: border-box;
 }
 
 .project-desc {
@@ -102,27 +109,31 @@ export default {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-  .project-card {
-    flex-direction: column; 
-    align-items: center;
-    max-width: 100%;
-  }
+.people-icons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
 
-  .project-card.reverse-card {
-    flex-direction: column; 
-  }
+.person-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+}
 
-  .left-side {
-    min-width: 100%;
-  }
+.learn-more {
+  background-color: #f48120;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-  .project-image {
-    max-width: 100%;
-  }
-
-  .right-side {
-    padding: 1rem 0;
-  }
+.learn-more:hover {
+  background-color: #d76f1b;
 }
 </style>
