@@ -1,11 +1,13 @@
 <template>
   <div class="navbar" id="navbar">
-    <div class="nameState">
+    <div class="navbar-content">
       <!-- NEECIST Logo -->
-      <router-link router-link :to="{ name: 'Home' }">
-        <img class="navbar-left-logo" :src="navbar_logo_link" />
-        <img class="navbar-left-logo-mobile" :src="navbar_mobile_logo_link" />
-      </router-link>
+      <div class="navbar-logo-wrapper">
+        <router-link router-link :to="{ name: 'Home' }">
+          <img class="navbar-left-logo" :src="navbar_logo_link" />
+          <img class="navbar-left-logo-mobile" :src="navbar_mobile_logo_link" />
+        </router-link>
+      </div>
       
       <!-- Rest of Navbar Entries -->
       <div class="navbar-links">
@@ -19,7 +21,7 @@
           <div class="navbar-title">NEECATHON</div>
         </router-link>
       </div>
-    </div>
+    </div> <!-- /.navbar-content -->
 
     <!-- Old NEEC Room status -->
     <!--
@@ -126,14 +128,14 @@ text-decoration: none;
 }
 
 .navbar {
-  width: 105vw;
   position: fixed;
-  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* make it span exactly the viewport width */
+  width: 100vw;
   background-color: #FFF4E8;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1vh 0;
+  z-index: 1000;
 }
 .navbar-left-logo {
   width: 160px;
@@ -142,12 +144,11 @@ text-decoration: none;
   display: none;
 }
 
-.nameState {
+.navbar-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 0 2vw;
+  padding: 1vh 2vw;
 }
 
 .pagesBox {
@@ -225,10 +226,14 @@ text-decoration: none;
   display: inline-block;
 }
 
+.navbar-logo-wrapper {
+  flex-shrink: 0;
+}
+
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 1.5vw;
+  gap: 2vw;
 }
 
 .navbar-title {

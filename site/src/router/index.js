@@ -5,6 +5,7 @@ import Error_Handling from '@/pages/Error_Handling'
 import Team from '@/pages/Team'
 //import Oportunities from '@/pages/Oportunities'
 import Projects from '@/pages/Projects'
+import Projects_Mobile from '@/pages/Projects_Mobile'
 import NEECATHON from '@/pages/NEECATHON'
 import Drive from '@/pages/Drive'
 import Copa from '@/pages/Copa'
@@ -40,6 +41,11 @@ const routes = [
         path: '/projects',
         name: 'Projects',
         component: Projects
+    },
+    {
+        path: '/projects_mobile',
+        name: 'Projects_Mobile',
+        component: Projects_Mobile
     },
     {
         path: '/form',
