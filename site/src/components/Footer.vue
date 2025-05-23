@@ -1,3 +1,5 @@
+<!-- Note that maybe the fixed bar should maybe only be used in the home page -->
+<!-- Maybe have it but always showing instead of not showing in the beggining -->
 <template>
   <div>
     <!-- Always-fixed bar -->
