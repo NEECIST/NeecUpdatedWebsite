@@ -146,14 +146,14 @@ export default {
   }
   .socials-footer .icon {
     font-size: 1.5rem;
-    color: #fff4e8;
+    color: #FFF4E8;
   }
   .socials-footer .icon:hover {
     color: #009de0;
   }
 
   .copyright-footer {
-    color: #fff4e8;
+    color: #FFF4E8;
     text-decoration: none;
     text-align: left;
     padding: 0.5rem 0;
@@ -206,7 +206,7 @@ export default {
   }
 
   /* Make sure links are visible */
-  a { color: #fff4e8; }
+  a { color: #FFF4E8; }
   a:hover { color: #009de0; }
 
 
