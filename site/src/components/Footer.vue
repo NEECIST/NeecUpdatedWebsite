@@ -46,6 +46,10 @@
             <i class="fa-brands fa-spotify icon"></i>
           </a>
         </div>
+
+        <div class="copyright-footer" id="copyright">
+          © NEECIST 2025
+        </div>
       </div>
     </transition>
 
@@ -74,7 +78,7 @@
     </div>
     <div class="bottom-bar" :class="{ show: footerVisible }">
       <div id="copyright">
-        © 2022 Núcleo de Estudantes de Eletrotécnica e de Computadores do IST
+        © NEECIST - Núcleo de Estudantes de Eletrotécnica e de Computadores do IST 2025 
       </div>
     </div>
   </div>
@@ -120,17 +124,12 @@ export default {
     right: 0;
     display: flex;
     gap: 1rem;
-    padding: 0.5rem 0 0.5rem 1rem;
-    background: rgba(37,37,37,0.8);
+    justify-content: space-between;    /* push left group to left, right group to right */
+    align-items: center;               /* vertical centering */
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    background: rgba(37,37,37,1);
     transition: background 0.3s ease, transform 0.3s ease;
     z-index: 1001;
-  }
-
-  /* bottom‐of‐page variant */
-  .scrollable-footer--bottom {
-    background: rgba(55,121,184,0.9);
-    position: absolute;
-    transform: scale(1.1);
   }
 
   /* social icons */
@@ -149,9 +148,9 @@ export default {
     color: #009de0;
   }
 
-  .site-footer {
-    background: #252525;
+  .copyright-footer {
     color: #fff4e8;
+    text-decoration: none;
   }
 
   /* Fade in/out over 0.3s */
