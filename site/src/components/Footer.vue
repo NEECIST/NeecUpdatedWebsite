@@ -1,5 +1,223 @@
 <template>
-  <div class="contacts-comp">
+  <div>
+    <!-- Full contact section (slides up only at page‐bottom) -->
+    <section
+      id="contact"
+      class="contact-section"
+      :class="{ show: isAtBottom }"
+    >
+      <div class="container">
+        <div class="col-md-4">
+          <!-- your location/address… -->
+        </div>
+        <div class="col-md-4">
+          <!-- <h2>Redes Sociais</h2>  Remove this entire column -->
+          <!-- …and its icons––we’ll pin them separately. -->
+        </div>
+        <div class="col-md-4">
+          <!-- your phone/email… -->
+        </div>
+      </div>
+    </section>
+
+    <!-- → NEW: Always-fixed social icons bar -->
+    <transition name="fade">
+      <div 
+        class="scrollable-footer"
+        v-show="footerVisible && !isAtBottom"
+      >
+        <div class="socials-footer">
+          <a href="https://www.facebook.com/NEECIST/" target="_blank">
+            <i class="fa-brands fa-facebook icon"></i>
+          </a>
+          <a href="https://github.com/NEECIST" target="_blank">
+            <i class="fa-brands fa-github icon"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/2977028/" target="_blank">
+            <i class="fa-brands fa-linkedin icon"></i>
+          </a>
+          <a href="https://www.instagram.com/neecist/" target="_blank">
+            <i class="fa-brands fa-instagram icon"></i>
+          </a>
+          <a href="https://www.youtube.com/user/NEECIST" target="_blank">
+            <i class="fa-brands fa-youtube icon"></i>
+          </a>
+          <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
+            <i class="fa-brands fa-spotify icon"></i>
+          </a>
+        </div>
+      </div>
+    </transition>
+
+    <!-- Sticky bottom-bar (as before) -->
+    <div 
+      class="socials"
+    >
+      <a href="https://www.facebook.com/NEECIST/" target="_blank">
+        <i class="fa-brands fa-facebook icon"></i>
+      </a>
+      <a href="https://github.com/NEECIST" target="_blank">
+        <i class="fa-brands fa-github icon"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/2977028/" target="_blank">
+        <i class="fa-brands fa-linkedin icon"></i>
+      </a>
+      <a href="https://www.instagram.com/neecist/" target="_blank">
+        <i class="fa-brands fa-instagram icon"></i>
+      </a>
+      <a href="https://www.youtube.com/user/NEECIST" target="_blank">
+        <i class="fa-brands fa-youtube icon"></i>
+      </a>
+      <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
+        <i class="fa-brands fa-spotify icon"></i>
+      </a>
+    </div>
+    <div class="bottom-bar" :class="{ show: footerVisible }">
+      <div id="copyright">
+        © 2022 Núcleo de Estudantes de Eletrotécnica e de Computadores do IST
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<script>
+export default {
+  name: "footer-component",
+  data() {
+    return {
+      footerVisible: false,
+      isAtBottom: false,
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+    this.handleScroll(); // initialize on load
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const scrollY = window.scrollY;
+      const winH = window.innerHeight;
+      const docH = document.documentElement.scrollHeight;
+
+      this.footerVisible = scrollY > 100;
+      this.isAtBottom = scrollY + winH >= docH - 10;
+    },
+  },
+};
+</script>
+
+<style scoped>
+  /* pinned absolutely just above the bottom-bar */
+  /* default (mid‐page) */
+  .scrollable-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0 0.5rem 1rem;
+    background: rgba(37,37,37,0.8);
+    transition: background 0.3s ease, transform 0.3s ease;
+    z-index: 1001;
+  }
+
+  /* bottom‐of‐page variant */
+  .scrollable-footer--bottom {
+    background: rgba(55,121,184,0.9);
+    position: absolute;
+    transform: scale(1.1);
+  }
+
+  /* social icons */
+  .socials-footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    left: 1vm;
+  }
+  .socials-footer .icon {
+    font-size: 1.5rem;
+    color: #fff4e8;
+  }
+  .socials-footer .icon:hover {
+    color: #009de0;
+  }
+
+  .site-footer {
+    background: #252525;
+    color: #fff4e8;
+  }
+
+  /* Fade in/out over 0.3s */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease;
+  }
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+  .fade-enter-to,
+  .fade-leave-from {
+    opacity: 1;
+  }
+
+  /* Top section */
+  .footer-top {
+    padding: 2rem;
+  }
+  .footer-top .container {
+    display: flex;
+  }
+  .footer-top .col-md-4 {
+    flex: 1;
+    padding: 0 1rem;
+  }
+
+  /* Social icons */
+  .socials {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .icon { font-size: 1.5rem; }
+
+  /* Bottom bar */
+  .footer-bottom {
+    padding: 1rem;
+    text-align: center;
+    background: #1a1a1a;
+    font-size: 0.9rem;
+  }
+
+  
+  .bottom-bar {
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    background-color: #252525;
+    color: #FFF4E8;
+    position: relative;
+    overflow: hidden;
+    bottom: 0;
+  }
+
+  /* Make sure links are visible */
+  a { color: #fff4e8; }
+  a:hover { color: #009de0; }
+</style>
+
+
+
+
+<!--
+<template>
+  <div class="contacts-comp" :class="footerState">
     <section id="contact" class="section-bg wow fadeInUp">
       <div class="container">
         <div class="row">
@@ -56,12 +274,48 @@
 export default {
   name: "footer-component",
   data() {
-    return {};
+    return {
+      footerVisible: false,
+      isAtBottom: false
+    };
+  },
+
+  computed: {
+    footerState() {
+      return {
+        'footer-hidden': !this.footerVisible && !this.isAtBottom,
+        'footer-visible': this.footerVisible && !this.isAtBottom,
+        'footer-expanded': this.isAtBottom,
+      };
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+    this.handleScroll();  // Initial check
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const fullHeight = document.body.scrollHeight;
+
+      // Show when scrolling down a bit
+      this.footerVisible = scrollY > 100;
+
+      // Expand when near bottom
+      this.isAtBottom = (scrollY + windowHeight + 50) >= fullHeight;
+    },
   },
 };
 </script>
 
 <style>
+body {
+  padding-bottom: 120px; /* Adjust based on footer height */
+}
 .socials {
   text-align: center;
   font-size: 30px;
@@ -90,12 +344,39 @@ export default {
   filter: grayscale(0%);
 }
 .contacts-comp {
-  position: absolute;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  position: fixed;
   width: 100%;
   bottom: 0;
   background-color: #252525;
   text-align: left;
   color: #FFF4E8;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  z-index: 10;
+}
+/* Hidden by default */
+.footer-hidden {
+  transform: translateY(100%);
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Compact footer while scrolling */
+.footer-visible {
+  transform: translateY(0%);
+  height: 120px;
+  opacity: 1;
+  background-color: #252525;
+}
+
+/* Expanded footer at bottom */
+.footer-expanded {
+  transform: translateY(0%);
+  height: auto;
+  background-color: #252525;
+  opacity: 1;
 }
 .bottom-bar {
   margin-top: 10px;
@@ -223,3 +504,4 @@ export default {
   }
 }
 </style>
+-->

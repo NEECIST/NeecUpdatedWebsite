@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="announcement">
-      <a class="hover-underline-animation" href="/form">Inscreve-te agora na nossa newsletter!</a>
+      
     </div>
 
     <div class="container" :style="{ padding: '10px', paddingBottom: '200px' }">
