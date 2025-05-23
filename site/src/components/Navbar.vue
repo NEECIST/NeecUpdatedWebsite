@@ -90,7 +90,7 @@ export default {
       this.$router.push({ name: page });
     },
     handleScroll() {
-      if (window.scrollY > 710) {
+      if (window.scrollY > 595) {
         document.getElementById("navbar").classList.add("dark");
         document.getElementById("menu").classList.add("dark");
       } else {
@@ -119,9 +119,13 @@ export default {
   background-color: #252525;
   color:#FFF4E8;
 }
-#navbar.dark > .nameState  .navbar-title{
+#navbar.dark > .nameState {
   color:#FFF4E8;
 }
+#navbar.dark .navbar-title {
+  color: #FFF4E8;
+}
+
 
 a, a:-webkit-any-link {
 text-decoration: none;
@@ -247,7 +251,6 @@ text-decoration: none;
   font-size: 19px;
   padding-inline: 3vw 1vw;
   font-weight: bold;
-  
 }
 .navbar-title:hover {
   color: rgb(55, 121, 184);
