@@ -70,6 +70,19 @@ export default {
       navbar_mobile_logo_link: neec_logo_mobile
     };
   },
+  mounted(){
+    window.addEventListener('scroll', this.handleScroll);
+    DataService.getAll().on("value", this.onDataChange);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+    DataService.getAll().off("value", this.onDataChange);
+  },
+  watch: {
+    $route() {
+      this.handleScroll(); // Re-evaluate footer visibility on page change
+    }
+  },
   methods: {
     onDataChange(items) {
       //let payload = [];
@@ -90,22 +103,22 @@ export default {
       this.$router.push({ name: page });
     },
     handleScroll() {
-      if (window.scrollY > 595) {
+      // Check if the current page is the home page
+      const isHome = this.$route?.path === "/";
+
+      if (!isHome) {
         document.getElementById("navbar").classList.add("dark");
         document.getElementById("menu").classList.add("dark");
       } else {
-        document.getElementById("navbar").classList.remove("dark");
-        document.getElementById("menu").classList.remove("dark");
+        if (window.scrollY > 595) {
+          document.getElementById("navbar").classList.add("dark");
+          document.getElementById("menu").classList.add("dark");
+        } else {
+          document.getElementById("navbar").classList.remove("dark");
+          document.getElementById("menu").classList.remove("dark");
+        }
       }
     }
-  },
-  mounted(){
-    window.addEventListener('scroll', this.handleScroll);
-    DataService.getAll().on("value", this.onDataChange);
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-    DataService.getAll().off("value", this.onDataChange);
   }
 };
 </script>
