@@ -13,7 +13,7 @@
     </div>
 
     <div class="container" :style="{ padding: '10px', paddingBottom: '200px' }">
-      <div class="activities-row">
+      <div class="activities-row" id="QuemSomos">
         <div class="col iconss" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
           <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
             <i class="fa-solid fa-people-group fa-10x icon"></i>
@@ -32,11 +32,20 @@
 
       <hr> <!-- Horizontal Divider -->
 
-      <div class="activities-row">
+      <div class="activities-row" id="Projetos">
         <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
           <div class="algo-card">
-            <h2>Workshops</h2>
-            <p>Queres por em prática alguns dos conhecimentos das aulas? O NEEC ajuda-te. Realizamos workshops de Eletrónica, Soldadura, Programação, Soft-Skills entre muitos outros...</p>
+            <h2>Projetos</h2>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
             <p>
               <a class="address-text" href="https://linktr.ee/neecist"><i class="fa-solid fa-gear fa-xl" :style="{ paddingRight: '4px' }"></i>Inscreve-te!</a>
             </p>
@@ -51,37 +60,72 @@
 
       <hr> <!-- Horizontal Divider -->
 
-      <div class="activities-row">
-        <div class="col iconss" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
-          <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
-            <i class="fa-solid fa-folder-open fa-10x icon"></i>
+      <div class="activities-row-team" id="Equipas">
+        <div class="section-title" data-aos="fade-top">
+          <h2>Equipas</h2>
+        </div>
+        
+        <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+          <div :style="{height: '100px', width: 'auto'}"></div>
+          <div class="teams-text">
+            MULTIMÉDIA
+          </div>
+          <div class="image-border">
+            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
           </div>
         </div>
-        <div class="col" data-aos="fade-left">
-          <div class="algo-card">
-            <h2>Drive MEEC</h2>
-            <p>
-              Acesso a todos os recursos necessários para conseguires trabalhar nas tuas cadeiras! Aulas, problemas, testes e exames, tanto de licenciatura como de mestrado. Também podes contribuir
-              com material teu!
-            </p>
-            <p>
-              <a class="address-text" href="https://drive.google.com/drive/u/3/folders/1HjuUvki3FrK9BKkcequsfCHxNjIVtWbz"
-                ><i class="fa-solid fa-folder-open fa-xl" :style="{ paddingRight: '4px' }"></i>drive.neecist.org</a
-              >
-            </p>
+        <div class="col-div-5" data-aos="fade-bottom" :style="{ display: 'flex', flexDirection: 'column' }">
+          <div class="image-border">
+            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+          </div>
+          <div class="teams-text">
+            IT
+          </div>
+          <div :style="{height: '100px', width: 'auto'}"></div>
+        </div>
+        <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+          <div :style="{height: '100px', width: 'auto'}"></div>
+          <div class="teams-text">
+            DESIGN
+          </div>
+          <div class="image-border">
+            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+          </div>
+        </div>
+        <div class="col-div-5" data-aos="fade-bottom" :style="{ display: 'flex', flexDirection: 'column' }">
+          <div class="image-border">
+            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+          </div>
+          <div class="teams-text">
+            PROJETOS
+          </div>
+          <div :style="{height: '100px', width: 'auto'}"></div>
+        </div>
+        <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+          <div :style="{height: '100px', width: 'auto'}"></div>
+          <div class="teams-text">
+            DIVULGAÇÃO
+          </div>
+          <div class="image-border">
+            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
           </div>
         </div>
       </div>
 
       <hr> <!-- Horizontal Divider -->
 
-      <div class="activities-row">
+      <div class="activities-row" id="Soon">
         <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
           <div class="algo-card">
-            <h2>IST SI</h2>
+            <h2>Em Breve</h2>
             <p>
-              Queres experienciar o mundo de trabalho? Entra em contacto e candidata-te para estagiar no verão em empresas ligadas a todos os ramos de engenharia, para poderes enriquecer a tua
-              experiência profissional.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <p>
               <a class="address-text" href="https://ist-csm.symplicity.com/students/app/home"><i class="fa-solid fa-id-badge fa-xl" :style="{ paddingRight: '4px' }"></i>Explora!</a>
@@ -97,7 +141,7 @@
 
       <hr> <!-- Horizontal Divider -->
 
-      <div class="activities-row">
+      <div class="activities-row" id="Patrocinadores">
         <div class="col iconss" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
           <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
             <i class="fa-solid fa-microchip fa-10x icon"></i>
@@ -105,17 +149,23 @@
         </div>
         <div class="col" data-aos="fade-left">
           <div class="algo-card">
-            <h2>NEECLab</h2>
+            <h2>Patrocinadores</h2>
             <p>
-              Precisas de ajuda para desenvolver o teu projeto pessoal? O NEECLab é um laboratório de eletrónica com as ferramentas necessárias e uma equipa pronta a ajudar-te a transformares a tua
-              ideia num sucesso!
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
         </div>
       </div>
 
-      <hr> <!-- Horizontal Divider -->
-
+      <!-- Old NEECTalks -->
+      <!-- <hr> Horizontal Divider -->
+      <!--
       <div class="activities-row">
         <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
           <div class="algo-card">
@@ -144,6 +194,7 @@
           </div>
         </div>
       </div>
+      -->
 
     </div>
   </div>
@@ -230,10 +281,6 @@ export default {
   color: #009de0;
 }
 
-.about-container {
-  padding: 10px;
-  background-color: red;
-}
 .algo-card {
   width: 50%;
   padding-left: 10vw;
@@ -253,24 +300,13 @@ export default {
   width: 50%;
   display: flex;
 }
-.about-card {
-  display: inline-block;
-  background-color: cyan;
-  border-radius: 4px;
-  width: 25%;
-  height: 100%;
-  margin: 10px;
+
+.col-div-5 {
+  width: 18%; /* 18 and not 20 to leave some space on the borders and bring them closer */
+  display: flex;
+  align-items: center;
 }
 
-.card-title {
-  background-color: yellow;
-  height: 25%;
-}
-.card-content {
-  background-color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-}
 .announcement {
   display: flex;
   align-items: center;
@@ -311,6 +347,27 @@ export default {
   transform-origin: bottom left;
 }
 
+.section-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* Optional spacing below title */
+}
+
+.activities-row-team {
+  display: flex;
+  flex-wrap: wrap; /* This allows items to stack */
+  justify-content: center;
+  align-items: flex-start;
+}
+.teams-text {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 10px 0; /* Optional spacing below title */
+}
+
 .activities-row {
   display: flex;
   align-items: center;
@@ -318,19 +375,32 @@ export default {
   height: 300px;
 }
 
+
 .container hr {
   border: none;
   height: 5px;
   border-radius: 12px; /* Round corners */
   background: #252525;
-  margin: 25px 0;
+  margin: 60px 15px;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
+/* Square shapes that hold images */
+.image-border {
+  --border-width: 5px;
+  width: 160px; /* image width + border*2 */
+  height: 160px;
+  padding: var(--border-width);
+  background: linear-gradient(45deg, #115CA9, #8F439D);
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+.image-border img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0; /* Keep square shape */
 }
 
 #NEECtalksPlayer {
@@ -352,6 +422,9 @@ export default {
   .col {
     width: 100%;
   }
+  .col-div-5 {
+    width: 100%;
+  }
   .announcement a {
     text-decoration: underline;
   }
@@ -365,6 +438,9 @@ export default {
     width: 100% !important;
   }
   .col {
+    width: 100%;
+  }
+  .col-div-5 {
     width: 100%;
   }
   .announcement a {
