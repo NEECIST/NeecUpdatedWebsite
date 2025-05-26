@@ -390,7 +390,7 @@ export default {
   width: 160px; /* image width + border*2 */
   height: 160px;
   padding: var(--border-width);
-  background: linear-gradient(45deg, #115CA9, #8F439D);
+  background: linear-gradient(-45deg, #115CA9, #8F439D);
   display: inline-block;
   box-sizing: border-box;
   margin: 10px 0;
