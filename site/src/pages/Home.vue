@@ -19,7 +19,6 @@
             <i class="fa-solid fa-people-group fa-10x icon"></i>
           </div>
         </div>
-        <div class="vl"></div>
         <div class="col" data-aos="fade-left">
           <div class="algo-card">
             <h2>Quem somos?</h2>
@@ -30,6 +29,9 @@
           </div>
         </div>
       </div>
+
+      <hr> <!-- Horizontal Divider -->
+
       <div class="activities-row">
         <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
           <div class="algo-card">
@@ -40,20 +42,21 @@
             </p>
           </div>
         </div>
-        <div class="vl"></div>
         <div class="col iconss" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
           <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
             <i class="fa-solid fa-gear fa-10x icon"></i>
           </div>
         </div>
       </div>
+
+      <hr> <!-- Horizontal Divider -->
+
       <div class="activities-row">
         <div class="col iconss" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
           <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
             <i class="fa-solid fa-folder-open fa-10x icon"></i>
           </div>
         </div>
-        <div class="vl"></div>
         <div class="col" data-aos="fade-left">
           <div class="algo-card">
             <h2>Drive MEEC</h2>
@@ -69,6 +72,9 @@
           </div>
         </div>
       </div>
+
+      <hr> <!-- Horizontal Divider -->
+
       <div class="activities-row">
         <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
           <div class="algo-card">
@@ -82,20 +88,21 @@
             </p>
           </div>
         </div>
-        <div class="vl"></div>
         <div class="col iconss" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
           <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
             <i class="fa-solid fa-id-badge fa-10x icon"></i>
           </div>
         </div>
       </div>
+
+      <hr> <!-- Horizontal Divider -->
+
       <div class="activities-row">
         <div class="col iconss" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
           <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
             <i class="fa-solid fa-microchip fa-10x icon"></i>
           </div>
         </div>
-        <div class="vl"></div>
         <div class="col" data-aos="fade-left">
           <div class="algo-card">
             <h2>NEECLab</h2>
@@ -106,6 +113,9 @@
           </div>
         </div>
       </div>
+
+      <hr> <!-- Horizontal Divider -->
+
       <div class="activities-row">
         <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
           <div class="algo-card">
@@ -121,7 +131,6 @@
             <a class="address-text" href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank"><i class="fa-brands fa-spotify fa-2x" :style="{ padding: '4px' }"></i></a>
           </div>
         </div>
-        <div class="vl"></div>
         <div class="col iconss" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
           <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
             <iframe
@@ -135,6 +144,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -239,11 +249,6 @@ export default {
   font-size: 20px;
 }
 
-.vl {
-  border-left: 4px solid #dcdcdc;
-  height: 100%;
-  border-radius: 8px;
-}
 .col {
   width: 50%;
   display: flex;
@@ -273,6 +278,8 @@ export default {
   background-color: #252525;
   padding-top: 20px;
   padding-bottom: 20px;
+
+  margin-bottom: 20px;
 
   white-space: nowrap;
 }
@@ -310,6 +317,15 @@ export default {
   justify-content: center;
   height: 300px;
 }
+
+.container hr {
+  border: none;
+  height: 5px;
+  border-radius: 12px; /* Round corners */
+  background: #252525;
+  margin: 25px 0;
+}
+
 .row {
   display: flex;
   align-items: center;
