@@ -105,14 +105,28 @@ export default {
   beforeUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   },
+  watch: {
+    $route() {
+      this.handleScroll(); // Re-evaluate footer visibility on page change
+    }
+  },
   methods: {
     handleScroll() {
+      // Check if the current page is the home page
+      const isHome = this.$route?.path === "/";
+
       const scrollY = window.scrollY;
       const winH = window.innerHeight;
       const docH = document.documentElement.scrollHeight;
 
-      this.footerVisible = scrollY > 100;
-      this.isAtBottom = scrollY + winH >= docH - 140;
+      // Always show footer if not on homepage
+      if (!isHome) {
+        this.footerVisible = true;
+      } else {
+        this.footerVisible = scrollY > 100;
+      }
+
+      this.isAtBottom = scrollY + winH >= docH - 160;
     },
   },
 };
@@ -195,14 +209,17 @@ export default {
 
   
   .bottom-bar {
+    text-align: right;
     width: 100%;
     height: auto;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0rem;
     background-color: #252525;
     color: #FFF4E8;
     position: relative;
     overflow: hidden;
     bottom: 0;
+    flex-wrap: wrap;
+    display: flex;
   }
 
   /* Make sure links are visible */
@@ -230,10 +247,10 @@ export default {
   }
 
   #copyright {
-    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 5px;
+    margin-left: auto;
     font-size: 13px;
-    float: left;
     font-family: "Roboto", sans-serif;
   }
 
