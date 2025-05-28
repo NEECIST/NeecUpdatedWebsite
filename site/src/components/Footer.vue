@@ -44,7 +44,7 @@
               <p><i class="fa-solid fa-location-dot" :style="{marginRight: '4px' }"></i> Instituto Superior Técnico - Av. Rovisco Pais, 1049-001 Lisboa</p>
               <p>
                 <i class="fa-solid fa-building-flag" :style="{marginRight: '4px' }"></i>
-                <a style="color: white" href="https://neecist.org/acessos_sede">Sede do NEEC - Pavilhão de Electricidade, Piso 4, Sala 4i.13</a>
+                <a style="color: #252525" href="https://neecist.org/acessos_sede">Sede do NEEC - Pavilhão de Electricidade, Piso 4, Sala 4i.13</a>
               </p>
               <p><i class="fa-solid fa-flask" :style="{marginRight: '4px' }"></i> NEECLab - Pavilhão de Electricidade, Piso 1 (Junto à receção da SCDEEC)</p>
             </div>
@@ -53,22 +53,22 @@
             <div class="socials">
               <h2>Redes Sociais</h2>
               <a href="https://www.facebook.com/NEECIST/" target="_blank">
-                <i class="fa-brands fa-facebook icon" :style="{ color: '#FFF4E8' }"></i>
+                <i class="fa-brands fa-facebook icon" :style="{ color: '#252525' }"></i>
               </a>
               <a href="https://github.com/NEECIST" target="_blank">
-                <i class="fa-brands fa-github icon" :style="{ color: '#FFF4E8' }"></i>
+                <i class="fa-brands fa-github icon" :style="{ color: '#252525' }"></i>
               </a>
               <a href="https://www.linkedin.com/company/2977028/" target="_blank">
-                <i class="fa-brands fa-linkedin icon" :style="{ color: '#FFF4E8' }"></i>
+                <i class="fa-brands fa-linkedin icon" :style="{ color: '#252525' }"></i>
               </a>
               <a href="https://www.instagram.com/neecist/" target="_blank">
-                <i class="fa-brands fa-instagram icon" :style="{ color: '#FFF4E8' }"></i>
+                <i class="fa-brands fa-instagram icon" :style="{ color: '#252525' }"></i>
               </a>
               <a href="https://www.youtube.com/user/NEECIST" target="_blank">
-                <i class="fa-brands fa-youtube icon" :style="{ color: '#FFF4E8' }"></i>
+                <i class="fa-brands fa-youtube icon" :style="{ color: '#252525' }"></i>
               </a>
               <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
-                <i class="fa-brands fa-spotify icon" :style="{ color: '#FFF4E8' }"></i>
+                <i class="fa-brands fa-spotify icon" :style="{ color: '#252525' }"></i>
               </a>
             </div>
           </div>
@@ -145,7 +145,7 @@ export default {
     justify-content: space-between;    /* push left group to left, right group to right */
     align-items: center;               /* vertical centering */
     padding: 0.5rem 0.5rem 0.5rem 1rem;
-    background: rgba(37,37,37,1);
+    background: #C5B6A7;
     transition: background 0.3s ease, transform 0.3s ease;
     z-index: 1001;
   }
@@ -160,14 +160,14 @@ export default {
   }
   .socials-footer .icon {
     font-size: 1.5rem;
-    color: #FFF4E8;
+    color: #252525;
   }
   .socials-footer .icon:hover {
     color: #009de0;
   }
 
   .copyright-footer {
-    color: #FFF4E8;
+    color: #252525;
     text-decoration: none;
     text-align: left;
     padding: 0.5rem 0;
@@ -199,22 +199,14 @@ export default {
     padding: 0 1rem;
   }
 
-  /* Bottom bar */
-  .footer-bottom {
-    padding: 1rem;
-    text-align: center;
-    background: #1a1a1a;
-    font-size: 0.9rem;
-  }
-
   
   .bottom-bar {
     text-align: right;
     width: 100%;
     height: auto;
     padding: 0.5rem 0.5rem 0.5rem 0rem;
-    background-color: #252525;
-    color: #FFF4E8;
+    background-color: #C5B6A7;
+    color: #252525;
     position: relative;
     overflow: hidden;
     bottom: 0;
@@ -239,10 +231,10 @@ export default {
     margin-bottom: 10px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #FFF4E8;
+    color: #252525;
   }
   .icon {
-    color: #FFF4E8;
+    color: #252525;
     margin: 5px;
   }
 
@@ -260,7 +252,7 @@ export default {
     align-items: center;
     justify-content: center;
     height: 165px;
-    background-color: #252525;
+    background-color: #C5B6A7;
   }
 
   @media screen and (max-width: 560px) {
@@ -286,7 +278,7 @@ export default {
     float: left;
     font-size: 16px;
     font-family: "Montserrat";
-    color: #FFF4E8;
+    color: #252525;
     padding: 10px;
     padding-left: 10px;
   }
@@ -294,11 +286,11 @@ export default {
     float: right;
     font-size: 16px;
     font-family: "Montserrat";
-    color: #FFF4E8;
+    color: #252525;
     padding: 20px;
   }
   .contact-address-text {
-    color: #FFF4E8;
+    color: #252525;
   }
   .contact-address-text:hover {
     color: #009de0;
