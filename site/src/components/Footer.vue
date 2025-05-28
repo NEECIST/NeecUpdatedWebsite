@@ -74,6 +74,7 @@
           </div>
           <div class="col-md-4">
             <div class="contact-adress">
+              <p>Entra em contacto connosco:</p>
               <p><i class="fa-solid fa-phone" :style="{marginRight: '6px' }"></i> <a class="contact-address-text" href="tel:(+351) 218 419 056">(+351) 218 417 745</a></p>
               <p><i class="fa-solid fa-envelope" :style="{marginRight: '6px' }"></i> <a class="contact-address-text" href="mailto:contacto@neecist.org">contacto@neecist.org</a></p>
             </div>
@@ -83,7 +84,7 @@
     </section>
 
     <div class="bottom-bar">
-      <div id="copyright">Copyright © 2022 - Núcleo de Estudantes de Eletrotécnica e de Computadores do Instituto Superior Técnico</div>
+      <div id="copyright">Copyright © 2025 - Núcleo de Estudantes de Eletrotécnica e de Computadores do Instituto Superior Técnico</div>
     </div>
   </div>
 </template>
