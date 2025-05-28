@@ -21,7 +21,7 @@
         </div>
         <div class="col" data-aos="fade-left">
           <div class="algo-card">
-            <h2>Quem somos?</h2>
+            <h1>Quem somos?</h1>
             <p>
               O Núcleo de Estudantes de Electrotecnia e Computadores é uma associação sem fins lucrativos que reúne os estudantes de LEEC e MEEC do IST. Somos formados por alunos que, através do seu
               trabalho voluntário e motivados pela tecnologia e associativismo, procuram trazer novas ideias, projetos e iniciativas contribuindo para o desenvolvimento de todos os alunos.
@@ -35,8 +35,7 @@
       <div class="activities-row" id="Projetos">
         <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
           <div class="algo-card">
-            <h2>Projetos</h2>
-
+            <h1>Projetos</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -62,7 +61,7 @@
 
       <div class="activities-row-team" id="Equipas">
         <div class="section-title" data-aos="fade-top">
-          <h2>Equipas</h2>
+          <h1>Equipas</h1>
         </div>
         
         <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
@@ -117,7 +116,7 @@
       <div class="activities-row" id="Soon">
         <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
           <div class="algo-card">
-            <h2>Em Breve</h2>
+            <h1>Em Breve</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -149,7 +148,7 @@
         </div>
         <div class="col" data-aos="fade-left">
           <div class="algo-card">
-            <h2>Patrocinadores</h2>
+            <h1>Patrocinadores</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -271,8 +270,8 @@ export default {
   position: relative;
 }
 @font-face {
-  font-family: "Vibur";
-  src: local("Vibur"), url(../assets/fonts/Vibur/Vibur-Regular.ttf) format("truetype");
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
 }
 .address-text {
   color: #252525;

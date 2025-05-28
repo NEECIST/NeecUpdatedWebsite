@@ -251,7 +251,7 @@ export default {
     padding-bottom: 5px;
     margin-left: auto;
     font-size: 13px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 
 
@@ -285,7 +285,7 @@ export default {
   .location-adress {
     float: left;
     font-size: 16px;
-    font-family: "Roboto";
+    font-family: "Montserrat";
     color: #FFF4E8;
     padding: 10px;
     padding-left: 10px;
@@ -293,7 +293,7 @@ export default {
   .contact-adress {
     float: right;
     font-size: 16px;
-    font-family: "Roboto";
+    font-family: "Montserrat";
     color: #FFF4E8;
     padding: 20px;
   }
