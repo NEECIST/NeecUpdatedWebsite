@@ -29,7 +29,7 @@
 
           <!-- Botão -->
           <button @click="openModal(card)" class="btn">
-            Saber mais
+            SABER MAIS
           </button>
         </div>
       </div>
@@ -113,6 +113,8 @@ export default {
   font-weight: bold;
   color: #333;
   margin-bottom: 4rem;
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
 }
 
 .card-grid {
