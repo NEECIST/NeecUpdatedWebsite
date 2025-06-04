@@ -14,14 +14,16 @@
 
     <div class="container" :style="{ padding: '10px', paddingBottom: '200px' }">
       <div class="activities-row" id="QuemSomos">
-        <div class="col iconss" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
+        <div class="section-title" data-aos="fade-top">
+          <h1>Quem Somos?</h1>
+        </div>
+        <div class="col-div-2 iconss" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
           <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
             <i class="fa-solid fa-people-group fa-10x icon"></i>
           </div>
         </div>
-        <div class="col" data-aos="fade-left">
+        <div class="col-div-2" data-aos="fade-left">
           <div class="algo-card">
-            <h2>Quem somos?</h2>
             <p>
               O Núcleo de Estudantes de Electrotecnia e Computadores é uma associação sem fins lucrativos que reúne os estudantes de LEEC e MEEC do IST. Somos formados por alunos que, através do seu
               trabalho voluntário e motivados pela tecnologia e associativismo, procuram trazer novas ideias, projetos e iniciativas contribuindo para o desenvolvimento de todos os alunos.
@@ -33,81 +35,99 @@
       <hr> <!-- Horizontal Divider -->
 
       <div class="activities-row" id="Projetos">
-        <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
-          <div class="algo-card">
-            <h2>Projetos</h2>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <p>
-              <a class="address-text" href="https://linktr.ee/neecist"><i class="fa-solid fa-gear fa-xl" :style="{ paddingRight: '4px' }"></i>Inscreve-te!</a>
-            </p>
-          </div>
+        <div class="section-title" data-aos="fade-top">
+          <h1>Projetos</h1>
         </div>
-        <div class="col iconss" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
-          <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
-            <i class="fa-solid fa-gear fa-10x icon"></i>
+
+        <div class="row">
+          <div class="col-div-2" data-aos="fade-right" :style="{flexDirection: 'column'}">
+            <div class="row">
+              <div class="col-div-2">
+                <div class="image-border" :style="{ width: 'calc(100% - 1rem)', height: 'calc(100% - 1rem)'}">
+                  <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+                </div>
+              </div>
+              <div class="col-div-2">
+                <div class="image-border" :style="{ width: 'calc(100% - 1rem)', height: 'calc(100% - 1rem)'}">
+                  <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="image-border" :style="{ width: 'calc(40% - 0.5rem)', height: 'calc(100% - 0.5rem)'}">
+                <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+              </div>
+            </div>
+          </div>
+          <div class="col-div-2" data-aos="fade-left">
+            <div class="image-border" :style="{ width: 'calc(100% - 7.5rem)', height: 'calc(100% - 7.5rem)'}">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
           </div>
         </div>
       </div>
 
       <hr> <!-- Horizontal Divider -->
 
-      <div class="activities-row-team" id="Equipas">
+      <div class="activities-row" id="Equipas">
         <div class="section-title" data-aos="fade-top">
-          <h2>Equipas</h2>
+          <h1>Equipas</h1>
         </div>
         
-        <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
-          <div :style="{height: '100px', width: 'auto'}"></div>
-          <div class="teams-text">
-            MULTIMÉDIA
+        <!-- 2 Rows to form the layout -->
+        <div class="row">
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="teams-text bottom">
+              MULTIMÉDIA
+            </div>
           </div>
-          <div class="image-border">
-            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
+          </div>
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="teams-text bottom">
+              DESIGN
+            </div>
+          </div>
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
+          </div>
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="teams-text bottom">
+              DIVULGAÇÃO
+            </div>
           </div>
         </div>
-        <div class="col-div-5" data-aos="fade-bottom" :style="{ display: 'flex', flexDirection: 'column' }">
-          <div class="image-border">
-            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+        
+        <div class="row">
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
           </div>
-          <div class="teams-text">
-            IT
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="teams-text top">
+              IT
+            </div>
           </div>
-          <div :style="{height: '100px', width: 'auto'}"></div>
-        </div>
-        <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
-          <div :style="{height: '100px', width: 'auto'}"></div>
-          <div class="teams-text">
-            DESIGN
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
           </div>
-          <div class="image-border">
-            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="teams-text top">
+              PROJETOS
+            </div>
           </div>
-        </div>
-        <div class="col-div-5" data-aos="fade-bottom" :style="{ display: 'flex', flexDirection: 'column' }">
-          <div class="image-border">
-            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
-          </div>
-          <div class="teams-text">
-            PROJETOS
-          </div>
-          <div :style="{height: '100px', width: 'auto'}"></div>
-        </div>
-        <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
-          <div :style="{height: '100px', width: 'auto'}"></div>
-          <div class="teams-text">
-            DIVULGAÇÃO
-          </div>
-          <div class="image-border">
-            <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+          <div class="col-div-5" data-aos="fade-top" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
           </div>
         </div>
       </div>
@@ -115,9 +135,11 @@
       <hr> <!-- Horizontal Divider -->
 
       <div class="activities-row" id="Soon">
-        <div class="col" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
+        <div class="section-title" data-aos="fade-top">
+          <h1>Em Breve</h1>
+        </div>
+        <div class="col-div-2" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
           <div class="algo-card">
-            <h2>Em Breve</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -132,7 +154,7 @@
             </p>
           </div>
         </div>
-        <div class="col iconss" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
+        <div class="col-div-2 iconss" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
           <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
             <i class="fa-solid fa-id-badge fa-10x icon"></i>
           </div>
@@ -142,23 +164,60 @@
       <hr> <!-- Horizontal Divider -->
 
       <div class="activities-row" id="Patrocinadores">
-        <div class="col iconss" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
-          <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
-            <i class="fa-solid fa-microchip fa-10x icon"></i>
+        <div class="section-title" data-aos="fade-top">
+          <h1>Patrocinadores</h1>
+        </div>
+
+        <!-- 2 Rows Of Sponsors -->
+        <div class="row">
+          <div class="col-div-4" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
+          </div>
+          
+          <div class="col-div-4" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
+          </div>
+          
+          <div class="col-div-4" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
+          </div>
+          
+          <div class="col-div-4" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
           </div>
         </div>
-        <div class="col" data-aos="fade-left">
-          <div class="algo-card">
-            <h2>Patrocinadores</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+
+        <div class="row">
+          <div class="col-div-4" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
+          </div>
+          
+          <div class="col-div-4" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
+          </div>
+          
+          <div class="col-div-4" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
+          </div>
+          
+          <div class="col-div-4" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'column' }">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            </div>
           </div>
         </div>
       </div>
@@ -271,8 +330,8 @@ export default {
   position: relative;
 }
 @font-face {
-  font-family: "Vibur";
-  src: local("Vibur"), url(../assets/fonts/Vibur/Vibur-Regular.ttf) format("truetype");
+  font-family: "Montserrat";
+  src: local("Montserrat"), url(../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
 }
 .address-text {
   color: #252525;
@@ -296,14 +355,32 @@ export default {
   font-size: 20px;
 }
 
-.col {
-  width: 50%;
+.row {
+  width: 100%;
   display: flex;
+  align-items: stretch;    /* Make children stretch to the row’s height */
+  justify-content: center; /* Start columns from center */
 }
 
+.col-div-2 {
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.col-div-4 {
+  width: 22%; /* 22 and not 25 to leave some space on the borders and bring them closer */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .col-div-5 {
   width: 18%; /* 18 and not 20 to leave some space on the borders and bring them closer */
+  height: auto;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -355,7 +432,8 @@ export default {
   margin-bottom: 20px; /* Optional spacing below title */
 }
 
-.activities-row-team {
+.activities-row {
+  height: auto;
   display: flex;
   flex-wrap: wrap; /* This allows items to stack */
   justify-content: center;
@@ -367,14 +445,12 @@ export default {
   font-size: 1.5rem;
   margin: 10px 0; /* Optional spacing below title */
 }
-
-.activities-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
+.teams-text.bottom {
+  margin-top: auto; /* pushes itself to the bottom of the flex column */
 }
-
+.teams-text.top {
+  margin-bottom: auto; /* pushes itself to the bottom of the flex column */
+}
 
 .container hr {
   border: none;
@@ -386,7 +462,7 @@ export default {
 
 /* Square shapes that hold images */
 .image-border {
-  --border-width: 5px;
+  --border-width: 7px;
   width: 160px; /* image width + border*2 */
   height: 160px;
   padding: var(--border-width);
@@ -394,13 +470,14 @@ export default {
   display: inline-block;
   box-sizing: border-box;
   margin: 10px 0;
+  border-radius: 12px; /* Keep square shape */
 }
 .image-border img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 0; /* Keep square shape */
+  border-radius: 5px; /* Keep square shape */
 }
 
 #NEECtalksPlayer {
@@ -422,6 +499,9 @@ export default {
   .col {
     width: 100%;
   }
+  .col-div-4 {
+    width: 100%;
+  }
   .col-div-5 {
     width: 100%;
   }
@@ -438,6 +518,9 @@ export default {
     width: 100% !important;
   }
   .col {
+    width: 100%;
+  }
+  .col-div-4 {
     width: 100%;
   }
   .col-div-5 {
