@@ -17,19 +17,55 @@
         <div class="section-title" data-aos="fade-top">
           <h1>Quem Somos?</h1>
         </div>
-        <div class="col-div-2 iconss" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
-          <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
-            <i class="fa-solid fa-people-group fa-10x icon"></i>
+        <div class="row">
+          <div class="col-div-2" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
+            <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
+              <i class="fa-solid fa-people-group fa-10x icon"></i>
+            </div>
+          </div>
+          <div class="col-div-2" data-aos="fade-left">
+            <div class="algo-card">
+              <p>
+                O Núcleo de Estudantes de Electrotecnia e Computadores é uma associação sem fins lucrativos que reúne os estudantes de LEEC e MEEC do IST. Somos formados por alunos que, através do seu
+                trabalho voluntário e motivados pela tecnologia e associativismo, procuram trazer novas ideias, projetos e iniciativas contribuindo para o desenvolvimento de todos os alunos.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="col-div-2" data-aos="fade-left">
-          <div class="algo-card">
-            <p>
-              O Núcleo de Estudantes de Electrotecnia e Computadores é uma associação sem fins lucrativos que reúne os estudantes de LEEC e MEEC do IST. Somos formados por alunos que, através do seu
-              trabalho voluntário e motivados pela tecnologia e associativismo, procuram trazer novas ideias, projetos e iniciativas contribuindo para o desenvolvimento de todos os alunos.
-            </p>
+      </div>
+
+      <hr> <!-- Horizontal Divider -->
+
+      <div class="activities-row" id="DriveLMEEC">
+        <div class="section-title" data-aos="fade-top">
+          <h1>Drive de L/MEEC</h1>
+        </div>
+        <div class="row">
+          <div class="col-div-2" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
+            <div class="algo-card">
+              <p>
+                Nesta drive poderás encontrar todo o material de apoio às unidades curriculares de L/MEEC,
+                como, por exemplo, slides, exercícios e exames resolvidos por alunos, entre outros.
+                Esta drive é gerida exclusivamente pelo NEECIST e é atualizada regularmente com o material mais recente,
+                no entanto, são aceites materiais de outros alunos de L/MEEC (e outros, caso aplicável).
+                Para partilhar estes materiais connosco basta colocá-los na pasta
+                <a class="address-text" target="blank" href="https://drive.google.com/drive/folders/1PjrWL1Rpvy7qDEI-HsP_2MhN0wr0BZ5l">Uploads</a>
+                ou enviá-los por email para
+                <a class="address-text" href="mailto:drive@neecist.org">drive@neecist.org</a>.
+                Caso sejas o dono deste material serás devidamente creditado.
+              </p>
+              <p>
+                <a class="address-text" target="blank" href="https://drive.neecist.org/"><i class="fa-solid fa-folder-open fa-xl" :style="{ paddingRight: '4px' }"></i>Acede à Drive!</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-div-2" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
+            <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
+              <i class="fa-solid fa-folder-open fa-10x icon"></i>
+            </div>
           </div>
         </div>
+        
       </div>
 
       <hr> <!-- Horizontal Divider -->
@@ -138,25 +174,27 @@
         <div class="section-title" data-aos="fade-top">
           <h1>Em Breve</h1>
         </div>
-        <div class="col-div-2" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
-          <div class="algo-card">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <p>
-              <a class="address-text" href="https://ist-csm.symplicity.com/students/app/home"><i class="fa-solid fa-id-badge fa-xl" :style="{ paddingRight: '4px' }"></i>Explora!</a>
-            </p>
+        <div class="row">
+          <div class="col-div-2" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
+            <div class="algo-card">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <p>
+                <a class="address-text" target="blank" href="https://ist-csm.symplicity.com/students/app/home"><i class="fa-solid fa-id-badge fa-xl" :style="{ paddingRight: '4px' }"></i>Explora!</a>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="col-div-2 iconss" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
-          <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
-            <i class="fa-solid fa-id-badge fa-10x icon"></i>
+          <div class="col-div-2" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
+            <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
+              <i class="fa-solid fa-id-badge fa-10x icon"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -334,6 +372,7 @@ export default {
   src: local("Montserrat"), url(../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
 }
 .address-text {
+  font-style: italic;
   color: #252525;
 }
 .address-text:hover {
@@ -344,6 +383,10 @@ export default {
   width: 50%;
   padding-left: 10vw;
   padding-right: 10vw;
+}
+.icon-holder {
+  justify-content: center;
+  align-items: center;
 }
 .icon {
   color: #303633;
