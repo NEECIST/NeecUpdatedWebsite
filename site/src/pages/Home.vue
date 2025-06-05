@@ -262,8 +262,8 @@
           </div>
           
           <div class="col-div-4" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'column' }">
-            <div class="image-border" :style="{ width: 'calc(75% - 1rem)', height: 'auto'}">
-              <img src="https://static.bandainamcoent.eu/high/pac-man/brand-setup/pac_thumb_brand_624x468_4b.jpg" alt="Sample image">
+            <div class="image-border">
+              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
             </div>
           </div>
         </div>
