@@ -36,56 +36,59 @@
     </transition>
 
     <!-- Sticky bottom-bar -->
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="location-adress">
-              <p><i class="fa-solid fa-location-dot" :style="{marginRight: '4px' }"></i> Instituto Superior Técnico - Av. Rovisco Pais, 1049-001 Lisboa</p>
-              <p>
-                <i class="fa-solid fa-building-flag" :style="{marginRight: '4px' }"></i>
-                <a style="color: #252525" href="https://neecist.org/acessos_sede">Sede do NEEC - Pavilhão de Electricidade, Piso 4, Sala 4i.13</a>
-              </p>
-              <p><i class="fa-solid fa-flask" :style="{marginRight: '4px' }"></i> NEECLab - Pavilhão de Electricidade, Piso 1 (Junto à receção da SCDEEC)</p>
+    <div>
+      <section id="contact">
+        <div class="footer-top container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="location-adress">
+                <p><i class="fa-solid fa-location-dot" :style="{marginRight: '4px' }"></i> Instituto Superior Técnico - Av. Rovisco Pais, 1049-001 Lisboa</p>
+                <p>
+                  <i class="fa-solid fa-building-flag" :style="{marginRight: '4px' }"></i>
+                  <a style="color: #252525" href="https://neecist.org/acessos_sede">Sede do NEEC - Pavilhão de Electricidade, Piso 4, Sala 4i.13</a>
+                </p>
+                <p><i class="fa-solid fa-flask" :style="{marginRight: '4px' }"></i> NEECLab - Pavilhão de Electricidade, Piso 1 (Junto à receção da SCDEEC)</p>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="socials">
-              <h2>Redes Sociais</h2>
-              <a href="https://www.facebook.com/NEECIST/" target="_blank">
-                <i class="fa-brands fa-facebook icon" :style="{ color: '#252525' }"></i>
-              </a>
-              <a href="https://github.com/NEECIST" target="_blank">
-                <i class="fa-brands fa-github icon" :style="{ color: '#252525' }"></i>
-              </a>
-              <a href="https://www.linkedin.com/company/2977028/" target="_blank">
-                <i class="fa-brands fa-linkedin icon" :style="{ color: '#252525' }"></i>
-              </a>
-              <a href="https://www.instagram.com/neecist/" target="_blank">
-                <i class="fa-brands fa-instagram icon" :style="{ color: '#252525' }"></i>
-              </a>
-              <a href="https://www.youtube.com/user/NEECIST" target="_blank">
-                <i class="fa-brands fa-youtube icon" :style="{ color: '#252525' }"></i>
-              </a>
-              <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
-                <i class="fa-brands fa-spotify icon" :style="{ color: '#252525' }"></i>
-              </a>
+            <div class="col-md-3">
+              <div class="socials">
+                <h2>Redes Sociais</h2>
+                <a href="https://www.facebook.com/NEECIST/" target="_blank">
+                  <i class="fa-brands fa-facebook icon" :style="{ color: '#252525' }"></i>
+                </a>
+                <a href="https://github.com/NEECIST" target="_blank">
+                  <i class="fa-brands fa-github icon" :style="{ color: '#252525' }"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/2977028/" target="_blank">
+                  <i class="fa-brands fa-linkedin icon" :style="{ color: '#252525' }"></i>
+                </a>
+                <a href="https://www.instagram.com/neecist/" target="_blank">
+                  <i class="fa-brands fa-instagram icon" :style="{ color: '#252525' }"></i>
+                </a>
+                <a href="https://www.youtube.com/user/NEECIST" target="_blank">
+                  <i class="fa-brands fa-youtube icon" :style="{ color: '#252525' }"></i>
+                </a>
+                <a href="https://open.spotify.com/show/1cIa5h27pb8ghnfDB7N8Mu" target="_blank">
+                  <i class="fa-brands fa-spotify icon" :style="{ color: '#252525' }"></i>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="contact-adress">
-              <p>Entra em contacto connosco:</p>
-              <p><i class="fa-solid fa-phone" :style="{marginRight: '6px' }"></i> <a class="contact-address-text" href="tel:(+351) 218 419 056">(+351) 218 417 745</a></p>
-              <p><i class="fa-solid fa-envelope" :style="{marginRight: '6px' }"></i> <a class="contact-address-text" href="mailto:contacto@neecist.org">contacto@neecist.org</a></p>
+            <div class="col-md-3">
+              <div class="contact-adress">
+                <p>Entra em contacto connosco:</p>
+                <p><i class="fa-solid fa-phone" :style="{marginRight: '6px' }"></i> <a class="contact-address-text" href="tel:(+351) 218 419 056">(+351) 218 417 745</a></p>
+                <p><i class="fa-solid fa-envelope" :style="{marginRight: '6px' }"></i> <a class="contact-address-text" href="mailto:contacto@neecist.org">contacto@neecist.org</a></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div class="bottom-bar">
-      <div id="copyright">Copyright © 2025 - Núcleo de Estudantes de Eletrotécnica e de Computadores do Instituto Superior Técnico</div>
+      <div class="bottom-bar">
+        <div id="copyright">Copyright © 2025 - Núcleo de Estudantes de Eletrotécnica e de Computadores do Instituto Superior Técnico</div>
+      </div>
     </div>
+    
   </div>
 </template>
 
@@ -145,7 +148,7 @@ export default {
     gap: 1rem;
     justify-content: space-between;    /* push left group to left, right group to right */
     align-items: center;               /* vertical centering */
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: 0rem 0.5rem 0rem 1rem;
     background: #C5B6A7;
     transition: background 0.3s ease, transform 0.3s ease;
     z-index: 1001;
@@ -190,14 +193,14 @@ export default {
 
   /* Top section */
   .footer-top {
-    padding: 2rem;
+    padding: 0rem;
   }
   .footer-top .container {
     display: flex;
   }
   .footer-top .col-md-4 {
     flex: 1;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 
   
@@ -205,7 +208,7 @@ export default {
     text-align: right;
     width: 100%;
     height: auto;
-    padding: 0.5rem 0.5rem 0.5rem 0rem;
+    padding: 0rem 0.5rem 0.5rem 0rem;
     background-color: #C5B6A7;
     color: #252525;
     position: relative;
@@ -270,7 +273,7 @@ export default {
     }
   }
 
-  .col-md-4 {
+  .col-md-3 {
     width: 33%;
     display: inline-block;
   }
