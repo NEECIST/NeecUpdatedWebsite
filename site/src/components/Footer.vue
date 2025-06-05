@@ -42,12 +42,18 @@
           <div class="row">
             <div class="col-md-3">
               <div class="location-adress">
-                <p><i class="fa-solid fa-location-dot" :style="{marginRight: '4px' }"></i> Instituto Superior Técnico - Av. Rovisco Pais, 1049-001 Lisboa</p>
+                <p>
+                  <i class="fa-solid fa-location-dot" :style="{marginRight: '4px' }"></i>
+                  Instituto Superior Técnico - Av. Rovisco Pais, 1049-001 Lisboa
+                </p>
                 <p>
                   <i class="fa-solid fa-building-flag" :style="{marginRight: '4px' }"></i>
                   <a style="color: #252525" href="https://neecist.org/acessos_sede">Sede do NEEC - Pavilhão de Electricidade, Piso 4, Sala 4i.13</a>
                 </p>
-                <p><i class="fa-solid fa-flask" :style="{marginRight: '4px' }"></i> NEECLab - Pavilhão de Electricidade, Piso 1 (Junto à receção da SCDEEC)</p>
+                <p>
+                  <i class="fa-solid fa-flask" :style="{marginRight: '4px' }"></i>
+                  NEECLab - Pavilhão de Electricidade, Piso 1 (Junto à receção da SCDEEC)
+                </p>
               </div>
             </div>
             <div class="col-md-3">

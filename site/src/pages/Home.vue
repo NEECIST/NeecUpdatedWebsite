@@ -19,8 +19,8 @@
         </div>
         <div class="row">
           <div class="col-div-2" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'row-reverse' }">
-            <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingRight: '10vw', justifyContent: 'center' }">
-              <i class="fa-solid fa-people-group fa-10x icon"></i>
+            <div class="image-border" :style="{ width: 'calc(75% - 1rem)', height: 'auto'}">
+              <img src="https://www.thepattersonfoundation.org/media/zoo/images/picture_8c175f2be82708fafb06ef854755f14a.jpg" alt="Sample image">
             </div>
           </div>
           <div class="col-div-2" data-aos="fade-left">
@@ -60,8 +60,8 @@
             </div>
           </div>
           <div class="col-div-2" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
-            <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
-              <i class="fa-solid fa-folder-open fa-10x icon"></i>
+            <div class="image-border" :style="{ width: 'calc(75% - 1rem)', height: 'auto'}">
+              <img src="https://static.bandainamcoent.eu/high/pac-man/brand-setup/pac_thumb_brand_624x468_4b.jpg" alt="Sample image">
             </div>
           </div>
         </div>
@@ -79,24 +79,24 @@
           <div class="col-div-2" data-aos="fade-right" :style="{flexDirection: 'column'}">
             <div class="row">
               <div class="col-div-2">
-                <div class="image-border" :style="{ width: 'calc(100% - 1rem)', height: 'calc(100% - 1rem)'}">
+                <div class="image-border" :style="{ width: 'calc(100% - 1rem)', height: 'auto'}">
                   <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
                 </div>
               </div>
               <div class="col-div-2">
-                <div class="image-border" :style="{ width: 'calc(100% - 1rem)', height: 'calc(100% - 1rem)'}">
+                <div class="image-border" :style="{ width: 'calc(100% - 1rem)', height: 'auto'}">
                   <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
                 </div>
               </div>
             </div>
             <div class="row">
-              <div class="image-border" :style="{ width: 'calc(40% - 0.5rem)', height: 'calc(100% - 0.5rem)'}">
+              <div class="image-border" :style="{ width: 'calc(40% - 0.5rem)', height: 'auto'}">
                 <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
               </div>
             </div>
           </div>
           <div class="col-div-2" data-aos="fade-left">
-            <div class="image-border" :style="{ width: 'calc(100% - 7.5rem)', height: 'calc(100% - 7.5rem)'}">
+            <div class="image-border" :style="{ width: 'calc(80% - 0.5rem)', height: 'auto'}">
               <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
             </div>
           </div>
@@ -178,22 +178,31 @@
           <div class="col-div-2" data-aos="fade-right" :style="{ flexDirection: 'row-reverse' }">
             <div class="algo-card">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                ESTAVAM A RECLAMAR QUE O TEXTO ANTERIOR ESTAVA EM LATIM???? Qual é o mal?
+                Era só um texto aleatório,
+                sem sentido — como qualquer outro texto de enchimento — mas como estava em latim,
+                parece que incomodou mais do que o normal.
+                Não que alguém esperasse perceber o que lá estava, claro...
+                Mas aparentemente, se é para ser texto sem nexo,
+                que ao menos seja em português, não é?
+
+                Então cá está: um novo texto aleatório,
+                desta vez em bom português de Portugal, só para acalmar os ânimos.
+                Continuamos sem ter nada de concreto para mostrar neste espaço,
+                mas pelo menos agora ninguém se vai queixar que está numa língua morta.
+
+                Obrigado pela paciência (ou pela persistência em reclamar).
+                Em breve — esperemos — haverá conteúdo digno deste espaço.
+                Até lá, fiquem com este desabafo.
               </p>
               <p>
-                <a class="address-text" target="blank" href="https://ist-csm.symplicity.com/students/app/home"><i class="fa-solid fa-id-badge fa-xl" :style="{ paddingRight: '4px' }"></i>Explora!</a>
+                <a class="address-text" target="blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-solid fa-id-badge fa-xl" :style="{ paddingRight: '4px' }"></i>Explora!</a>
               </p>
             </div>
           </div>
           <div class="col-div-2" data-aos="fade-left" :style="{ display: 'flex', flexDirection: 'row' }">
-            <div class="icon-holder" :style="{ display: 'flex', width: '50%', paddingLeft: '10vw', justifyContent: 'center' }">
-              <i class="fa-solid fa-id-badge fa-10x icon"></i>
+            <div class="image-border" :style="{ width: 'calc(75% - 1rem)', height: 'auto'}">
+              <img src="https://i.imgflip.com/54d9lj.png?a485856" alt="Sample image">
             </div>
           </div>
         </div>
@@ -253,8 +262,8 @@
           </div>
           
           <div class="col-div-4" data-aos="fade-right" :style="{ display: 'flex', flexDirection: 'column' }">
-            <div class="image-border">
-              <img src="https://i.ytimg.com/vi/hAsZCTL__lo/maxresdefault.jpg" alt="Sample image">
+            <div class="image-border" :style="{ width: 'calc(75% - 1rem)', height: 'auto'}">
+              <img src="https://static.bandainamcoent.eu/high/pac-man/brand-setup/pac_thumb_brand_624x468_4b.jpg" alt="Sample image">
             </div>
           </div>
         </div>
@@ -380,9 +389,9 @@ export default {
 }
 
 .algo-card {
-  width: 50%;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .icon-holder {
   justify-content: center;
