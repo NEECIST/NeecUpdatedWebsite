@@ -18,7 +18,6 @@
 import axios from "axios";
 //import { url } from 'inspector';
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
-import { createCanvas } from "canvas";
 export default {
   name: "certificate-page",
   components: {
@@ -37,7 +36,7 @@ export default {
         Authorization: `Bearer 6d91366b1570f57e18431d3581ed78afe6bb64d7fde38be4b3df3f08fd4b8d83184344a85b0a49925c3a957d58e9764d8ae4bdc2fcdc5952fea7948ba3eaf724488648a354dfd7ab6abf1c1357ece89dce648554c33169c705e5e0d4da2363cb2b7ebde31dc9b8e2a24c61810f109a57c0b59415e5ddb95ee2ee568475c5abd8`,
       },
     };
-    const canvas = createCanvas();
+    const canvas = document.createElement("canvas");
     axios
       .get("https://api.neecist.org/api/certificados?filters[cert_uid][$eq]=" + this.$route.params.id + "&populate=Background&populate=signature", config)
       .then((response) => {
