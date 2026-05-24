@@ -1,324 +1,458 @@
-<!-- Copiei o site da NEECATHON por outro chamado oportunities que já existia para conseguir mexer na NavBar -->
-<!-- Assinado: João Duarte -->
-
-
 <template>
-  <div class="oportunities-app" :style="{padding: '10px', paddingBottom: '200px', fontFamily: 'Roboto'}">
+  <div class="neecathon-page">
 
-     <div class="description-opportunities">
-         <div class="opportunities-text">
-              <div class="description-title">
-                  Oportunidades
-              </div>
-              <div class="description-text">Desde estágios até vagas de emprego, conhece aqui as melhores oportunidades!
-              </div>
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section class="neecathon-hero">
+      <div class="neecathon-hero__overlay">
+        <h1 class="neecathon-hero__title">NEECathon</h1>
+        <p class="neecathon-hero__subtitle">Uma competição xyz</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ INFO CARD ════════════════════════════════ -->
+    <section class="neecathon-section neecathon-section--mid">
+      <div class="neecathon-section__content">
+        <div class="info-card">
+          <h2 class="info-card__title">O que é; onde; quando, como</h2>
+          <div class="info-card__body">
+            <p>
+              <span class="highlight">NEECathon</span> isto e aquilo<br>
+              descrição<br>
+              filler <strong>parte importante</strong><br>
+              onde quando como
+            </p>
           </div>
-          <img src="../assets/oportunities.jpg"/>
+          <div class="info-card__buttons">
+            <button class="pill-button">X Edições</button>
+            <button class="pill-button">Y prémios dados</button>
+            <button class="pill-button">Z ?</button>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="team" v-if="initialized">
-           <ul v-if="cardList && cardList.length" style="list-style: none;display: flex; flex-direction: row; flex-wrap: wrap;">
-              <li v-for="(card,card_id) in cardList" :key="card_id" style=" flex: 0 1 50%;padding-bottom: 10px;">
-                  <div class="card" >       
-                      <h2>{{card.name}}</h2>
-                      <p><span v-html="card.desc"/></p>
-                  </div>
-              </li>
-          </ul>
+    <!-- ══════════════════════════ EDITIONS ═════════════════════════════════ -->
+    <section class="neecathon-section neecathon-section--dark">
+      <div class="neecathon-section__content neecathon-section__content--wide">
+        <h2 class="section-title">EDIÇÕES</h2>
+
+        <div class="editions-carousel" aria-label="Edições NEECathon">
+          <button class="carousel-arrow" @click="prevEdition" aria-label="Anterior">&#8249;</button>
+
+          <div class="carousel-track">
+            <div
+              v-for="(edition, index) in visibleEditions"
+              :key="edition.year"
+              class="edition-card"
+              :class="{ 'edition-card--active': index === 1, 'edition-card--side': index !== 1 }"
+            >
+              <div class="edition-card__image">
+                <span class="edition-card__year">{{ edition.year }}</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-arrow" @click="nextEdition" aria-label="Próxima">&#8250;</button>
+        </div>
       </div>
-      <div v-else>
-          <PulseLoader :color="'#009DE0'"></PulseLoader>
+    </section>
+
+    <!-- ══════════════════════════ 2026 CARD ════════════════════════════════ -->
+    <section class="neecathon-section neecathon-section--mid">
+      <div class="neecathon-section__content">
+        <div class="info-card">
+          <h2 class="info-card__title">NEECathon 2026</h2>
+          <div class="info-card__rows">
+            <div class="info-card__row">
+              <span class="info-card__label">Data:</span>
+              <span>placeholder data</span>
+            </div>
+            <div class="info-card__row">
+              <span class="info-card__label">Preço:</span>
+              <span>placeholder preço</span>
+            </div>
+            <div class="info-card__row">
+              <span class="info-card__label">Inscrições:</span>
+              <span>placeholder inscrições</span>
+            </div>
+          </div>
+          <div class="info-card__site-row">
+            <span class="info-card__label">Site da competição:</span>
+            <button class="pill-button pill-button--dark">Disponível em breve</button>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <!-- ══════════════════════════ MAIS INFO ════════════════════════════════ -->
+    <section class="neecathon-section neecathon-section--mid">
+      <div class="neecathon-section__content">
+        <h2 class="section-title section-title--left">MAIS INFO:</h2>
+        <ul class="more-info-list">
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+          <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</li>
+        </ul>
+      </div>
+    </section>
+
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
-
 export default {
-  name: "oportunities-page",
+  name: "neecathon-page",
   data() {
-      return {
-          initialized: false,
-          cardList: []
-      };
+    return {
+      centerIndex: 1,
+      editions: [
+        { year: "2025" },
+        { year: "2024" },
+        { year: "2023" },
+      ],
+    };
   },
-  created() {
-      axios.get("https://api.trello.com/1/lists/620256ba93c9f35b1c4c54ac/cards?attachments=true")
-          .then(response => {
-          for (var i = 0; i < response.data.length; i++) {
-              this.cardList.push({ id: i, name: response.data[i].name, url: response.data[i].attachments[0].url, desc: response.data[i].desc });
-          }
-      }).finally(() => {
-          this.initialized = true;
-      });
+  computed: {
+    visibleEditions() {
+      const total = this.editions.length;
+      return [
+        this.editions[(this.centerIndex - 1 + total) % total],
+        this.editions[this.centerIndex],
+        this.editions[(this.centerIndex + 1) % total],
+      ];
+    },
   },
   methods: {
-      curateCardText(List) {
-          List.forEach(element => {
-              element.desc = this.linkify(element.desc);
-          });
-      },
-      linkify(inputText) {
-          //eslint-disable-next-line
-          const pattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-          let text = inputText.replace(pattern1, "<a href=\"$1\" target=\"_blank\">$1</a>");
-          //eslint-disable-next-line
-          const pattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-          text = text.replace(pattern2, "$1<a href=\"http://$2\" target=\"_blank\">$2</a>");
-          return text;
-      }
+    nextEdition() {
+      this.centerIndex = (this.centerIndex + 1) % this.editions.length;
+    },
+    prevEdition() {
+      this.centerIndex =
+        (this.centerIndex - 1 + this.editions.length) % this.editions.length;
+    },
   },
-  components: { PulseLoader }
 };
 </script>
 
 <style scoped>
-.description-opportunities{
-  padding-top: 100px;
-  height: 300px;
-  background-color:white;
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
+
+/* ── BASE ─────────────────────────────────────────────────── */
+.neecathon-page {
+  background-color: #1a3a52;
+  color: #fff;
+  font-family: 'Anonymous Pro', 'Courier New', monospace;
+  min-height: 100vh;
+}
+
+.neecathon-page,
+.neecathon-page * {
+  box-sizing: border-box;
+}
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.neecathon-hero {
+  height: calc(60vh - 60px);
+  min-height: 380px;
+  background-color: #0d1b2a;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neecathon-hero__overlay {
+  text-align: center;
+  z-index: 2;
+}
+
+.neecathon-hero__title {
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+}
+
+.neecathon-hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #c8dce8;
+  margin: 1rem 0 0;
+  letter-spacing: 1px;
+}
+
+/* ── SECTIONS ─────────────────────────────────────────────── */
+.neecathon-section {
+  display: flex;
+  justify-content: center;
+  padding: 64px 8vw;
+  width: 100%;
+}
+
+.neecathon-section--mid {
+  background-color: #1a3a52;
+}
+
+.neecathon-section--dark {
+  background-color: #0A2342;
+  padding-top: 0;
+}
+
+.neecathon-section__content {
+  max-width: 820px;
+  width: 100%;
+}
+
+.neecathon-section__content--wide {
+  max-width: 1200px;
+}
+
+/* ── INFO CARD ────────────────────────────────────────────── */
+.info-card {
+  background-color: #b8d4e8;
+  border-radius: 16px;
+  padding: 2.5rem 3rem;
+  color: #000;
+}
+
+.info-card__title {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.info-card__body {
+  margin-bottom: 2rem;
+}
+
+.info-card__body p {
+  font-size: 1rem;
+  line-height: 2;
+  margin: 0;
+}
+
+.highlight {
+  color: #1E6091;
+  font-weight: 700;
+}
+
+/* Buttons */
+.info-card__buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pill-button {
+  background-color: #0A2342;
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.6rem;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.pill-button:hover {
+  background-color: #1E6091;
+  transform: translateY(-2px);
+}
+
+.pill-button--dark {
+  background-color: #0A2342;
+}
+
+/* 2026 card rows */
+.info-card__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-card__row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+}
+
+.info-card__label {
+  color: #1E6091;
+  font-weight: 700;
+  min-width: 115px;
+  flex-shrink: 0;
+}
+
+.info-card__site-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  flex-wrap: wrap;
+}
+
+/* ── EDITIONS ─────────────────────────────────────────────── */
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0 2.5rem;
+  margin: 0;
+}
+
+.section-title--left {
+  text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.editions-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.carousel-arrow {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 3.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.3rem;
+  flex-shrink: 0;
+  transition: color 0.2s, transform 0.15s;
+}
+
+.carousel-arrow:hover {
+  color: #6FE7B8;
+  transform: scale(1.15);
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.edition-card {
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.edition-card--active {
+  transform: scale(1.08);
+  opacity: 1;
+  z-index: 2;
+}
+
+.edition-card--side {
+  transform: scale(0.88);
+  opacity: 0.45;
+  z-index: 1;
+}
+
+.edition-card__image {
+  width: 300px;
+  height: 210px;
+  background: linear-gradient(135deg, #1E6091 0%, #0A2342 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem 1.2rem;
   position: relative;
 }
 
-.card {
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-  text-align: center;
-  padding: 5px;
-  margin: 10px;
-  white-space: pre-wrap;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 100%;
-  box-sizing: border-box;
+.edition-card--side .edition-card__image {
+  width: 260px;
+  height: 180px;
 }
-.description-opportunities img{
-  width: 700px;
-  /*transform: rotate(30deg);*/
-  clip-path: inset(0 5.5em 4.5em 3em);
+
+.edition-card__year {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ── MORE INFO ────────────────────────────────────────────── */
+.more-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.more-info-list li {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: 0.5rem 0 0.5rem 1.8rem;
+  position: relative;
+}
+
+.more-info-list li::before {
+  content: '•';
   position: absolute;
-  top:100px;
-  left: -60px;
-  z-index: 0;
+  left: 0;
+  color: #6FE7B8;
+  font-size: 1.3rem;
+  line-height: 1.45;
 }
-.opportunities-text{
-  float: right;
-  padding-right: 40px;
-  position: relative;
-  z-index: 1;
-}
-.description-title{
-  font-family: 'Raleway', sans-serif;
-  font-size: 50px;
-  font-weight: bolder;
-  color: #505050;
-  text-align: right;
-  padding-top: 30px;
-}
-.description-text{
-  margin-top: 10px;
-  background-color: #009DE0;
-  border-radius: 5px;
-  font-size: 30px;
-  font-family: 'Karla';
-  width: 750px;
-  padding-right: 40px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-right: -40px;
-  text-align: right;
-  color: #ffffff;
-  line-height: 50px;
-}
-.team{
-  padding: 15px;
-  background-color: #ecf7ff;
-}
-.team-flex{
-  padding-left: 50px;
-  padding-right: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-right: 8vw;
-  margin-left: 8vw;
-  margin-top: 30px;
-}
-.teams_container {
-  position: relative;
-  height: auto;
-  width: auto;
-}
-.linkedin-icons {
-  opacity: 0;
-  position:absolute;
-  top:-75px;
-  left:0px;
-  right:85px;
-  bottom:0;
-  margin: auto;
-  border-radius: 0px;
-  width:60px;
-  height:60px;
-  transition: .5s ease;
-}
-.insta-icons {
-  opacity: 0;
-  position:absolute;
-  top:-75px;
-  left:85px;
-  right:0;
-  bottom:0;
-  margin: auto;
-  border-radius: 0px;
-  width:60px;
-  height:60px;
-  transition: .5s ease;
-}
-.git-icons {
-  opacity: 0;
-  position:absolute;
-  top:75px;
-  left:85px;
-  right:0;
-  bottom:0;
-  margin: auto;
-  border-radius: 0px;
-  width:60px;
-  height:60px;
-  transition: .5s ease;
-}
-.mail-icons {
-  opacity: 0;
-  position:absolute;
-  top:75px;
-  left:-85px;
-  right:0;
-  bottom:0;
-  margin: auto;
-  border-radius: 0px;
-  width:60px;
-  height:60px;
-  transition: .5s ease;
-}
-.teams_container:hover .git-icons,
-.teams_container:hover .mail-icons,
-.teams_container:hover .insta-icons,
-.teams_container:hover .linkedin-icons {
-opacity: 1;
-}
-.team-member-name {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.team-member {
-  transition: .5s ease;
-}
-.team-member img{ 
-  height: 220px;
-  width: 220px;
-  margin-right: 10px;
-  margin-left: 10px;
-}
-.teams_container:hover .team-member {
-opacity: 0.5;
-}
-.member-name{
-  width: 100px;
-  font-size: 22px;
-  text-align: center;
-  font-family:'Lato', sans-serif;
-  color: #262626;
-}
-.icon-team-member {
-  height: 60px;
-}
-@media screen and (max-width: 1200px) {
-  .team-flex {
-      padding-left: 12px;
-      margin-right: 5vw;
-      margin-left: 5vw;
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .edition-card__image {
+    width: 220px;
+    height: 155px;
+  }
+
+  .edition-card--side .edition-card__image {
+    width: 180px;
+    height: 130px;
   }
 }
-@media screen and (max-width: 800px) {
-  .description-title{
-      font-size: 40px;
+
+@media (max-width: 600px) {
+  .neecathon-section {
+    padding: 48px 24px;
   }
-  .description-text{
-      font-size: 18px;
-      width: 320px;
-      padding-right: 40px;
-      line-height: 28px;
+
+  .info-card {
+    padding: 1.5rem 1.2rem;
   }
-  .description-opportunities img{
-      width: 475px;
-      top: 200px;
+
+  .info-card__buttons {
+    flex-direction: column;
   }
-  
-  .team-flex {
-      padding-left: 12px;
-      margin-right: 5vw;
-      margin-left: 5vw;
+
+  .pill-button {
+    width: 100%;
+    text-align: center;
   }
-  .team-flex img{
-      height: 140px;
-      width: 140px;
-      margin-top: 30px;
-      flex: 0 0 50%;
-      margin-right: 10px;
+
+  .edition-card__image {
+    width: 160px;
+    height: 115px;
   }
-  .member-name{
-      font-size: 17px;
-      margin-left:13%;
+
+  .edition-card--side .edition-card__image {
+    width: 120px;
+    height: 90px;
   }
-  .icon-team-member {
-      height: 40px !important;
-      width: 40px !important;
-      margin-top: 20px !important;
-      margin-right: 0px !important;
-  }
-}
-@media screen and (max-width: 400px) {
-  .description-opportunities{
-      height: 200px;
-      background-color:white;
-      position: relative;
-  }
-  .description-title{
-      font-size: 30px;
-      padding-top: 10px;
-  }
-  .description-text{
-      font-size: 16px;
-      width: 250px;
-      padding-right: 30px;
-      padding-left: 20px;
-      line-height: 24px;
-  }
-  .description-opportunities img{
-      width: 475px;
-      top: 150px;
-  }
-  .team{
-      padding-top: 20px;
-  }
-  
-  .team-flex {
-      margin-right: 2vw;
-      margin-left: 2vw;
-  }
-  .team-flex img{
-      height: 120px;
-      width: 120px;
-      margin-top: 5px;
-      flex: 0 0 50%; margin-right: 10px;
-  }
-  .member-name{
-      margin-left:6%;
+
+  .carousel-arrow {
+    font-size: 2.5rem;
   }
 }
 </style>
